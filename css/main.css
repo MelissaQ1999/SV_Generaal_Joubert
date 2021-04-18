@@ -1,0 +1,158 @@
+/* In dit CSS-bestand vind je de basisstijl die door de hele site hetzelfde is, bijvoorbeeld de tekst en de knoppen. */
+
+/* De Lettertypes worden hier geladen via Google*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
+
+:root {
+    --primary: #D44C4C;
+    --secondary: #EDEDED;
+}
+
+/* Dit haalt de standaard gegenereerde stijl weg */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body { 
+    background-color: #FFF;
+    width: 100%;
+}
+
+/*--------------------------------------------------
+    Lader van de website
+---------------------------------------------------*/
+#doc-loader {
+    background: #08262A;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+#loaderInner {
+    background:url(../images/load.gif);
+    background-position: center center; 
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+/*--------------------------------------------------
+    Lettertype 
+---------------------------------------------------*/
+/* Opmaak van het lettertype */
+h1, h2, h3, h4, h5, h6{
+    color: #FFF;
+    font-family: 'Playfair Display', Georgia, Times, serif;
+    font-weight: bold;
+}
+
+/* font-family: 'New Rocker', cursive; */
+
+h1 {
+    font-size: 95px;
+    line-height: 128px;
+}
+
+h2 {
+    font-size: 70px;
+    line-height: 90px;
+}
+
+h3 {
+    font-size: 56px;
+    line-height: 74px;
+}
+
+h4 {
+    font-size: 45px;
+    line-height: 58px;
+}
+
+h5 {
+    font-size: 33px;
+    line-height: 44px;
+}
+
+h6 {
+    font-size: 22px;
+    line-height: 28px;
+}
+
+p {
+    color: #FFF;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+}
+
+
+/*--------------------------------------------------
+    Buttons
+---------------------------------------------------*/
+/* Hier kun je de primaire knop bewerken */
+button.primary {
+    background-color: #FFF;
+    color: var(--primary);
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    padding: 8px 20px;
+    margin-top: 35px;
+    border: 3px solid var(--primary);
+    border-radius: 25px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+}
+
+/* Hierdoor verandert de knop wanneer je er met de muis overheen beweegt */
+button.primary:hover {
+    background-color: var(--primary);
+    color: #FFF;
+}
+
+/* Hier kun je de secundaire knop bewerken */
+button.secondary {
+    background-color: #FFF;
+    color: #000;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    padding: 8px 20px;
+    margin-top: 35px;
+    border: 3px solid var(--secondary);
+    border-radius: 15px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+}
+
+/* Hierdoor verandert de knop wanneer je er met de muis overheen beweegt */
+button.secondary:hover {
+    background-color: var(--secondary);
+}
+
+/* Dit zorgt ervoor dat de link verandert wanneer je er met de muis overheen beweegt */
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+    cursor: pointer;
+}
