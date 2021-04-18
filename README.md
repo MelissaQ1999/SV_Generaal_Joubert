@@ -6,7 +6,7 @@ Hier komt alle code te staan zolang ik bezig ben om de website te bouwen.
 Op deze manier kan ik namelijk makkelijk de code delen met andere en het gelijk via het web op verschillende aparaten uittesten.
 
 
-English
+English<br>
 Website shooting club
 
 I have been asked to create a new website for shooting sports club General Joubert.
