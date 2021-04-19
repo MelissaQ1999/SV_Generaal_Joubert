@@ -1,13 +1,7 @@
 /* In dit CSS-bestand vind je de basisstijl die door de hele site hetzelfde is, bijvoorbeeld de tekst en de knoppen. */
 
-/* De Lettertypes worden hier geladen via Google*/
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
-
-
 :root {
-    --primary: #D44C4C;
+    --primary: #F4974E;
     --secondary: #EDEDED;
 }
 
@@ -22,6 +16,7 @@
 body { 
     background-color: #FFF;
     width: 100%;
+    overflow: hidden;
 }
 
 /*--------------------------------------------------
@@ -55,50 +50,47 @@ body {
 ---------------------------------------------------*/
 /* Opmaak van het lettertype */
 h1, h2, h3, h4, h5, h6{
-    color: #FFF;
-    font-family: 'Playfair Display', Georgia, Times, serif;
+    color: #0A0A0A;
+    font-family: 'Georgia', Times, serif;
     font-weight: bold;
 }
 
-/* font-family: 'New Rocker', cursive; */
-
 h1 {
-    font-size: 95px;
-    line-height: 128px;
+    font-size: 35px;
+    line-height: 40px;
 }
 
 h2 {
-    font-size: 70px;
-    line-height: 90px;
+    font-size: 29px;
+    line-height: 33px;
 }
 
 h3 {
-    font-size: 56px;
-    line-height: 74px;
+    font-size: 25px;
+    line-height: 28px;
 }
 
 h4 {
-    font-size: 45px;
-    line-height: 58px;
+    font-size: 21px;
+    line-height: 24px;
 }
 
 h5 {
-    font-size: 33px;
-    line-height: 44px;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 h6 {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 19px;
 }
 
 p {
-    color: #FFF;
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    color: #0A0A0A;
+    font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 28px;
-    letter-spacing: 0.8px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 
@@ -107,52 +99,192 @@ p {
 ---------------------------------------------------*/
 /* Hier kun je de primaire knop bewerken */
 button.primary {
-    background-color: #FFF;
-    color: var(--primary);
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    background-color: #FFDA47;
+    background-image: linear-gradient(to right, #FFDA47 0%, var(--primary) 100%);
+    color: #000;
+    font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 20px;
-    letter-spacing: 0.8px;
+    font-size: 19px;
+    text-align: center;
     padding: 8px 20px;
     margin-top: 35px;
-    border: 3px solid var(--primary);
-    border-radius: 25px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    height: 50px;
+    height: 55px;
     width: 150px;
 }
 
 /* Hierdoor verandert de knop wanneer je er met de muis overheen beweegt */
 button.primary:hover {
     background-color: var(--primary);
-    color: #FFF;
+    background-image: linear-gradient(to left, var(--primary) 100%);
+    box-shadow: 0px 0px 10px 1px #000;
 }
 
 /* Hier kun je de secundaire knop bewerken */
 button.secondary {
-    background-color: #FFF;
+    background-color: transparent;
     color: #000;
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 20px;
-    letter-spacing: 0.8px;
+    font-size: 19px;
+    text-align: center;
     padding: 8px 20px;
     margin-top: 35px;
-    border: 3px solid var(--secondary);
-    border-radius: 15px;
+    border: 3px solid #808080;
+    border-radius: 10px;
     cursor: pointer;
-    height: 50px;
+    height: 55px;
     width: 150px;
 }
 
 /* Hierdoor verandert de knop wanneer je er met de muis overheen beweegt */
 button.secondary:hover {
-    background-color: var(--secondary);
+    border-color: var(--primary);
+    box-shadow: inset 0px 0px 10px -2px, 0px 0px 10px 2px #000;
+}
+
+/* Hier kun je een link bewerken */
+a {
+    color: #3DACE3;
 }
 
 /* Dit zorgt ervoor dat de link verandert wanneer je er met de muis overheen beweegt */
 a:hover {
-    color: var(--primary);
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tussenversie van mobiel en tablet (450px) */
+@media (min-width: 450px) {
+
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 46px;
+        line-height: 52px;
+    }
+    
+    h2 {
+        font-size: 36px;
+        line-height: 41px;
+    }
+    
+    h3 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    
+    h4 {
+        font-size: 25px;
+        line-height: 28px;
+    }
+    
+    h5 {
+        font-size: 21px;
+        line-height: 24px;
+    }
+    
+    h6 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+    
+    p {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+    h1 {
+        font-size: 58px;
+        line-height: 66px;
+    }
+    
+    h2 {
+        font-size: 48px;
+        line-height: 55px;
+    }
+    
+    h3 {
+        font-size: 35px;
+        line-height: 40px;
+    }
+    
+    h4 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    
+    h5 {
+        font-size: 24px;
+        line-height: 27px;
+    }
+    
+    h6 {
+        font-size: 19px;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680PX) {
+    h1 {
+        font-size: 70px;
+        line-height: 79px;
+    }
+    
+    h2 {
+        font-size: 55px;
+        line-height: 62px;
+    }
+    
+    h3 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    
+    h4 {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    
+    h5 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    
+    h6 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    
+    p {
+        font-size: 17px;
+        line-height: 21px;
+    }
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+
 }

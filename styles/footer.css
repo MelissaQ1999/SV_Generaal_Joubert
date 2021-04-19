@@ -8,10 +8,49 @@ footer {
     margin-top: 75px;
 }
 
+p, p>a {
+    color: #FFF;
+}
+
 button.primary.contact-b {
     margin: 50px 0 50px 0;
 }
 
 .copy {
     margin-top: auto;
+}
+
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tussenversie van mobiel en tablet (450px) */
+@media (min-width: 450px) {
+
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680PX) {
+
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+
 }
