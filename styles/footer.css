@@ -1,23 +1,79 @@
 /* In dit CSS-bestand vindt je de stijl voor de footer die voor elke pagina nodig is */
 
 footer {
-    height: 300px;
     width: 100%;
     background-color: #0E2D3C;
-    text-align: center;
     margin-top: 75px;
 }
 
-p, p>a {
+footer p, footer a {
     color: #FFF;
+    font-family: 'Verdana', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
 }
 
-button.primary.contact-b {
-    margin: 50px 0 50px 0;
+.footerMenu {
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footNav li {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.footNav li.first {
+    margin-top: 0px;
+}
+
+.footNav li.last {
+    margin-bottom: 0px;
+}
+
+.footAdres {
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footContact {
+    text-align: left;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footContact button {
+    margin: 15px 0 15px 0;
 }
 
 .copy {
     margin-top: auto;
+    text-align: center;
+}
+
+
+/*--------------------------------------------------
+    Het grid systeem
+---------------------------------------------------*/
+/* Het grid instellen */
+.footgrid {
+    display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-row-gap: 35px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* Het grid toepassen */
+.footerMenu, .footAdres, .footContact, .copy {
+    grid-column: 1 / span 12;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 
@@ -32,7 +88,10 @@ button.primary.contact-b {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-
+    footer p, footer a {
+        font-size: 15px;
+        line-height: 23px;
+    }
 }
 
 /* Laptop-versie (1024px) */
@@ -42,12 +101,18 @@ button.primary.contact-b {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-
+    footer p, footer a {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-
+    footer p, footer a {
+        font-size: 17px;
+        line-height: 26px;
+    }
 }
 
 /* Desktop versie (1920px) */
