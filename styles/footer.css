@@ -1,11 +1,15 @@
-/* In dit CSS-bestand vindt je de stijl voor de footer die voor elke pagina nodig is */
+/*---------------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de footer die voor elke pagina nodig is
+----------------------------------------------------------------------------------------*/
 
+/* De grote, kleur en positie van de footer */
 footer {
     width: 100%;
     background-color: #0E2D3C;
     margin-top: 35px;
 }
 
+/* Hier wordt de tekst opmaak binnen de footer bepaald */
 footer p, footer a {
     color: #FFF;
     font-family: 'Verdana', Helvetica, sans-serif;
@@ -14,6 +18,7 @@ footer p, footer a {
     line-height: 22px;
 }
 
+/* De opmaak van de menu items */
 .footNav li {
     margin-top: 8px;
     margin-bottom: 8px;
@@ -27,6 +32,7 @@ footer p, footer a {
     margin-bottom: 0px;
 }
 
+/* De positie van de contact button */
 .footContact button {
     margin: 15px 0 15px 0;
 }

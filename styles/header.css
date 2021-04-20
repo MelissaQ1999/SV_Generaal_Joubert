@@ -1,5 +1,8 @@
-/* In dit CSS-bestand vindt je de stijl voor de header die voor elke pagina nodig is */
+/*--------------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de header die voor elke pagina nodig is
+---------------------------------------------------------------------------------------*/
 
+/* De grote, kleur en positie van de header worden hier bepaald */
 header {
     background-color: #0E2D3C;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
@@ -11,17 +14,19 @@ header {
     z-index: 100;
 }
 
+/* Dit activeerd wanneer het hamburgermenu actief is */
 header.act {
     position: relative;
 }
 
+/* De positie en grote van het logo */
 a.logo img {
     margin: 5px 0 0 10px;
     width: auto;
     height: 50px;
 }
 
-/* menu button */
+/* De hamburgermenu button */
 .menuBtn {
     height: 35px;
     width: 35px;
@@ -64,6 +69,7 @@ a.logo img {
     bottom: -7px;
 }
 
+/* Dit activeerd wanneer het hamburgermenu actief is */
 .menuBtn.act > span {
     height: 0;
 }
@@ -97,19 +103,7 @@ a.logo img {
     transform: scale(0);
 }
 
-/* .mainMenu.act {
-    height: 200vw;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-image: url(../images/background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-} */
-
+/* Dit activeerd wanneer het hamburgermenu actief is */
 .mainMenu.act {
     opacity: 1;
     transform: scale(1);
@@ -120,18 +114,21 @@ a.logo img {
     transform: translateX(0);
 }
 
+/* De positie van de menu items */
 .mainMenu ul.nav {
     top: 0;
     margin-top: 100px;
     margin-bottom: 50px;
 }
 
+/* De animatie op de menu items */
 .mainMenu li {
     padding: 10px 0;
     transition: all 400ms 510ms;
     opacity: 0;
 }
 
+/* Positie van de submenu items */
 ul.subNav {
     margin-bottom: 12px;
 }
@@ -140,6 +137,7 @@ ul.subNav li {
     padding: 6px 0;
 }
 
+/* De animatie richting van de menu items */
 .mainMenu li:nth-child(odd) {
     transform: translateX(30%);
 }
@@ -152,6 +150,7 @@ ul.subNav li {
     transform: none;
 }
 
+/* De opmaak van de hoofdmenu items in normale staat */
 a.nav-item {
     color: #FFF;
     display: inline-block;
@@ -161,15 +160,18 @@ a.nav-item {
     text-decoration: none;
 }
 
+/* De opmaak van de hoofdmenu items als je er overheen beweegd */
 a.nav-item:hover {
     color: var(--primary);
 }
 
+/* De opmaak van de hoofdmenu items wanneer deze actief is */
 #selectedMain {
     color: var(--primary);
     font-weight: bold;
 }
 
+/* De opmaak van de submenu items in normale staat */
 a.subNav-item {
     color: #808080;
     display: inline-block;
@@ -178,10 +180,12 @@ a.subNav-item {
     line-height: 20px;
 }
 
+/* De opmaak van de submenu items als je er overheen beweegd */
 a.subNav-item:hover {
     color: #F57A4E;
 }
 
+/* De opmaak van de submenu items wanneer deze actief is */
 #selectedSub {
     color: #F57A4E;
     font-weight: bold;
