@@ -1,0 +1,84 @@
+/*---------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de Informatie - Disciplines pagina
+----------------------------------------------------------------------------------*/
+
+/* Hier kunt u alle stylesheets importeren */
+@import 'main.css';
+@import 'header.css';
+@import 'footer.css';
+
+nav.subMenu {
+    visibility: hidden;
+}
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tussenversie van mobiel en tablet (450px) */
+@media (min-width: 450px) {
+
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+    nav.subMenu {
+        visibility: visible;
+        background-color: #1C5876;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 60px;
+        display: table;
+        text-align: left;
+        top: 85;
+        left: 0;
+    }
+
+    .subMenu ul {
+        justify-content: space-between;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .subMenu li {
+        display: inline-block;
+        margin-right: 35px;
+    }
+
+    ul.subNav-active {
+        padding-left: 50px;
+    }
+
+    a.subNav-item {
+        font-size: 20px;
+        line-height: 23px;
+        color: #FFF;
+    }
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+    ul.subNav-active {
+        padding-left: 100px;
+    }
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680PX) {
+    ul.subNav-active {
+        padding-left: 200px;
+    }
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+    ul.subNav-active {
+        padding-left: 250px;
+    }
+}
