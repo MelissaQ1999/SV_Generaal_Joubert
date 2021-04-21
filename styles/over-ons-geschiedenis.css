@@ -11,6 +11,58 @@ nav.subMenu {
     visibility: hidden;
 }
 
+main {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h2.pageTitle {
+    margin-top: 45px;
+}
+
+p.overhandiging {
+    margin-top: 15px;
+}
+
+/* De opmaak van de foto's */
+figure {
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.stone, .prijs {
+    width: 250px;
+    height: 192.5px;
+}
+  
+.stone img, .prijs img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+/*--------------------------------------------------
+    Het grid systeem
+---------------------------------------------------*/
+/* Het grid instellen */
+.history {
+    display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    padding-top: 30px;
+}
+
+/* Het grid toepassen */
+.oprichting, .stone, .overhandiging, .prijs {
+    grid-column: 1 / span 12;
+    text-align: center;
+}
+
 /*--------------------------------------------------
     De breekpunten
 ---------------------------------------------------*/
@@ -30,13 +82,12 @@ nav.subMenu {
     nav.subMenu {
         visibility: visible;
         background-color: #1C5876;
-        position: absolute;
+        position: fixed;
         z-index: 100;
         width: 100%;
         height: 60px;
         display: table;
         text-align: left;
-        top: 85;
         left: 0;
     }
 
@@ -60,19 +111,39 @@ nav.subMenu {
         line-height: 23px;
         color: #FFF;
     }
+
+    main {
+        margin-top: 60px;;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    nav.subMenu {
+        height: 65px;
+    }
+
     ul.subNav-active {
         padding-left: 100px;
+    }
+
+    main {
+        margin-top: 65px;;
     }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    nav.subMenu {
+        height: 70px;
+    }
+
     ul.subNav-active {
         padding-left: 200px;
+    }
+
+    main {
+        margin-top: 70px;;
     }
 }
 

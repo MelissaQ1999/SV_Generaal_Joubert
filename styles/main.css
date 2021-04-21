@@ -98,6 +98,10 @@ p {
     line-height: 22px;
 }
 
+.pageTitle {
+    text-align: center;
+}
+
 
 /*--------------------------------------------------
     Buttons
