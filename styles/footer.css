@@ -67,6 +67,10 @@ footer p, footer a {
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
+    footer {
+        margin-top: 45px;
+    }
+
     .footgrid {
         padding-top: 25px;
     }
@@ -74,6 +78,10 @@ footer p, footer a {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    footer {
+        margin-top: 65px;
+    }
+
     footer p, footer a {
         font-size: 15px;
         line-height: 23px;
@@ -92,6 +100,10 @@ footer p, footer a {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    footer {
+        margin-top: 80px;
+    }
+
     .footgrid {
         grid-row-gap: 35px;
         padding-top: 35px;
@@ -126,6 +138,10 @@ footer p, footer a {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    footer {
+        margin-top: 105px;
+    }
+
     footer p, footer a {
         font-size: 16px;
         line-height: 24px;
@@ -146,6 +162,10 @@ footer p, footer a {
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    footer {
+        margin-top: 135px;
+    }
+
     footer p, footer a {
         font-size: 17px;
         line-height: 26px;
@@ -167,6 +187,10 @@ footer p, footer a {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    footer {
+        margin-top: 150px;
+    }
+
     .footgrid {
         padding-top: 55px;
     }
