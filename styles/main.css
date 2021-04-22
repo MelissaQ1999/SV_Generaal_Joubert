@@ -24,6 +24,11 @@ body {
     width: 100%;
 }
 
+main {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 /*--------------------------------------------------
     Lader van de website
 ---------------------------------------------------*/
@@ -173,6 +178,11 @@ a:hover {
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
     h2.pageTitle, h2.pageTitleSub {
         margin-top: 50px;
     }
@@ -180,6 +190,11 @@ a:hover {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    main {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
     h1 {
         font-size: 46px;
         line-height: 52px;
@@ -230,6 +245,11 @@ a:hover {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
     h2.pageTitle {
         margin-top: 75px;
     }
@@ -241,6 +261,11 @@ a:hover {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    main {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
     h1 {
         font-size: 58px;
         line-height: 66px;
@@ -286,6 +311,11 @@ a:hover {
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    main {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
     h1 {
         font-size: 70px;
         line-height: 79px;
@@ -332,6 +362,11 @@ a:hover {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    main {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+
     h2.pageTitle {
         margin-top: 150px;
     }

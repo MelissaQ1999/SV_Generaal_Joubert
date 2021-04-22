@@ -8,11 +8,6 @@
 @import 'subNav.css';
 @import 'footer.css';
 
-main {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 p.overhandiging {
     margin-top: 20px;
 }
@@ -76,11 +71,6 @@ figure {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-    main {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
     .stone, .prijs {
         width: 350px;
         height: 195px;
@@ -98,11 +88,6 @@ figure {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    main {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
     figure {
         margin: auto 0px auto 0px;
     }
@@ -143,11 +128,6 @@ figure {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    main {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-
     .history {
         grid-row-gap: 75px;
     }
@@ -165,11 +145,6 @@ figure {
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-    main {
-        padding-left: 200px;
-        padding-right: 200px;
-    }
-
     .history {
         grid-row-gap: 90px;
         margin-top: 75px;
@@ -183,11 +158,6 @@ figure {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    main {
-        padding-left: 250px;
-        padding-right: 250px;
-    }
-
     .history {
         grid-row-gap: 115px;
         margin-top: 100px;

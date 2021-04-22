@@ -7,13 +7,65 @@
 @import 'header.css';
 @import 'footer.css';
 
-/* .banner {
-    background-image: url(../images/background.jpg);
+/* De bannerabeelding met tekst en contact button */
+.hoofdimg {
+    min-height: 350px;
+    width: 100%;
+    background-image: url(../images/pistool_cover.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
-} */
+    position: fixed;
+    z-index: -1;
+}
+
+/* Dit zorgt voor de overlay over de bannerafbeelding */
+.hoofdimg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-text, .banner div.button{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.banner-text h1 {
+    padding-top: 15px;
+	text-align: left;
+    color: #FFF;
+}
+
+.banner-text p {
+    margin-top: 25px;
+	text-align: left;
+    color: #FFF;
+}
+
+.button a button {
+    margin-bottom: 15px;
+}
+
+/* Het vlak voor de hoofd content wordt hier bewerkt */
+main {
+    background-color: #FFF;
+    padding-bottom: 35px;
+}
+
+h2.pageTitleHome {
+    padding-top: 45px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 0;
+}
+
 
 /*--------------------------------------------------
     De breekpunten
@@ -22,29 +74,161 @@
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
 
+    .banner-text, .banner div.button {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .banner-text h1 {
+        padding-top: 25px;;
+    }
+    
+    .banner-text p {
+        margin-top: 35px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 50px;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    .banner-text, .banner div.button {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
 
+    .banner-text h1 {
+        padding-top: 35px;;
+    }
+
+    .button a button {
+        margin-top: 45px;
+        margin-bottom: 25px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 55px;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    .hoofdimg {
+        min-height: 450px;
+    }
 
+    .banner-text, .banner div.button {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .button a button {
+        margin-bottom: 35px;
+    }
+
+    /* Het grid instellen, zodat de paragraaftekst niet te lang wordt */
+    .banner-text {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: auto auto;
+        grid-auto-columns: auto auto;
+    }
+
+    /* Het grid toepassen op de heading en de paragraaf */
+    .banner-text h1 {
+        grid-column: 1 / span 12;
+        padding-top: 50px;;
+    }
+
+    .banner-text p {
+        grid-column: 1 / span 8;
+        margin-top: 45px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 75px;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    .banner-text, .banner div.button {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 
+    .banner-text h1 {
+        padding-top: 65px;;
+    }
+
+    .banner-text p {
+        grid-column: 1 / span 7;
+        margin-top: 55px;
+    }
+
+    .button a button {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 85px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    .hoofdimg {
+        min-height: 550px;
+    }
 
+    .banner-text, .banner div.button {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .banner-text h1 {
+        padding-top: 85px;;
+    }
+
+    .banner-text p {
+        margin-top: 65px;
+    }
+
+    .button a button {
+        margin-top: 55px;
+        margin-bottom: 65px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 105px;
+    }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    .banner-text, .banner div.button {
+        margin-left: 250px;
+        margin-right: 250px;
+    }
 
+    .banner-text h1 {
+        padding-top: 100px;;
+    }
+
+    .banner-text p {
+        grid-column: 1 / span 6;
+        margin-top: 75px;
+    }
+
+    .button a button {
+        margin-top: 65px;
+        margin-bottom: 75px;
+    }
+
+    h2.pageTitleHome {
+        padding-top: 150px;
+    }
 }
