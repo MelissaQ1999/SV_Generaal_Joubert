@@ -7,6 +7,7 @@
 @import 'header.css';
 @import 'footer.css';
 
+/* De navigatiebalk die pas vanaf een grote tablet of kleine laptop moet verschijnen */
 nav.subMenu {
     visibility: hidden;
 }
@@ -31,8 +32,8 @@ figure {
 }
   
 .stone, .prijs {
-    width: 250px;
-    height: 192.5px;
+    width: 290px;
+    height: 193px;
 }
   
 .stone img, .prijs img {
@@ -54,13 +55,13 @@ figure {
 	grid-row-gap: 25px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    padding-top: 30px;
+    margin-top: 30px;
 }
 
 /* Het grid toepassen */
 .oprichting, .stone, .overhandiging, .prijs {
     grid-column: 1 / span 12;
-    text-align: center;
+    text-align: left;
 }
 
 .stone {
@@ -70,6 +71,7 @@ figure {
 .prijs {
     grid-row: 2;
 }
+
 
 /*--------------------------------------------------
     De breekpunten
@@ -82,7 +84,28 @@ figure {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    main {
+        padding-left: 35px;
+        padding-right: 35px;
+    }
 
+    .stone, .prijs {
+        width: 350px;
+        height: 195px;
+    }
+
+    .history {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+    }
+
+    h2.pageTitle {
+        margin-top: 55px;
+    }
+    
+    p.overhandiging {
+        margin-top: 25px;
+    }
 }
 
 /* Laptop-versie (1024px) */
@@ -121,7 +144,49 @@ figure {
     }
 
     main {
-        margin-top: 60px;;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    h2.pageTitle {
+        margin-top: 135px;
+    }
+
+    figure {
+        margin: auto 0px auto 0px;
+    }
+
+    .history {
+        grid-row-gap: 55px;
+        margin-top: 65px;
+    }
+
+    .oprichting {
+        grid-column: 1 / span 7;
+        text-align: left;
+    }
+    
+    .stone {
+        grid-row: 1;
+        grid-column: 8 / span 5;
+        margin-left: auto;
+        width: 335px;
+        height: 225px;
+    }
+
+    .overhandiging {
+        grid-column: 6 / span 7;
+    }
+
+    p.overhandiging {
+        margin-top: 0px;
+    }
+    
+    .prijs {
+        grid-row: 2;
+        grid-column: 1 / span 5;
+        width: 335px;
+        height: 225px;
     }
 }
 
@@ -136,7 +201,26 @@ figure {
     }
 
     main {
-        margin-top: 65px;;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    h2.pageTitle {
+        margin-top: 150px;
+    }
+
+    .history {
+        grid-row-gap: 75px;
+    }
+
+    p.oprichting, p.overhandiging {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .stone, .prijs {
+        width: 385px;
+        height: 280px;
     }
 }
 
@@ -151,7 +235,22 @@ figure {
     }
 
     main {
-        margin-top: 70px;;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    h2.pageTitle {
+        margin-top: 175px;
+    }
+
+    .history {
+        grid-row-gap: 90px;
+        margin-top: 75px;
+    }
+
+    .stone, .prijs {
+        width: 425px;
+        height: 305px;
     }
 }
 
@@ -159,5 +258,24 @@ figure {
 @media (min-width: 1920PX) {
     ul.subNav-active {
         padding-left: 250px;
+    }
+
+    main {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+
+    h2.pageTitle {
+        margin-top: 225px;
+    }
+
+    .history {
+        grid-row-gap: 115px;
+        margin-top: 100px;
+    }
+
+    .stone, .prijs {
+        width: 525px;
+        height: 385px;
     }
 }
