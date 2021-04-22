@@ -5,12 +5,8 @@
 /* Hier kunt u alle stylesheets importeren */
 @import 'main.css';
 @import 'header.css';
+@import 'subNav.css';
 @import 'footer.css';
-
-/* De navigatiebalk die pas vanaf een grote tablet of kleine laptop moet verschijnen */
-nav.subMenu {
-    visibility: hidden;
-}
 
 main {
     padding-left: 15px;
@@ -110,40 +106,6 @@ figure {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    nav.subMenu {
-        visibility: visible;
-        background-color: #1C5876;
-        position: fixed;
-        top: 85px;
-        z-index: 100;
-        width: 100%;
-        height: 60px;
-        display: table;
-        text-align: left;
-        left: 0;
-    }
-
-    .subMenu ul {
-        justify-content: space-between;
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    .subMenu li {
-        display: inline-block;
-        margin-right: 35px;
-    }
-
-    ul.subNav-active {
-        padding-left: 50px;
-    }
-
-    a.subNav-item {
-        font-size: 20px;
-        line-height: 23px;
-        color: #FFF;
-    }
-
     main {
         padding-left: 50px;
         padding-right: 50px;
@@ -193,14 +155,6 @@ figure {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    nav.subMenu {
-        height: 65px;
-    }
-
-    ul.subNav-active {
-        padding-left: 100px;
-    }
-
     main {
         padding-left: 100px;
         padding-right: 100px;
@@ -227,15 +181,6 @@ figure {
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-    nav.subMenu {
-        height: 70px;
-        top: 100px;
-    }
-
-    ul.subNav-active {
-        padding-left: 200px;
-    }
-
     main {
         padding-left: 200px;
         padding-right: 200px;
@@ -258,10 +203,6 @@ figure {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    ul.subNav-active {
-        padding-left: 250px;
-    }
-
     main {
         padding-left: 250px;
         padding-right: 250px;
