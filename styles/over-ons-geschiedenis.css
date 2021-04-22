@@ -21,7 +21,7 @@ h2.pageTitle {
 }
 
 p.overhandiging {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 /* De opmaak van de foto's */
@@ -61,6 +61,14 @@ figure {
 .oprichting, .stone, .overhandiging, .prijs {
     grid-column: 1 / span 12;
     text-align: center;
+}
+
+.stone {
+    grid-row: 4;
+}
+
+.prijs {
+    grid-row: 2;
 }
 
 /*--------------------------------------------------
