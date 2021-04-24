@@ -7,6 +7,16 @@
 @import 'header.css';
 @import 'footer.css';
 
+/* Het vlak voor de hoofd content wordt hier bewerkt */
+main {
+    background-color: #FFF;
+    padding-bottom: 35px;
+}
+
+
+/*--------------------------------------------------------------
+    CSS voor de banner
+---------------------------------------------------------------*/
 /* De bannerabeelding met tekst en contact button */
 .hoofdimg {
     min-height: 350px;
@@ -51,15 +61,33 @@
     margin-bottom: 15px;
 }
 
-/* Het vlak voor de hoofd content wordt hier bewerkt */
-main {
-    background-color: #FFF;
-    padding-bottom: 35px;
-}
 
+/*--------------------------------------------------------------
+    CSS voor wat de vereniging te bieden heeft
+---------------------------------------------------------------*/
 h2.pageTitleHome {
     padding-top: 45px;
     text-align: center;
+}
+
+/* Het grid instellen voor de drie kopjes die horen bij wat de vereniging te bieden heeft */
+.watBiedenWij {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 35px;
+}
+
+/* Het grid toepassen op de drie kopjes die horen bij wat de vereniging te bieden heeft */
+.gezelligheid, .kwaliteit, .strijd {
+    grid-column: 1 / span 12;
+    text-align: center;
+}
+
+.watBiedenWij section p {
+    margin-top: 10px;
 }
 
 footer {
@@ -73,7 +101,7 @@ footer {
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
-
+    /* De banner */
     .banner-text, .banner div.button {
         margin-left: 20px;
         margin-right: 20px;
@@ -87,13 +115,24 @@ footer {
         margin-top: 35px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 50px;
+    }
+
+    .watBiedenWij {
+        grid-row-gap: 30px;
+        margin-top: 40px;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 15px;
     }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    /* De banner */
     .banner-text, .banner div.button {
         margin-left: 35px;
         margin-right: 35px;
@@ -108,13 +147,24 @@ footer {
         margin-bottom: 25px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 55px;
+    }
+
+    .watBiedenWij {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 20px;
     }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    /* De banner */
     .hoofdimg {
         min-height: 450px;
     }
@@ -139,7 +189,7 @@ footer {
     /* Het grid toepassen op de heading en de paragraaf */
     .banner-text h1 {
         grid-column: 1 / span 12;
-        padding-top: 50px;;
+        padding-top: 50px;
     }
 
     .banner-text p {
@@ -147,13 +197,36 @@ footer {
         margin-top: 45px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 75px;
+    }
+
+    .watBiedenWij {
+        grid-column-gap: 30px;
+        margin-top: 50px;
+    }
+
+    .gezelligheid {
+        grid-column: 1 / span 4;
+    }
+
+    .kwaliteit {
+        grid-column: 5 / span 4;
+    } 
+
+    .strijd {
+        grid-column: 9 / span 4;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 25px;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    /* De banner */
     .banner-text, .banner div.button {
         margin-left: 100px;
         margin-right: 100px;
@@ -173,13 +246,24 @@ footer {
         margin-bottom: 50px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 85px;
+    }
+
+    .watBiedenWij {
+        grid-column-gap: 40px;
+        margin-top: 65px;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 30px;
     }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    /* De banner */
     .hoofdimg {
         min-height: 550px;
     }
@@ -202,13 +286,24 @@ footer {
         margin-bottom: 65px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 105px;
+    }
+
+    .watBiedenWij {
+        grid-column-gap: 50px;
+        margin-top: 85px;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 35px;
     }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    /* De banner */
     .banner-text, .banner div.button {
         margin-left: 250px;
         margin-right: 250px;
@@ -228,7 +323,17 @@ footer {
         margin-bottom: 75px;
     }
 
+    /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
         padding-top: 150px;
+    }
+
+    .watBiedenWij {
+        grid-column-gap: 60px;
+        margin-top: 100px;
+    }
+
+    .watBiedenWij section p {
+        margin-top: 40px;
     }
 }
