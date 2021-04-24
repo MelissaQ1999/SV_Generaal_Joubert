@@ -14,9 +14,9 @@ main {
 }
 
 
-/*--------------------------------------------------------------
+/*--------------------------------------------------
     CSS voor de banner
----------------------------------------------------------------*/
+---------------------------------------------------*/
 /* De bannerabeelding met tekst en contact button */
 .hoofdimg {
     min-height: 350px;
@@ -62,9 +62,9 @@ main {
 }
 
 
-/*--------------------------------------------------------------
+/*--------------------------------------------------
     CSS voor wat de vereniging te bieden heeft
----------------------------------------------------------------*/
+---------------------------------------------------*/
 h2.pageTitleHome {
     padding-top: 45px;
     text-align: center;
@@ -78,6 +78,7 @@ h2.pageTitleHome {
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
     margin-top: 35px;
+    margin-bottom: 45px;
 }
 
 /* Het grid toepassen op de drie kopjes die horen bij wat de vereniging te bieden heeft */
@@ -88,6 +89,56 @@ h2.pageTitleHome {
 
 .watBiedenWij section p {
     margin-top: 10px;
+}
+
+
+/*--------------------------------------------------
+    CSS voor het laatste nieuws
+---------------------------------------------------*/
+article.nieuwsAchtergrond {
+    background-color: #D1D5D0;
+    /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+}
+
+div.laatsteNieuws {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.laatsteNieuws h2 {
+    padding-top: 45px;
+}
+
+/* Het grid instellen voor de nieuws items */
+.nieuwsItems {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 35px;
+    padding-bottom: 45px;
+}
+
+/* Het grid toepassen op de nieuws items */
+.nieuwsItem {
+    grid-column: 1 / span 12;
+}
+
+p.datum {
+    font-style: italic;
+    font-size: 13px;
+    line-height: 21px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+hr {
+    color: #707070;
+    border-style: solid;
 }
 
 footer {
@@ -114,6 +165,7 @@ footer {
     .banner-text p {
         margin-top: 35px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -123,11 +175,30 @@ footer {
     .watBiedenWij {
         grid-row-gap: 30px;
         margin-top: 40px;
+        margin-bottom: 50px;
     }
 
     .watBiedenWij section p {
         margin-top: 15px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 50px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 30px;
+        margin-top: 40px;
+        padding-bottom: 50px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tablet-versie (768px) */
@@ -146,6 +217,7 @@ footer {
         margin-top: 45px;
         margin-bottom: 25px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -155,11 +227,37 @@ footer {
     .watBiedenWij {
         grid-row-gap: 35px;
         margin-top: 45px;
+        margin-bottom: 55px;
     }
 
     .watBiedenWij section p {
         margin-top: 20px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 55px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    p.datum {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 6px;
+        margin-bottom: 15px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Laptop-versie (1024px) */
@@ -196,6 +294,7 @@ footer {
         grid-column: 1 / span 8;
         margin-top: 45px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -205,6 +304,7 @@ footer {
     .watBiedenWij {
         grid-column-gap: 30px;
         margin-top: 50px;
+        margin-bottom: 75px;
     }
 
     .gezelligheid {
@@ -222,6 +322,33 @@ footer {
     .watBiedenWij section p {
         margin-top: 25px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 75px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 40px;
+        margin-top: 50px;
+        padding-bottom: 75px;
+    }
+
+    .nieuwsItem {
+        grid-column: 2 / span 10;
+    }
+
+    p.datum {
+        margin-top: 8px;
+        margin-bottom: 20px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Grotere laptopversie (1280px) */
@@ -245,6 +372,7 @@ footer {
         margin-top: 50px;
         margin-bottom: 50px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -254,11 +382,41 @@ footer {
     .watBiedenWij {
         grid-column-gap: 40px;
         margin-top: 65px;
+        margin-bottom: 85px;
     }
 
     .watBiedenWij section p {
         margin-top: 30px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 85px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 45px;
+        margin-top: 65px;
+        padding-bottom: 85px;
+    }
+
+    .nieuwsItem {
+        grid-column: 2 / span 9;
+    }
+
+    p.datum {
+        font-size: 15px;
+        line-height: 23px;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
@@ -285,6 +443,7 @@ footer {
         margin-top: 55px;
         margin-bottom: 65px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -294,11 +453,37 @@ footer {
     .watBiedenWij {
         grid-column-gap: 50px;
         margin-top: 85px;
+        margin-bottom: 105px;
     }
 
     .watBiedenWij section p {
         margin-top: 35px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 105px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 50px;
+        margin-top: 85px;
+        padding-bottom: 105px;
+    }
+
+    p.datum {
+        font-size: 16px;
+        line-height: 25px;
+        margin-top: 12px;
+        margin-bottom: 30px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Desktop versie (1920px) */
@@ -322,6 +507,7 @@ footer {
         margin-top: 65px;
         margin-bottom: 75px;
     }
+    /*----------------------------------------*/
 
     /* Wat de vereniging te bieden heeft */
     h2.pageTitleHome {
@@ -331,9 +517,35 @@ footer {
     .watBiedenWij {
         grid-column-gap: 60px;
         margin-top: 100px;
+        margin-bottom: 150px;
     }
 
     .watBiedenWij section p {
         margin-top: 40px;
     }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    div.laatsteNieuws {
+        margin-left: 250px;
+        margin-right: 250px;
+    }
+
+    .laatsteNieuws h2 {
+        padding-top: 150px;
+    }
+
+    .nieuwsItems {
+        margin-top: 100px;
+        padding-bottom: 150px;
+    }
+
+    .nieuwsItem {
+        grid-column: 2 / span 8;
+    }
+
+    p.datum {
+        margin-top: 14px;
+    }
+    /*----------------------------------------*/
 }
