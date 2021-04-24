@@ -10,7 +10,6 @@
 /* Het vlak voor de hoofd content wordt hier bewerkt */
 main {
     background-color: #FFF;
-    padding-bottom: 35px;
 }
 
 
@@ -126,6 +125,7 @@ div.laatsteNieuws {
 /* Het grid toepassen op de nieuws items */
 .nieuwsItem {
     grid-column: 1 / span 12;
+    text-align: left;
 }
 
 p.datum {
@@ -139,6 +139,63 @@ p.datum {
 hr {
     color: #707070;
     border-style: solid;
+}
+
+
+/*-----------------------------------------------------------------
+    CSS voor de korte intro stukjes van Jeugdleden & Lidmaatschap
+------------------------------------------------------------------*/
+/* De opmaak van de foto's */
+figure {
+    margin-right: auto;
+}
+  
+.jeugd, .aanmelden {
+    width: 290px;
+    height: 193px;
+}
+  
+.jeugd img, .aanmelden img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+h2.web {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Het grid instellen */
+.jeugdLid {
+    display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Het grid toepassen */
+.jeugdleden, .jeugd, .lidmaatschap, .aanmelden {
+    grid-column: 1 / span 12;
+    text-align: left;
+}
+
+h2.lidmaatschap {
+    margin-top: 35px;
+}
+
+
+/*--------------------------------------------------
+    CSS voor de sponsors
+---------------------------------------------------*/
+article.sponsors {
+    overflow: hidden;
 }
 
 footer {
@@ -199,6 +256,23 @@ footer {
         padding-bottom: 50px;
     }
     /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugd, .aanmelden {
+        width: 350px;
+        height: 200px;
+    }
+
+    .jeugdLid {
+        grid-row-gap: 30px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 35px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tablet-versie (768px) */
@@ -256,6 +330,64 @@ footer {
         line-height: 22px;
         margin-top: 6px;
         margin-bottom: 15px;
+    }
+    /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugd, .aanmelden {
+        width: 292px;
+        height: 225px;
+    }
+
+    .jeugdLid {
+        grid-row-gap: 65px;
+        margin-top: 55px;
+        margin-bottom: 55px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 40px;
+    }
+
+    h2.web {
+        visibility: visible;
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    h2.app {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    figure, .jeugdleden, .lidmaatschap {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    figure.aanmelden {
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    .jeugd {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+    
+    .jeugdleden {
+        grid-row: 1;
+        grid-column: 7 / span 6;
+    }
+
+    .lidmaatschap {
+        grid-row: 2;
+        grid-column: 1 / span 6;
+    }
+    
+    .aanmelden {
+        grid-row: 2;
+        grid-column: 7 / span 6;
     }
     /*----------------------------------------*/
 }
@@ -349,6 +481,27 @@ footer {
         margin-bottom: 20px;
     }
     /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugdLid {
+        grid-row-gap: 75px;
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+    .jeugd, .aanmelden {
+        width: 385px;
+        height: 275px;
+    }
+
+    h2.web {
+        margin-bottom: 30px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 45px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Grotere laptopversie (1280px) */
@@ -415,6 +568,27 @@ footer {
         line-height: 23px;
         margin-top: 10px;
         margin-bottom: 25px;
+    }
+    /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugdLid {
+        grid-row-gap: 85px;
+        margin-top: 85px;
+        margin-bottom: 85px;
+    }
+
+    .jeugd, .aanmelden {
+        width: 450px;
+        height: 320px;
+    }
+
+    h2.web {
+        margin-bottom: 35px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 55px;
     }
     /*----------------------------------------*/
 }
@@ -484,6 +658,27 @@ footer {
         margin-bottom: 30px;
     }
     /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugdLid {
+        grid-row-gap: 105px;
+        margin-top: 105px;
+        margin-bottom: 105px;
+    }
+
+    .jeugd, .aanmelden {
+        width: 515px;
+        height: 370px;
+    }
+
+    h2.web {
+        margin-bottom: 45px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 60px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Desktop versie (1920px) */
@@ -546,6 +741,27 @@ footer {
 
     p.datum {
         margin-top: 14px;
+    }
+    /*----------------------------------------*/
+
+    /* Jeugdleden & Lidmaatschap */
+    .jeugdLid {
+        grid-row-gap: 150px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    .jeugd, .aanmelden {
+        width: 625px;
+        height: 450px;
+    }
+
+    h2.web {
+        margin-bottom: 50px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 65px;
     }
     /*----------------------------------------*/
 }
