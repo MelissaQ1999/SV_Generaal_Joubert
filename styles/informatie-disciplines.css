@@ -9,6 +9,58 @@
 @import 'footer.css';
 
 
+/*-----------------------------------------------------------------
+    CSS voor de discipline stukjes
+------------------------------------------------------------------*/
+/* De opmaak van de foto's */
+.dicsciplines figure {
+    margin-right: auto;
+}
+  
+.photo {
+    width: 290px;
+    height: 190px;
+}
+  
+.photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+/* De opmaak van de tekst */
+h3.web {
+    display: none;
+}
+
+h3.H3 {
+    margin-top: 35px;
+}
+
+br.on {
+    display: none;
+}
+
+/* Het grid instellen voor de disciplines */
+.disciplines {
+    display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Het grid toepassen op de disciplines */
+.photo, .oddT, .evenT {
+    grid-column: 1 / span 12;
+    text-align: left;
+}
+
 
 /*--------------------------------------------------
     De breekpunten
@@ -16,30 +68,206 @@
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
+    /* De disciplines */
+    .photo {
+        width: 380px;
+        height: 240px;
+    }
 
+    .disciplines {
+        grid-row-gap: 35px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .data {
+        display: inline;
+    }
+    
+    .afstand {
+        display: inline;
+        margin-left: 21px;
+    }
+    
+    .wanneer {
+        display: inline;
+        margin-left: 9px;
+    }
+    
+    .wanneerD {
+        margin-top: -20px;
+        margin-left: 96px;
+    }
+
+    br.on {
+        display: unset;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    /* De disciplines */
+    .photo {
+        width: 295px;
+        height: 220px;
+    }
 
+    .disciplines {
+        grid-row-gap: 55px;
+        margin-top: 55px;
+        margin-bottom: 55px;
+    }
+
+    h3.web {
+        display: revert;
+        margin-bottom: 25px;
+    }
+
+    h3.app {
+        display: none;
+    }
+
+    .wanneerD {
+        margin-left: 105px;
+    }
+
+    .disciplines figure, .disciplines section {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .evenI {
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    .oddI {
+        grid-column: 1 / span 6;
+    }
+    
+    .oddT {
+        grid-column: 7 / span 6;
+    }
+
+    .evenT {
+        grid-column: 1 / span 6;
+    }
+
+    .n1 {
+        grid-row: 2;
+    }
+
+    .n2 {
+        grid-row: 4;
+    }
+
+    .n3 {
+        grid-row: 6;
+    }
+    
+    .evenI {
+        grid-column: 7 / span 6;
+    }
+    /*----------------------------------------*/
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    /* De disciplines */
+    .disciplines {
+        grid-row-gap: 75px;
+        margin-top: 75px;
+        margin-bottom: 75px;
+    }
+
+    .photo {
+        width: 385px;
+        height: 278px;
+    }
+
+    h3.web {
+        margin-bottom: 30px;
+    }
+
+    .afstand {
+        margin-left: 31px;
+    }
     
+    .wanneer {
+        margin-left: 19px;
+    }
+
+    .wanneerD {
+        margin-left: 115px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    
+    /* De disciplines */
+    .disciplines {
+        grid-row-gap: 85px;
+        margin-top: 85px;
+        margin-bottom: 85px;
+    }
+
+    .photo {
+        width: 450px;
+        height: 324px;
+    }
+
+    h3.web {
+        margin-bottom: 35px;
+    }
+
+    .wanneerD {
+        margin-left: 119px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-    
+    /* De disciplines */
+    .disciplines {
+        grid-row-gap: 105px;
+        margin-top: 105px;
+        margin-bottom: 105px;
+    }
+
+    .photo {
+        width: 535px;
+        height: 386px;
+    }
+
+    h3.web {
+        margin-bottom: 45px;
+    }
+
+    .wanneerD {
+        margin-left: 123px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    
+    /* De disciplines */
+    .disciplines {
+        grid-row-gap: 150px;
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+    .photo {
+        width: 625px;
+        height: 450px;
+    }
+
+    h3.web {
+        margin-bottom: 50px;
+    }
+    /*----------------------------------------*/
 }
