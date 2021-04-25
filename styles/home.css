@@ -146,13 +146,13 @@ hr {
     CSS voor de korte intro stukjes van Jeugdleden & Lidmaatschap
 ------------------------------------------------------------------*/
 /* De opmaak van de foto's */
-figure {
+.jeugdLid figure {
     margin-right: auto;
 }
   
 .jeugd, .aanmelden {
     width: 290px;
-    height: 193px;
+    height: 190px;
 }
   
 .jeugd img, .aanmelden img {
@@ -195,7 +195,50 @@ h2.lidmaatschap {
     CSS voor de sponsors
 ---------------------------------------------------*/
 article.sponsors {
-    overflow: hidden;
+    background-color: #D1D5D0;
+    /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+}
+
+div.logoSponsors {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.logoSponsors h2 {
+    padding-top: 45px;
+    text-align: center;
+}
+
+.spondorGrid figure {
+    margin: auto;
+}
+
+.sponsor img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+/* Het grid instellen op de logo's van de sponsors */
+.sponsorGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 35px;
+    padding-bottom: 45px;
+}
+
+/* Het grid toepassen op de logo's van de sponsors */
+.sponsor {
+    grid-column: 1 / span 12;
 }
 
 footer {
@@ -259,8 +302,8 @@ footer {
 
     /* Jeugdleden & Lidmaatschap */
     .jeugd, .aanmelden {
-        width: 350px;
-        height: 200px;
+        width: 380px;
+        height: 240px;
     }
 
     .jeugdLid {
@@ -335,8 +378,8 @@ footer {
 
     /* Jeugdleden & Lidmaatschap */
     .jeugd, .aanmelden {
-        width: 292px;
-        height: 225px;
+        width: 295px;
+        height: 220px;
     }
 
     .jeugdLid {
@@ -360,7 +403,7 @@ footer {
         position: absolute;
     }
 
-    figure, .jeugdleden, .lidmaatschap {
+    .jeugdLid figure, .jeugdleden, .lidmaatschap {
         margin-top: auto;
         margin-bottom: auto;
     }
@@ -491,7 +534,7 @@ footer {
 
     .jeugd, .aanmelden {
         width: 385px;
-        height: 275px;
+        height: 278px;
     }
 
     h2.web {
@@ -580,7 +623,7 @@ footer {
 
     .jeugd, .aanmelden {
         width: 450px;
-        height: 320px;
+        height: 324px;
     }
 
     h2.web {
@@ -667,8 +710,8 @@ footer {
     }
 
     .jeugd, .aanmelden {
-        width: 515px;
-        height: 370px;
+        width: 535px;
+        height: 386px;
     }
 
     h2.web {
