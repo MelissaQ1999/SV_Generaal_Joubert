@@ -8,6 +8,10 @@
 @import 'subNav.css';
 @import 'footer.css';
 
+main {
+    overflow: hidden;
+}
+
 p.overhandiging {
     margin-top: 20px;
 }
