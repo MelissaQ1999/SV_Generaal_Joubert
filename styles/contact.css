@@ -1,0 +1,197 @@
+/*---------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de Contact pagina
+----------------------------------------------------------------------------------*/
+
+/* Hier kunt u alle stylesheets importeren */
+@import 'main.css';
+@import 'header.css';
+@import 'subNav.css';
+@import 'footer.css';
+
+/*--------------------------------------------------
+    CSS voor de contactinformatie
+---------------------------------------------------*/
+/* Het grid instellen voor de drie kopjes die horen bij de contactinformatie */
+.contactinformatie {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 35px;
+    margin-bottom: 45px;
+}
+
+/* Het grid toepassen op de drie kopjes die horen bij de contactinformatie */
+.openingstijden, .adres, .gegevens {
+    grid-column: 1 / span 12;
+    text-align: center;
+}
+
+.contactinformatie section p {
+    margin-top: 5px;
+}
+
+.contactinformatie section p.top {
+    margin-top: 10px;
+}
+
+.contactinformatie section p a {
+    color: #0A0A0A;
+}
+
+/*--------------------------------------------------
+    CSS voor de iframe
+---------------------------------------------------*/
+iframe {
+    height: 200px;
+    width: 100vw;
+    margin-left: -15px;
+}
+
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tussenversie van mobiel en tablet (450px) */
+@media (min-width: 450px) {
+    /* De contactinformatie */
+    .contactinformatie {
+        grid-row-gap: 30px;
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    .contactinformatie section p.top { 
+        margin-top: 15px;
+    }
+    /*----------------------------------------*/
+
+    /* De iframe */
+    iframe {
+        height: 220px;
+        margin-left: -20px;
+    }
+    /*----------------------------------------*/
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+    /* De contactinformatie */
+    .contactinformatie {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+        margin-bottom: 55px;
+    }
+
+    .contactinformatie section p {
+        margin-top: 10px;
+    }
+
+    .contactinformatie section p.top {
+        margin-top: 20px;
+    }
+    /*----------------------------------------*/
+
+    iframe {
+        height: 250px;
+        margin-left: -35px;
+    }
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+    /* De contactinformatie */
+    .contactinformatie {
+        grid-column-gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 75px;
+    }
+
+    .openingstijden {
+        grid-column: 1 / span 4;
+    }
+
+    .adres {
+        grid-column: 5 / span 4;
+    } 
+
+    .gegevens {
+        grid-column: 9 / span 4;
+    }
+
+    .contactinformatie section p.top {
+        margin-top: 25px;
+    }
+    /*----------------------------------------*/
+
+    iframe {
+        height: 300px;
+        margin-left: -50px;
+    }
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+    /* De contactinformatie */
+    .contactinformatie {
+        grid-column-gap: 40px;
+        margin-top: 65px;
+        margin-bottom: 85px;
+    }
+
+    .contactinformatie section p.top {
+        margin-top: 30px;
+    }
+    /*----------------------------------------*/
+
+    iframe {
+        height: 350px;
+        margin-left: -100px;
+    }
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680PX) {
+    /* De contactinformatie */
+    .contactinformatie {
+        grid-column-gap: 50px;
+        margin-top: 85px;
+        margin-bottom: 105px;
+    }
+
+    .contactinformatie section p.top {
+        margin-top: 35px;
+    }
+    /*----------------------------------------*/
+
+    iframe {
+        height: 400px;
+        margin-left: -200px;
+    }
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+     /* De contactinformatie */
+    .contactinformatie {
+        grid-column-gap: 60px;
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+
+    .contactinformatie section p {
+        margin-top: 12px;
+    }
+
+    .contactinformatie section p.top {
+        margin-top: 40px;
+    }
+    /*----------------------------------------*/
+
+    iframe {
+        height: 450px;
+        margin-left: -250px;
+    }
+}
