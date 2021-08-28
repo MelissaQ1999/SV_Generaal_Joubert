@@ -1,0 +1,115 @@
+/*------------------------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de sliders op de Informatie - Disciplines pagina
+-------------------------------------------------------------------------------------------------*/
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { 
+    display: none; 
+}
+ 
+.slide-container { 
+    display: block; 
+}
+
+.slide {
+    top: 0;
+    opacity: 0;
+    position: absolute;
+
+    transform: scale(1);
+
+    transition: 1s;
+}
+
+.nav label {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+
+	opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+}
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+}
+
+input:checked + .slide-container .nav label { 
+    display: block; 
+}
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: none;
+    border: 2px solid;
+    border-color: #FFF;
+}
+
+/*--------------------------------------------------
+    Specificeerd voor elke foto de radio buttons
+---------------------------------------------------*/
+input#LP-1:checked ~ .nav-dots label#LP-dot-1,
+input#LP-2:checked ~ .nav-dots label#LP-dot-2 {
+	background: var(--primary);
+}
+
+input#LGK-1:checked ~ .nav-dots label#LGK-dot-1,
+input#LGK-2:checked ~ .nav-dots label#LGK-dot-2 {
+	background: var(--primary);
+}
+
+input#LGS-1:checked ~ .nav-dots label#LGS-dot-1,
+input#LGS-2:checked ~ .nav-dots label#LGS-dot-2 {
+	background: var(--primary);
+}
+
+input#KKG-1:checked ~ .nav-dots label#KKG-dot-1,
+input#KKG-2:checked ~ .nav-dots label#KKG-dot-2 {
+	background: var(--primary);
+}
+
+input#KKK-1:checked ~ .nav-dots label#KKK-dot-1,
+input#KKK-2:checked ~ .nav-dots label#KKK-dot-2 {
+	background: var(--primary);
+}
+
+input#KKP-1:checked ~ .nav-dots label#KKP-dot-1,
+input#KKP-2:checked ~ .nav-dots label#KKP-dot-2 {
+	background: var(--primary);
+}
+
+input#GKP-1:checked ~ .nav-dots label#GKP-dot-1,
+input#GKP-2:checked ~ .nav-dots label#GKP-dot-2 {
+	background: var(--primary);
+}

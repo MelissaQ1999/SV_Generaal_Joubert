@@ -7,14 +7,20 @@
 @import 'header.css';
 @import 'subNav.css';
 @import 'footer.css';
+@import 'slides.css';
 
 
-/*-----------------------------------------------------------------
+.pageIntro {
+    margin-top: 30px;
+}
+
+/*--------------------------------------------------
     CSS voor de discipline stukjes
-------------------------------------------------------------------*/
+---------------------------------------------------*/
 /* De opmaak van de foto's */
 .dicsciplines figure {
     margin-right: auto;
+    position: relative;
 }
   
 .photo {
@@ -29,6 +35,7 @@
     margin-left: auto;
     margin-right: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
 /* De opmaak van de tekst */
@@ -44,6 +51,10 @@ br.on {
     display: none;
 }
 
+.dTekst {
+    margin-top: 15px;
+}
+
 /* Het grid instellen voor de disciplines */
 .disciplines {
     display: grid;
@@ -51,7 +62,7 @@ br.on {
 	grid-row-gap: 25px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 
@@ -107,6 +118,11 @@ br.on {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    .pageIntro {
+        margin-top: 35px;
+        text-align: center;
+    }
+    
     /* De disciplines */
     .photo {
         width: 295px;
@@ -130,6 +146,10 @@ br.on {
 
     .wanneerD {
         margin-left: 105px;
+    }
+
+    .dTekst {
+        margin-top: 20px;
     }
 
     .disciplines figure, .disciplines section {
@@ -174,6 +194,10 @@ br.on {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    .pageIntro {
+        margin-top: 50px;
+    }
+    
     /* De disciplines */
     .disciplines {
         grid-row-gap: 75px;
@@ -206,6 +230,10 @@ br.on {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    .pageIntro {
+        margin-top: 65px;
+    }
+    
     /* De disciplines */
     .disciplines {
         grid-row-gap: 85px;
@@ -230,6 +258,10 @@ br.on {
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
+    .pageIntro {
+        margin-top: 85px;
+    }
+    
     /* De disciplines */
     .disciplines {
         grid-row-gap: 105px;
@@ -254,6 +286,10 @@ br.on {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    .pageIntro {
+        margin-top: 100px;
+    }
+    
     /* De disciplines */
     .disciplines {
         grid-row-gap: 150px;
