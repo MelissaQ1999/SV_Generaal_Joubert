@@ -13,10 +13,12 @@ $(document).ready(function(){
 	$('.menuBtn').click(function() {
 		$(this).toggleClass('act');
 			if($(this).hasClass('act')) {
+                // $('html').css('overflow', 'hidden');
                 $('.mainMenu').addClass('act');
                 $('header').addClass('act');
             }
 			else {
+                // $('html').css('overflow', 'auto');
                 $('.mainMenu').removeClass('act');
                 $('header').removeClass('act');
             }
