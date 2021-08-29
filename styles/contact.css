@@ -25,7 +25,6 @@
 /* Het grid toepassen op de drie kopjes die horen bij de contactinformatie */
 .openingstijden, .adres, .gegevens {
     grid-column: 1 / span 12;
-    text-align: center;
 }
 
 .contactinformatie section p {
@@ -49,6 +48,22 @@ iframe {
     margin-left: -15px;
 }
 
+/*-------------------------------------------------------
+    CSS voor alles wat hoort bij het contactformulier
+--------------------------------------------------------*/
+.formTitel {
+        margin-top: 45px;
+        margin-bottom: 15px;
+}
+
+br.on {
+    display: none;
+}
+
+.contactformulier button {
+    margin-top: 15px;
+}
+
 
 /*--------------------------------------------------
     De breekpunten
@@ -68,12 +83,23 @@ iframe {
     }
     /*----------------------------------------*/
 
-    /* De iframe */
     iframe {
         height: 220px;
         margin-left: -20px;
     }
-    /*----------------------------------------*/
+
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Extra tussenversie van mobiel en tablet (510px) */
+@media (min-width: 510px) {
+    .openingstijden, .adres, .gegevens, .contactformulier {
+        text-align: center;
+    }
 }
 
 /* Tablet-versie (768px) */
@@ -97,6 +123,20 @@ iframe {
     iframe {
         height: 250px;
         margin-left: -35px;
+    }
+
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 55px;
+        margin-bottom: 25px;
+    }
+
+    br.on {
+        display: unset;
+    }
+
+    .contactformulier button {
+        margin-top: 20px;
     }
 }
 
@@ -122,13 +162,23 @@ iframe {
     }
 
     .contactinformatie section p.top {
-        margin-top: 25px;
+        margin-top: 30px;
     }
     /*----------------------------------------*/
 
     iframe {
         height: 300px;
         margin-left: -50px;
+    }
+
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 75px;
+        margin-bottom: 30px;
+    }
+
+    .contactformulier button {
+        margin-top: 25px;
     }
 }
 
@@ -150,6 +200,16 @@ iframe {
         height: 350px;
         margin-left: -100px;
     }
+    
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 85px;
+        margin-bottom: 35px;
+    }
+
+    .contactformulier button {
+        margin-top: 30px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
@@ -169,6 +229,12 @@ iframe {
     iframe {
         height: 400px;
         margin-left: -200px;
+    }
+
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 105px;
+        margin-bottom: 45px;
     }
 }
 
@@ -193,5 +259,15 @@ iframe {
     iframe {
         height: 450px;
         margin-left: -250px;
+    }
+
+    /* Alles wat hoort bij het contactformulier */
+    .formTitel {
+        margin-top: 150px;
+        margin-bottom: 50px;
+    }
+
+    .contactformulier button {
+        margin-top: 35px;
     }
 }
