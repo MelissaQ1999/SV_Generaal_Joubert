@@ -108,6 +108,9 @@ h2.pageTitle, h2.pageTitleSub {
     margin-top: 45px;
 }
 
+.pageIntro {
+    margin-top: 30px;
+}
 
 /*--------------------------------------------------
     Buttons & Link
@@ -235,6 +238,11 @@ a:hover {
     h2.pageTitle, h2.pageTitleSub {
         margin-top: 55px;
     }
+
+    .pageIntro {
+        margin-top: 35px;
+        text-align: center;
+    }
     /*----------------------------------------*/
 
     button.primary, button.secondary {
@@ -260,6 +268,10 @@ a:hover {
 
     h2.pageTitleSub {
         margin-top: 135px;
+    }
+
+    .pageIntro {
+        margin: 50px 45px 0px;
     }
 }
 
@@ -311,6 +323,10 @@ a:hover {
 
     h2.pageTitleSub {
         margin-top: 150px;
+    }
+
+    .pageIntro {
+        margin: 65px 85px 0px;
     }
 }
 
@@ -364,6 +380,10 @@ a:hover {
     h2.pageTitleSub {
         margin-top: 175px;
     }
+
+    .pageIntro {
+        margin: 85px 130px 0px;
+    }
 }
 
 /* Desktop versie (1920px) */
@@ -380,5 +400,9 @@ a:hover {
 
     h2.pageTitleSub {
         margin-top: 220px;
+    }
+
+    .pageIntro {
+        margin: 100px 300px 0px;
     }
 }
