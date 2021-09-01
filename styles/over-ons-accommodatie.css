@@ -32,7 +32,7 @@
 }
 
 .onNatural {
-    display: none;
+    display: none !important;
 }
 
 /*--------------------------------------------------
@@ -126,7 +126,7 @@
     }
 
     .onNatural {
-        display: unset;
+        display: unset !important;
     }
 
     p.natural {
