@@ -39,6 +39,10 @@
     color: #0A0A0A;
 }
 
+.contactinformatie section p a:visited {
+    color: #0A0A0A;
+}
+
 /*--------------------------------------------------
     CSS voor de iframe
 ---------------------------------------------------*/

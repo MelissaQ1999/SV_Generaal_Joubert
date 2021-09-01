@@ -166,12 +166,21 @@ button.secondary:hover {
 /* Hier kun je een link bewerken */
 a {
     color: #3DACE3;
+    font-family: 'Verdana', Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 /* Dit zorgt ervoor dat de link verandert wanneer je er met de muis overheen beweegt */
 a:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* Dit zorgt ervoor dat de link verandert wanneer je er op geklikt hebt */
+a:visited {
+    color: #1C5876;
 }
 
 
@@ -230,7 +239,7 @@ a:hover {
         line-height: 21px;
     }
     
-    p {
+    p, a {
         font-size: 15px;
         line-height: 23px;
     }
@@ -312,7 +321,7 @@ a:hover {
         font-size: 19px;
     }
     
-    p {
+    p, a {
         font-size: 16px;
         line-height: 24px;
     }
@@ -368,7 +377,7 @@ a:hover {
         line-height: 22px;
     }
     
-    p {
+    p, a {
         font-size: 17px;
         line-height: 26px;
     }

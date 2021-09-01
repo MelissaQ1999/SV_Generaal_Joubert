@@ -8,7 +8,13 @@
 @import 'subNav.css';
 @import 'footer.css';
 
+article {
+    margin-top: 25px;
+}
 
+a {
+    line-height: 25px;
+}
 
 /*--------------------------------------------------
     De breekpunten
@@ -16,30 +22,50 @@
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
-
+    a {
+        line-height: 28px;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-
+    article {
+        margin-top: 35px;
+    }
+    
+    a {
+        line-height: 30px;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    
+    article {
+        margin-top: 50px;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    article {
+        margin-top: 65px;
+    }
     
+    a {
+        line-height: 32px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-    
+    article {
+        margin-top: 85px;
+    }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    
+    article {
+        margin-top: 100px;
+    }
 }

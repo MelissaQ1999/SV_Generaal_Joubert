@@ -18,6 +18,10 @@ footer p, footer a {
     line-height: 22px;
 }
 
+footer a:visited {
+    color: #FFF;
+}
+
 /* De opmaak van de menu items */
 .footNav li {
     margin-top: 8px;

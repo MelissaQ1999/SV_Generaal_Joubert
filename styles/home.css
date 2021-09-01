@@ -88,7 +88,6 @@ h2.pageTitleHome {
 /* Het grid toepassen op de drie kopjes die horen bij wat de vereniging te bieden heeft */
 .gezelligheid, .kwaliteit, .strijd {
     grid-column: 1 / span 12;
-    text-align: center;
 }
 
 .watBiedenWij section p {
@@ -341,6 +340,13 @@ footer {
         grid-gap: 20px;
         margin-top: 40px;
         padding-bottom: 50px;
+    }
+}
+
+/* Extra tussenversie van mobiel en tablet (510px) */
+@media (min-width: 510px) {
+    .gezelligheid, .kwaliteit, .strijd {
+        text-align: center;
     }
 }
 

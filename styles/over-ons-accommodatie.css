@@ -8,38 +8,191 @@
 @import 'subNav.css';
 @import 'footer.css';
 
+/*--------------------------------------------------
+    CSS voor wat de vereniging te bieden heeft
+---------------------------------------------------*/
+/* Het grid instellen voor de drie kopjes die horen bij de schietbanen */
+.banen {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-row-gap: 25px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
 
+/* Het grid toepassen op de drie kopjes die horen bij de schietbanen */
+.baan1tm3, .baan4tm11, .baan12tm15 {
+    grid-column: 1 / span 12;
+}
+
+.banen section p {
+    margin-top: 10px;
+}
+
+.onNatural {
+    display: none;
+}
+
+/*--------------------------------------------------
+    CSS voor de foto's van de accommodatie
+---------------------------------------------------*/
+.fotoAcco h3 {
+    text-align: center;
+}
 
 /*--------------------------------------------------
     De breekpunten
 ---------------------------------------------------*/
 
+/* Extra tussenversie van mobiel en tablet (338px) */
+@media (min-width: 338px) {
+    .tab1 {
+        display: none;
+    }
+}
+
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {
+    /* De schietbanen */
+    .banen {
+        grid-row-gap: 30px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 
+    .banen section p {
+        margin-top: 15px;
+    }
+    /*----------------------------------------*/
+}
+
+/* Extra tussenversie van mobiel en tablet (510px) */
+@media (min-width: 510px) {
+    /* De schietbanen */
+    .baan1tm3, .baan4tm11, .baan12tm15 {
+        text-align: center;
+    }
+
+    .banen section p.natural, p.normal {
+        text-align: left;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    /* De schietbanen */
+    .banen {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
 
+    .banen section p {
+        margin-top: 20px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    
+    /* De schietbanen */
+    .banen {
+        grid-column-gap: 10px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .baan1tm3 {
+        grid-column: 1 / span 4;
+    }
+
+    .baan4tm11 {
+        grid-column: 5 / span 4;
+    } 
+
+    .baan12tm15 {
+        grid-column: 9 / span 4;
+    }
+
+    .banen section p {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .onNatural {
+        display: unset;
+    }
+
+    p.natural {
+        display: none !important;
+    }
+    /*----------------------------------------*/
+}
+
+/* Extra tussenversie van laptop (1110px) */
+@media (min-width: 1110px) {
+    .onNatural {
+        display: none !important;
+    }
+
+    p.natural {
+        display: unset !important;
+    }
+
+    .banen section p.natural {
+        display: flex !important;
+        flex-direction: row;
+        text-align: left;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    
+    /* De schietbanen */
+    .banen {
+        grid-row-gap: 40px;
+        margin-top: 65px;
+        margin-bottom: 65px;
+    }
+
+    .banen section p {
+        margin-top: 30px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Tussenversie van laptop en desktop (1680px) */
 @media (min-width: 1680PX) {
-    
+    /* De schietbanen */
+    .banen {
+        grid-row-gap: 50px;
+        margin-top: 85px;
+        margin-bottom: 85px;
+    }
+
+    .banen section p {
+        margin-top: 35px;
+    }
+    /*----------------------------------------*/
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    
+    /* De schietbanen */
+    .banen {
+        grid-row-gap: 60px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .banen section p {
+        margin-top: 40px;
+    }
+    /*----------------------------------------*/
 }
