@@ -41,9 +41,26 @@
     display: none;
     position: absolute;
 
-	opacity: 0;
+	opacity: 1;
     z-index: 9;
     cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 50pt;
+    font-family: 'Verdana', sans-serif;
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.nav label.next span { 
+    text-align: right;
+    right: 0;
+}
+
+.nav label span {
+    position: absolute;
+    padding-top: 20%;
 }
 
 input:checked + .slide-container  .slide {
@@ -112,4 +129,30 @@ input#KKP-2:checked ~ .nav-dots label#KKP-dot-2 {
 input#GKP-1:checked ~ .nav-dots label#GKP-dot-1,
 input#GKP-2:checked ~ .nav-dots label#GKP-dot-2 {
 	background: var(--primary);
+}
+
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+    .nav label span {
+        padding-top: 22%;
+    }
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280px) {
+    .nav label span {
+        padding-top: 25%;
+    }
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680px) {
+    .nav label {
+        opacity: 0;
+    }
 }
