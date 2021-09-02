@@ -8,7 +8,10 @@
 @import 'subNav.css';
 @import 'footer.css';
 
-
+.logoSticky svg {
+    height: 200px;
+    width: auto;
+}
 
 /*--------------------------------------------------
     De breekpunten
