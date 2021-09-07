@@ -9,17 +9,17 @@ header {
     height: 60px;
     width: 100%;
     position: sticky;
-    position: -webkit-sticky;
+    -webkit-position: sticky;
     top: 0;
     z-index: 100;
 }
 
-/* Dit activeerd wanneer het hamburgermenu actief is */
+/* Dit activeert wanneer het hamburgermenu actief is */
 header.act {
     position: relative;
 }
 
-/* De positie en grote van het logo */
+/* De positie en grootte van het logo */
 a.logo img {
     margin: 5px 0 0 10px;
     width: auto;
@@ -69,7 +69,7 @@ a.logo img {
     bottom: -7px;
 }
 
-/* Dit activeerd wanneer het hamburgermenu actief is */
+/* Dit activeert wanneer het hamburgermenu actief is */
 .menuBtn.act > span {
     height: 0;
 }
@@ -103,7 +103,7 @@ a.logo img {
     transform: scale(0);
 }
 
-/* Dit activeerd wanneer het hamburgermenu actief is */
+/* Dit activeert wanneer het hamburgermenu actief is */
 .mainMenu.act {
     opacity: 1;
     transform: scale(1);
