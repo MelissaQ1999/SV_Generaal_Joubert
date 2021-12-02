@@ -44,7 +44,7 @@ section.banner {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.banner-text, .banner div.button{
+.banner-text, .banner div.button {
     margin-left: 15px;
     margin-right: 15px;
 }
