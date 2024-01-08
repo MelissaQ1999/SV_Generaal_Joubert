@@ -35,11 +35,11 @@
 }
 
 /* De opmaak van de tekst */
-h3.web {
+h2.web {
     display: none;
 }
 
-h3.H3 {
+h2.H3 {
     margin-top: 35px;
 }
 
@@ -126,12 +126,12 @@ br.on {
         margin-bottom: 55px;
     }
 
-    h3.web {
+    h2.web {
         display: revert;
         margin-bottom: 25px;
     }
 
-    h3.app {
+    h2.app {
         display: none;
     }
 
@@ -197,7 +197,7 @@ br.on {
         height: 278px;
     }
 
-    h3.web {
+    h2.web {
         margin-bottom: 30px;
     }
 
@@ -229,7 +229,7 @@ br.on {
         height: 324px;
     }
 
-    h3.web {
+    h2.web {
         margin-bottom: 35px;
     }
 
@@ -253,7 +253,7 @@ br.on {
         height: 386px;
     }
 
-    h3.web {
+    h2.web {
         margin-bottom: 45px;
     }
 
@@ -277,7 +277,7 @@ br.on {
         height: 450px;
     }
 
-    h3.web {
+    h2.web {
         margin-bottom: 50px;
     }
     /*----------------------------------------*/

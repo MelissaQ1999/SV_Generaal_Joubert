@@ -1,0 +1,45 @@
+/*---------------------------------------------------------------------------------
+    In dit CSS-bestand vindt je de stijl voor de Informatie - Competitie pagina
+----------------------------------------------------------------------------------*/
+
+/* Hier kunt u alle stylesheets importeren */
+@import 'main.css';
+@import 'header.css';
+@import 'subNav.css';
+@import 'footer.css';
+
+
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+/* Tussenversie van mobiel en tablet (450px) */
+@media (min-width: 450px) {
+
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+    
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+    
+}
+
+/* Tussenversie van laptop en desktop (1680px) */
+@media (min-width: 1680PX) {
+    
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+    
+}

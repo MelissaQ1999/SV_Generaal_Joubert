@@ -16,7 +16,7 @@ nav.subMenu {
 @media (min-width: 1024px) {
     nav.subMenu {
         visibility: visible;
-        background-color: #1C5876;
+        background-color: #4E5C5B;
         position: absolute;
         top: 85px;
         z-index: 100;

@@ -23,18 +23,19 @@ section.banner {
 
 /* De bannerabeelding met tekst en contact button */
 .hoofdimg {
-    min-height: 350px;
+    min-height: fit-content;
     width: 100%;
-    background-image: url(../images/pistool_cover.jpg);
+    height: 100%;
+    background-image: url(../images/pistool-cover.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    position: fixed;
+    position: relative;
     z-index: -1;
 }
 
 /* Dit zorgt voor de overlay over de bannerafbeelding */
-.hoofdimg::before {
+/* .hoofdimg::before {
     content: '';
     position: absolute;
     top: 0;
@@ -42,27 +43,27 @@ section.banner {
     bottom: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.3);
-}
+} */
 
-.banner-text, .banner div.button {
+.banner-text {
     margin-left: 15px;
     margin-right: 15px;
 }
 
 .banner-text h1 {
-    padding-top: 15px;
+    padding-top: 48px;
 	text-align: left;
     color: #FFF;
 }
 
 .banner-text p {
-    margin-top: 25px;
+    margin-top: 24px;
 	text-align: left;
     color: #FFF;
 }
 
-.button a button {
-    margin-bottom: 15px;
+.banner-text div.button {
+    padding-bottom: 48px;
 }
 
 
@@ -70,79 +71,28 @@ section.banner {
     CSS voor wat de vereniging te bieden heeft
 ---------------------------------------------------*/
 h2.pageTitleHome {
-    padding-top: 45px;
+    padding-top: 48px;
     text-align: center;
 }
 
 /* Het grid instellen voor de drie kopjes die horen bij wat de vereniging te bieden heeft */
 .watBiedenWij {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-row-gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 24px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 35px;
-    margin-bottom: 45px;
+    margin-top: 32px;
+    margin-bottom: 88px;
 }
 
 /* Het grid toepassen op de drie kopjes die horen bij wat de vereniging te bieden heeft */
 .gezelligheid, .kwaliteit, .strijd {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 4;
 }
 
 .watBiedenWij section p {
-    margin-top: 10px;
-}
-
-
-/*--------------------------------------------------
-    CSS voor het laatste nieuws
----------------------------------------------------*/
-article.nieuwsAchtergrond {
-    background-color: #D1D5D0;
-    /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
-    --child-width: 100vw;
-    margin-left: calc(-.5 * var(--child-width) + 50%);
-    width: var(--child-width);
-}
-
-div.laatsteNieuws {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.laatsteNieuws h2 {
-    padding-top: 45px;
-}
-
-/* Het grid instellen voor de nieuws items */
-.nieuwsItems {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-row-gap: 25px;
-    grid-auto-rows: auto auto;
-    grid-auto-columns: auto auto;
-    margin-top: 35px;
-    padding-bottom: 45px;
-}
-
-/* Het grid toepassen op de nieuws items */
-.nieuwsItem {
-    grid-column: 1 / span 12;
-    text-align: left;
-}
-
-p.datum {
-    font-style: italic;
-    font-size: 13px;
-    line-height: 21px;
-    margin-top: 4px;
-    margin-bottom: 10px;
-}
-
-hr {
-    color: #707070;
-    border-style: solid;
+    margin-top: 12px;
 }
 
 
@@ -176,22 +126,61 @@ h2.web {
 /* Het grid instellen */
 .jeugdLid {
     display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-row-gap: 25px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 32px;
+    margin-bottom: 44px;
 }
 
 /* Het grid toepassen */
 .jeugdleden, .jeugd, .lidmaatschap, .aanmelden {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 4;
     text-align: left;
 }
 
 h2.lidmaatschap {
-    margin-top: 35px;
+    margin-top: 64px;
+}
+
+
+/*--------------------------------------------------
+    CSS voor het laatste nieuws
+---------------------------------------------------*/
+.laatsteNieuws h2 {
+    padding-top: 44px;
+}
+
+/* Het grid instellen voor de nieuws items */
+.nieuwsItems {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 24px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-top: 32px;
+    padding-bottom: 44px;
+}
+
+/* Het grid toepassen op de nieuws items */
+.nieuwsItem {
+    grid-column: 1 / span 4;
+    text-align: left;
+}
+
+p.datum {
+    font-style: italic;
+    color: #808080;
+    font-size: 13px;
+    line-height: 21px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+hr {
+    color: #4E5C5B;
+    border-style: solid;
 }
 
 
@@ -207,12 +196,12 @@ article.sponsors {
 }
 
 div.logoSponsors {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
 .logoSponsors h2 {
-    padding-top: 45px;
+    padding-top: 44px;
     text-align: center;
 }
 
@@ -232,21 +221,21 @@ div.logoSponsors {
 /* Het grid instellen op de logo's van de sponsors */
 .sponsorGrid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 35px;
-    padding-bottom: 45px;
+    margin-top: 32px;
+    padding-bottom: 56px;
 }
 
 /* Het grid toepassen op de logo's van de sponsors */
 .odd {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 2;
 }
 
 .even {
-    grid-column: 7 / span 6;
+    grid-column: 3 / span 2;
 }
 /*-------------------------------------------------*/
 
@@ -292,23 +281,6 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .laatsteNieuws h2 {
-        padding-top: 50px;
-    }
-
-    .nieuwsItems {
-        grid-row-gap: 30px;
-        margin-top: 40px;
-        padding-bottom: 50px;
-    }
-    /*----------------------------------------*/
-
     /* Jeugdleden & Lidmaatschap */
     .jeugd, .aanmelden {
         width: 380px;
@@ -323,6 +295,18 @@ footer {
 
     .jeugdleden a button, .lidmaatschap a button {
         margin-top: 35px;
+    }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    .laatsteNieuws h2 {
+        padding-top: 50px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 30px;
+        margin-top: 40px;
+        padding-bottom: 50px;
     }
     /*----------------------------------------*/
 
@@ -384,30 +368,6 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 35px;
-        margin-right: 35px;
-    }
-
-    .laatsteNieuws h2 {
-        padding-top: 55px;
-    }
-
-    .nieuwsItems {
-        grid-row-gap: 35px;
-        margin-top: 45px;
-        padding-bottom: 55px;
-    }
-
-    p.datum {
-        font-size: 14px;
-        line-height: 22px;
-        margin-top: 6px;
-        margin-bottom: 15px;
-    }
-    /*----------------------------------------*/
-
     /* Jeugdleden & Lidmaatschap */
     .jeugd, .aanmelden {
         width: 295px;
@@ -466,6 +426,25 @@ footer {
     }
     /*----------------------------------------*/
 
+    /* Het laatste nieuws */
+    .laatsteNieuws h2 {
+        padding-top: 55px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 35px;
+        margin-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    p.datum {
+        font-size: 14px;
+        line-height: 22px;
+        margin-top: 6px;
+        margin-bottom: 15px;
+    }
+    /*----------------------------------------*/
+
     /* De sponsors */
     div.logoSponsors {
         margin-left: 35px;
@@ -483,7 +462,7 @@ footer {
     }
 
     .sponsor {
-        grid-column: span 3;
+        grid-column: span 4;
         grid-row: 1;
     }
 }
@@ -552,32 +531,6 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .laatsteNieuws h2 {
-        padding-top: 75px;
-    }
-
-    .nieuwsItems {
-        grid-row-gap: 40px;
-        margin-top: 50px;
-        padding-bottom: 75px;
-    }
-
-    .nieuwsItem {
-        grid-column: 2 / span 10;
-    }
-
-    p.datum {
-        margin-top: 8px;
-        margin-bottom: 20px;
-    }
-    /*----------------------------------------*/
-
     /* Jeugdleden & Lidmaatschap */
     .jeugdLid {
         grid-row-gap: 75px;
@@ -596,6 +549,27 @@ footer {
 
     .jeugdleden a button, .lidmaatschap a button {
         margin-top: 45px;
+    }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    .laatsteNieuws h2 {
+        padding-top: 75px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 40px;
+        margin-top: 50px;
+        padding-bottom: 75px;
+    }
+
+    .nieuwsItem {
+        grid-column: 2 / span 10;
+    }
+
+    p.datum {
+        margin-top: 8px;
+        margin-bottom: 20px;
     }
     /*----------------------------------------*/
 
@@ -655,12 +629,28 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 100px;
-        margin-right: 100px;
+    /* Jeugdleden & Lidmaatschap */
+    .jeugdLid {
+        grid-row-gap: 85px;
+        margin-top: 85px;
+        margin-bottom: 85px;
     }
 
+    .jeugd, .aanmelden {
+        width: 450px;
+        height: 324px;
+    }
+
+    h2.web {
+        margin-bottom: 35px;
+    }
+
+    .jeugdleden a button, .lidmaatschap a button {
+        margin-top: 55px;
+    }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
     .laatsteNieuws h2 {
         padding-top: 85px;
     }
@@ -680,27 +670,6 @@ footer {
         line-height: 23px;
         margin-top: 10px;
         margin-bottom: 25px;
-    }
-    /*----------------------------------------*/
-
-    /* Jeugdleden & Lidmaatschap */
-    .jeugdLid {
-        grid-row-gap: 85px;
-        margin-top: 85px;
-        margin-bottom: 85px;
-    }
-
-    .jeugd, .aanmelden {
-        width: 450px;
-        height: 324px;
-    }
-
-    h2.web {
-        margin-bottom: 35px;
-    }
-
-    .jeugdleden a button, .lidmaatschap a button {
-        margin-top: 55px;
     }
     /*----------------------------------------*/
 
@@ -726,6 +695,7 @@ footer {
     /* De banner */
     .hoofdimg {
         min-height: 550px;
+        background-position-y: -275px;
     }
 
     .banner-text, .banner div.button {
@@ -763,30 +733,6 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 200px;
-        margin-right: 200px;
-    }
-
-    .laatsteNieuws h2 {
-        padding-top: 105px;
-    }
-
-    .nieuwsItems {
-        grid-row-gap: 50px;
-        margin-top: 85px;
-        padding-bottom: 105px;
-    }
-
-    p.datum {
-        font-size: 16px;
-        line-height: 25px;
-        margin-top: 12px;
-        margin-bottom: 30px;
-    }
-    /*----------------------------------------*/
-
     /* Jeugdleden & Lidmaatschap */
     .jeugdLid {
         grid-row-gap: 105px;
@@ -808,6 +754,25 @@ footer {
     }
     /*----------------------------------------*/
 
+    /* Het laatste nieuws */
+    .laatsteNieuws h2 {
+        padding-top: 105px;
+    }
+
+    .nieuwsItems {
+        grid-row-gap: 50px;
+        margin-top: 85px;
+        padding-bottom: 105px;
+    }
+
+    p.datum {
+        font-size: 16px;
+        line-height: 25px;
+        margin-top: 12px;
+        margin-bottom: 30px;
+    }
+    /*----------------------------------------*/
+
     /* De sponsors */
     div.logoSponsors {
         margin-left: 200px;
@@ -819,7 +784,7 @@ footer {
     }
 
     .sponsorGrid {
-        grid-column-gap: 40px;
+        grid-column-gap: 80px;
         margin-top: 85px;
         padding-bottom: 105px;
     }
@@ -864,30 +829,6 @@ footer {
     }
     /*----------------------------------------*/
 
-    /* Het laatste nieuws */
-    div.laatsteNieuws {
-        margin-left: 250px;
-        margin-right: 250px;
-    }
-
-    .laatsteNieuws h2 {
-        padding-top: 150px;
-    }
-
-    .nieuwsItems {
-        margin-top: 100px;
-        padding-bottom: 150px;
-    }
-
-    .nieuwsItem {
-        grid-column: 2 / span 8;
-    }
-
-    p.datum {
-        margin-top: 14px;
-    }
-    /*----------------------------------------*/
-
     /* Jeugdleden & Lidmaatschap */
     .jeugdLid {
         grid-row-gap: 150px;
@@ -906,6 +847,25 @@ footer {
 
     .jeugdleden a button, .lidmaatschap a button {
         margin-top: 65px;
+    }
+    /*----------------------------------------*/
+
+    /* Het laatste nieuws */
+    .laatsteNieuws h2 {
+        padding-top: 150px;
+    }
+
+    .nieuwsItems {
+        margin-top: 100px;
+        padding-bottom: 150px;
+    }
+
+    .nieuwsItem {
+        grid-column: 2 / span 8;
+    }
+
+    p.datum {
+        margin-top: 14px;
     }
     /*----------------------------------------*/
 
