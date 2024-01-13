@@ -1,0 +1,42 @@
+<svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+  <defs>
+    <style>
+      .bulletButton:hover {
+        cursor: pointer;
+      }
+
+      .bulletButton g {
+        fill: url(#linear-gradientA);
+      }
+
+      .bulletButton g:hover {
+        fill: url(#linear-gradientB);
+        /*   filter: url(#ShadowBullet); */
+      }
+
+      #Bullet:hover {
+        box-shadow: 0px 0px 4px rgb(0 0 0 / 35%);
+      }
+
+      g text.ButtonText {
+        font-size: 17px;
+        font-family: Verdana;
+      }
+    </style>
+    <linearGradient id="linear-gradientA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffda47" />
+      <stop offset="1" stop-color="#F4974E" />
+    </linearGradient>
+    <linearGradient id="linear-gradientB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#F4974E" />
+      <stop offset="1" stop-color="#ffda47" />
+    </linearGradient>
+    <!--<filter id="ShadowBullet">
+      <feDropShadow dx="0" dy="0" stdDeviation="0.8" />
+    </filter> -->
+  </defs>
+  <g>
+    <path id="Bullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+    <text x="20" y="27" class="ButtonText" fill="#000000" >Button</text>
+  </g>
+</svg>

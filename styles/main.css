@@ -22,6 +22,12 @@ html {
 body { 
     background-color: #FFF;
     width: 100%;
+    background-image: url(../svg/schiet_roos.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 30%;
+    background-attachment: fixed;
+    z-index: -100;
 }
 
 main {
@@ -121,7 +127,21 @@ h1.pageTitle, h1.pageTitleSub {
 /*--------------------------------------------------
     Buttons & Link
 ---------------------------------------------------*/
-/* Hier kun je de primaire knop bewerken */
+/* Hier vind je algemene stijling voor de kogel buttons */
+.bulletButton {
+    margin-top: 24px;
+}
+
+.bulletButton:hover {
+    cursor: pointer;
+}
+
+g text.ButtonText {
+    font-size: 17px;
+    font-family: Verdana;
+}
+
+/* Hier kun je de primaire knop bewerken, dit is alleen een basis knop. De kogel buttons zelf bestaan uit SVG code en zou je terplekken binnen de HTML moeten bewerken */
 button.primary {
     background-color: #FFDA47;
     /*background-image: linear-gradient(to right, #FFDA47 0%, var(--primary) 100%);*/

@@ -9,7 +9,6 @@
 
 /* Het vlak voor de hoofd content wordt hier bewerkt */
 main {
-    background-color: #FFF;
     overflow: hidden;
 }
 
@@ -30,7 +29,6 @@ section.banner {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    position: relative;
     z-index: -1;
 }
 
@@ -54,12 +52,14 @@ section.banner {
     padding-top: 48px;
 	text-align: left;
     color: #FFF;
+    text-shadow: 1px 1px 2px #000, 0px 0px 12px #000;
 }
 
 .banner-text p {
     margin-top: 24px;
 	text-align: left;
     color: #FFF;
+    text-shadow: 1px 1px 2px #000, 0px 0px 12px #000;
 }
 
 .banner-text div.button {
@@ -101,21 +101,31 @@ h2.pageTitleHome {
 ------------------------------------------------------------------*/
 /* De opmaak van de foto's */
 .jeugdLid figure {
-    margin-right: auto;
+    width: auto;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
 }
   
-.jeugd, .aanmelden {
+/* .jeugd, .aanmelden {
     width: 290px;
     height: 190px;
-}
+} */
   
-.jeugd img, .aanmelden img {
-    display: block;
+.jeugd img {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
     object-fit: cover;
+    object-position: center center;
+}
+
+.aanmelden img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: bottom;
 }
 
 h2.web {
