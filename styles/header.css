@@ -4,7 +4,7 @@
 
 /* De grote, kleur en positie van de header worden hier bepaald */
 header {
-    background-color: #38494D;
+    background-color: var(--outerSpace);
     /* box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2); */
     height: 60px;
     width: 100%;
@@ -90,7 +90,7 @@ a.logo img {
 
 /* Hoofd menu block */
 .mainMenu {
-    background-color: #38494D;
+    background-color: var(--outerSpace);
     position: absolute;
     top: 0;
     z-index: 100;
@@ -173,7 +173,7 @@ a.nav-item:hover {
 
 /* De opmaak van de submenu items in normale staat */
 a.subNav-item {
-    color: #808080;
+    color: var(--gray);
     display: inline-block;
     font-family: 'Georgia', Times, serif;
     font-size: 18px;
@@ -182,12 +182,12 @@ a.subNav-item {
 
 /* De opmaak van de submenu items als je er overheen beweegd */
 a.subNav-item:hover {
-    color: #F57A4E;
+    color: var(--orange);
 }
 
 /* De opmaak van de submenu items wanneer deze actief is */
 #selectedSub {
-    color: #F57A4E;
+    color: var(--orange);
     font-weight: bold;
     text-decoration: underline;
 }
@@ -240,7 +240,7 @@ a.subNav-item:hover {
 
     nav.mainMenu{
 		opacity: 1;
-        color: black;
+        color: #000;
         transform: scale(1);
         transition: none;
         height: 100%;

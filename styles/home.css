@@ -20,7 +20,7 @@ section.banner {
     overflow: hidden;
 }
 
-/* De bannerabeelding met tekst en contact button */
+/* De bannerabeelding bewerken */
 .hoofdimg {
     min-height: fit-content;
     width: 100%;
@@ -32,17 +32,7 @@ section.banner {
     z-index: -1;
 }
 
-/* Dit zorgt voor de overlay over de bannerafbeelding */
-/* .hoofdimg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3);
-} */
-
+/* de banner tekst bewerken */
 .banner-text {
     margin-left: 15px;
     margin-right: 15px;
@@ -62,6 +52,7 @@ section.banner {
     text-shadow: 1px 1px 2px #000, 0px 0px 12px #000;
 }
 
+/* Dit is voor extra ruimte onder de banner button */
 .banner-text div.button {
     padding-bottom: 48px;
 }
@@ -100,17 +91,12 @@ h2.pageTitleHome {
     CSS voor de korte intro stukjes van Jeugdleden & Lidmaatschap
 ------------------------------------------------------------------*/
 /* De opmaak van de foto's */
-.jeugdLid figure {
+.jeugdleden figure, .lidmaatschap figure {
     width: auto;
     height: 240px;
     overflow: hidden;
     position: relative;
 }
-  
-/* .jeugd, .aanmelden {
-    width: 290px;
-    height: 190px;
-} */
   
 .jeugd img {
     width: 100%;
@@ -128,40 +114,49 @@ h2.pageTitleHome {
     object-position: bottom;
 }
 
+/* De zichtbaarheid van de titel voor op een laptop/ desktop */
 h2.web {
     visibility: hidden;
     position: absolute;
 }
 
 /* Het grid instellen */
-.jeugdLid {
+.jeugdleden, .lidmaatschap {
     display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-row-gap: 25px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 32px;
-    margin-bottom: 44px;
+    margin-bottom: 88px;
+    position: relative;
 }
 
 /* Het grid toepassen */
-.jeugdleden, .jeugd, .lidmaatschap, .aanmelden {
+.jeugdledenText, .jeugd, .lidmaatschapText, .aanmelden {
     grid-column: 1 / span 4;
     text-align: left;
 }
 
-h2.lidmaatschap {
-    margin-top: 64px;
+/* De gekleurde achtergrond achter de content stukjes */
+.sectionDividerR {
+	width: 320px;
+    height: 248px;
+    background: var(--aliceBlue) 0% 0% no-repeat padding-box;
+	border-radius: 45% 0% 0% 45%;
+	opacity: 1;
+    position: absolute;
+    top: 35%;
+    right: -16px;
+    left: auto;
+    z-index: -1;
+    margin: 0px;
+	transition: 1s ease-in-out;
 }
 
 
 /*--------------------------------------------------
     CSS voor het laatste nieuws
 ---------------------------------------------------*/
-.laatsteNieuws h2 {
-    padding-top: 44px;
-}
-
 /* Het grid instellen voor de nieuws items */
 .nieuwsItems {
     display: grid;
@@ -181,7 +176,7 @@ h2.lidmaatschap {
 
 p.datum {
     font-style: italic;
-    color: #808080;
+    color: var(--gray);
     font-size: 13px;
     line-height: 21px;
     margin-top: 4px;
@@ -189,7 +184,7 @@ p.datum {
 }
 
 hr {
-    color: #4E5C5B;
+    color: var(--feldGrau);
     border-style: solid;
 }
 
@@ -197,8 +192,8 @@ hr {
 /*--------------------------------------------------
     CSS voor de sponsors
 ---------------------------------------------------*/
-article.sponsors {
-    background-color: #D1D5D0;
+section.sponsors {
+    background-color: var(--timberwolf);
     /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
     --child-width: 100vw;
     margin-left: calc(-.5 * var(--child-width) + 50%);
