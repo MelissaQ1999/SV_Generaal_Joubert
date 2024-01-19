@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-        <meta name="theme-color" content="#0E2D3C">
+        <meta name="theme-color" content="#0C2431">
 
         <title>sv Generaal Joubert | Informatie - Competitie</title>
         <link rel="icon" type="image/x-icon" href="../logo/favicon.ico?v=2">
@@ -51,15 +51,15 @@
 						<a class="nav-item" href="../index.html">Home</a>
 					</li>
 					<li>
-                        <a class="nav-item" href="over-ons-geschiedenis.html">Over ons</a>
+                        <a class="nav-item" href="over-ons-accommodatie.html">Over ons</a>
                     </li>
                     <!-- Dit zijn de submenu items die horen bij het kopje Over ons -->
                     <ul class="subNav">
                         <li>
-                            <a class="subNav-item" href="over-ons-geschiedenis.html">Geschiedenis</a>
+                            <a class="subNav-item" href="over-ons-accommodatie.html">Accommodatie</a>
                         </li>
                         <li>
-                            <a class="subNav-item" href="over-ons-accommodatie.html">Accommodatie</a>
+                            <a class="subNav-item" href="over-ons-geschiedenis.html">Geschiedenis</a>
                         </li>
                         <li>
                             <a class="subNav-item" href="over-ons-ons-clubblad.html">Ons clubblad</a>
@@ -83,7 +83,10 @@
                             <a class="subNav-item" id="selectedSub" href="informatie-competitie.html">Competitie</a>
                         </li>
                         <li>
-                            <a class="subNav-item" href="informatie-diverse-links.html">Diversen links</a>
+                            <a class="subNav-item" id="selectedSub" href="informatie-kosten.html">Kosten</a>
+                        </li>
+                        <li>
+                            <a class="subNav-item" href="informatie-diverse-links.html">Diverse links</a>
                         </li>
                     </ul>
 					<li>
@@ -111,7 +114,10 @@
                         <a class="subNav-item" id="selectedSub" href="informatie-competitie.html">Competitie</a>
                     </li>
                     <li>
-                        <a class="subNav-item" href="informatie-diverse-links.html">Diversen links</a>
+                        <a class="subNav-item" id="selectedSub" href="informatie-kosten.html">Kosten</a>
+                    </li>
+                    <li>
+                        <a class="subNav-item" href="informatie-diverse-links.html">Diverse links</a>
                     </li>
                 </ul>
 			</nav>
@@ -121,31 +127,37 @@
         ––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <main>
             <h1 class="pageTitleSub">Competitie</h1>
-            <article class="">
+            <section class="">
 
-            </article>
+            </section>
         </main>
 
         <!-- Hieronder begind de footer van de website
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- dit is voor de keep korel die je terug brengt naar de top -->
+        <div class="topArrow">
+            <span class="keepL"></span>
+            <a class="topArrow" href="#">top</a>
+            <span class="keepR"></span>
+        </div>
         <footer class="footgrid">
             <!-- Dit zijn de hoofd menu items, vanaf hier kun je ook meteen naar de verschillende pagina's -->
             <nav class="footerMenu">
 				<ul class="footNav">
 					<li class="first">
-						<a href="../index.html">Home</a>
+						<a href="index.html">Home</a>
 					</li>
 					<li>
-                        <a href="over-ons-geschiedenis.html">Over ons</a>
+                        <a href="pages/over-ons-accommodatie.html">Over ons</a>
                     </li>
 					<li>
-                        <a href="informatie-disciplines.html">Informatie</a>
+                        <a href="pages/informatie-disciplines.html">Informatie</a>
                     </li>
 					<li>
-						<a href="voor-leden.html">Voor leden</a>
+						<a href="pages/voor-leden.html">Voor leden</a>
                     </li>
                     <li class="last">
-						<a href="contact.html">Contact</a>
+						<a href="pages/contact.html">Contact</a>
 					</li>
 				</ul>
             </nav>
@@ -160,15 +172,44 @@
             </div>
             <!-- De call to action voor de contactpagina, zodat nieuwe leden gemakelijk kunnen aanmelden -->
             <div class="footContact">
-                <p>Heb je vragen, wil je proef schieten of ben je geïnteresseerd om lid te worden?</p>
+                <p>Heb je vragen, wil je proefschieten of ben je geïnteresseerd om lid te worden?</p>
                 <br>
                 <p>Neem dan contact met ons op!</p>
-                <a href="contact.html">
-                    <button class="primary" type="button">Contact</button>
+                <a href="pages/contact.html">
+                    <!-- <button class="primary" type="button">Contact</button> -->
+                    <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                        <defs>
+                            <style>                                   
+                                .bulletButton g {
+                                    fill: url(#linear-gradientContactA);
+                                }
+                                  
+                                .bulletButton g:hover {
+                                    fill: url(#linear-gradientContactB);
+                                    /* filter: url(#ShadowBullet); */
+                                }
+                            </style>
+                            <linearGradient id="linear-gradientContactA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#ffda47" />
+                                <stop offset="1" stop-color="#F4974E" />
+                            </linearGradient>
+                            <linearGradient id="linear-gradientContactB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#F4974E" />
+                                <stop offset="1" stop-color="#ffda47" />
+                            </linearGradient>
+                            <!-- <filter id="ShadowBullet">
+                                <feDropShadow dx="0" dy="0" stdDeviation="0.8" />
+                            </filter> -->
+                        </defs>
+                        <g>
+                            <path id="ContactBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                            <text x="20" y="26" class="ButtonText" fill="#000000">Contact</text>
+                        </g>
+                    </svg>
                 </a>
             </div>
             <!-- De copyright regel -->
-            <p class="copy">&copy; 2021 - SV Generaal Joubert</p>
+            <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="/pages/privacyverklaring.html">Privacy statement</a></p>
         </footer>
     </body>
 

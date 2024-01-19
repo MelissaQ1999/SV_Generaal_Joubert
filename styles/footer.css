@@ -2,9 +2,10 @@
     In dit CSS-bestand vindt je de stijl voor de footer die voor elke pagina nodig is
 ----------------------------------------------------------------------------------------*/
 div.topArrow {
-    object-position: center;
-    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
     z-index: 1;
+    transition: 1s ease-in-out;
 }
 
 div.topArrowB {
@@ -12,6 +13,12 @@ div.topArrowB {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
     z-index: 1;
+    transition: 1s ease-in-out;
+    box-shadow: 0px -20px 20px 10px rgba(209,213,208,2);
+}
+
+div.topArrowB span.keepL, div.topArrowB a.topArrow, div.topArrowB span.keepR {
+    box-shadow: 0px -2px 16px 0px rgba(0,0,0,0.48);
 }
 
 span.keepL {
@@ -47,7 +54,7 @@ a.topArrow {
 footer {
     width: 100%;
     background-color: var(--gunmetal);
-    margin-top: 35px;
+    box-shadow: inset 0px 20px 20px 0px rgb(12 36 49) !important;
 }
 
 /* Hier wordt de tekst opmaak binnen de footer bepaald */
@@ -77,9 +84,15 @@ footer a:visited {
     margin-bottom: 0px;
 }
 
-/* De positie van de contact button */
-.footContact button {
-    margin: 15px 0 15px 0;
+.footContact br {
+    content: "";
+    display: block;
+    margin-top: 12px
+}
+
+a.avg {
+    color: var(--lightGray);
+    text-decoration: underline;
 }
 
 
@@ -89,17 +102,17 @@ footer a:visited {
 /* Het grid instellen */
 .footgrid {
     display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-row-gap: 40px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-row-gap: 32px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 24px;
+    padding-bottom: 32px;
 }
 
 /* Het grid toepassen */
 .footerMenu, .footAdres, .footContact, .copy {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 4;
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
@@ -109,6 +122,12 @@ footer a:visited {
 /*--------------------------------------------------
     De breekpunten
 ---------------------------------------------------*/
+
+@media (min-width: 385px) {
+    p.copy br.on {
+        display: none;
+    }
+}
 
 /* Tussenversie van mobiel en tablet (450px) */
 @media (min-width: 450px) {

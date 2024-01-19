@@ -27,7 +27,7 @@
     grid-column: 1 / span 12;
 }
 
-.banen section p {
+.banen div p {
     margin-top: 10px;
 }
 
@@ -62,7 +62,7 @@
         margin-bottom: 40px;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 15px;
     }
     /*----------------------------------------*/
@@ -75,7 +75,7 @@
         text-align: center;
     }
 
-    .banen section p.natural, p.normal {
+    .banen div p.natural, p.normal {
         text-align: left;
         display: flex;
         justify-content: center;
@@ -91,7 +91,7 @@
         margin-bottom: 45px;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 20px;
     }
     /*----------------------------------------*/
@@ -118,7 +118,7 @@
         grid-column: 9 / span 4;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 25px;
         display: flex;
         flex-direction: column;
@@ -145,7 +145,7 @@
         display: unset !important;
     }
 
-    .banen section p.natural {
+    .banen div p.natural {
         display: flex !important;
         flex-direction: row;
         text-align: left;
@@ -161,7 +161,7 @@
         margin-bottom: 65px;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 30px;
     }
     /*----------------------------------------*/
@@ -176,7 +176,7 @@
         margin-bottom: 85px;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 35px;
     }
     /*----------------------------------------*/
@@ -191,7 +191,7 @@
         margin-bottom: 100px;
     }
 
-    .banen section p {
+    .banen div p {
         margin-top: 40px;
     }
     /*----------------------------------------*/

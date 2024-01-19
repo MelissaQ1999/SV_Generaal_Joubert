@@ -18,6 +18,9 @@ main {
 ---------------------------------------------------*/
 section.banner {
     overflow: hidden;
+    box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.48);
 }
 
 /* De bannerabeelding bewerken */
@@ -82,7 +85,7 @@ h2.pageTitleHome {
     grid-column: 1 / span 4;
 }
 
-.watBiedenWij section p {
+.watBiedenWij div p {
     margin-top: 12px;
 }
 
@@ -139,20 +142,34 @@ h2.web {
 
 /* De gekleurde achtergrond achter de content stukjes */
 .sectionDividerR {
-	width: 320px;
+	width: 95%;
     height: 248px;
     background: var(--aliceBlue) 0% 0% no-repeat padding-box;
-	border-radius: 45% 0% 0% 45%;
+	border-radius: 150px 0px 0px 150px;
 	opacity: 1;
     position: absolute;
-    top: 35%;
+    top: 33%;
     right: -16px;
     left: auto;
     z-index: -1;
     margin: 0px;
-	transition: 1s ease-in-out;
+	/* transition: 1s ease-in-out; */
 }
 
+.sectionDividerL {
+    width: 95%;
+    height: 248px;
+    background: var(--mintCream) 0% 0% no-repeat padding-box;
+	border-radius: 0px 150px 150px 0px;
+	opacity: 1;
+    position: absolute;
+    top: 33%;
+    left: -16px;
+    right: auto;
+    z-index: -1;
+    margin: 0px;
+	/* transition: 1s ease-in-out; */
+}
 
 /*--------------------------------------------------
     CSS voor het laatste nieuws
@@ -198,6 +215,9 @@ section.sponsors {
     --child-width: 100vw;
     margin-left: calc(-.5 * var(--child-width) + 50%);
     width: var(--child-width);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
 }
 
 div.logoSponsors {

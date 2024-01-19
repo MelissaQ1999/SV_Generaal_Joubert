@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------------------------------
     In dit CSS-bestand vindt je de stijl voor de header die voor elke pagina nodig is
 ---------------------------------------------------------------------------------------*/
-
 /* De grote, kleur en positie van de header worden hier bepaald */
 header {
     background-color: var(--outerSpace);
@@ -16,7 +15,7 @@ header {
 
 /* Dit activeert wanneer het hamburgermenu actief is */
 header.act {
-    position: relative;
+    position: static;
 }
 
 /* De positie en grootte van het logo */
@@ -24,6 +23,11 @@ a.logo img {
     margin: 5px 0 0 10px;
     width: auto;
     height: 50px;
+}
+
+a.logo.act {
+    position: fixed;
+    z-index: 101;
 }
 
 /* De hamburgermenu button */
@@ -94,7 +98,7 @@ a.logo img {
     position: absolute;
     top: 0;
     z-index: 100;
-    height: 250vw;
+    height: 100%;
     width: 100%;
     display: table;
     text-align: center;
@@ -105,8 +109,11 @@ a.logo img {
 
 /* Dit activeert wanneer het hamburgermenu actief is */
 .mainMenu.act {
+    position: fixed;
     opacity: 1;
     transform: scale(1);
+    overflow-y: scroll;
+    display: block;
 }
 
 .mainMenu.act ul li {

@@ -97,38 +97,39 @@ h1, h2, h3, h4, h5, h6{
     color: var(--gunmetal);
     font-family: 'Georgia', Times, serif;
     font-weight: bold;
+    line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
     font-size: 36px;
-    line-height: 40px;
+    /* line-height: 40px; */
 }
 
 h2 {
     font-size: 32px;
-    line-height: 36px;
+    /* line-height: 36px; */
 }
 
 h3 {
     font-size: 28px;
-    line-height: 32px;
+    /* line-height: 32px; */
 }
 
 h4 {
     font-size: 24px;
-    line-height: 26px;
+    /* line-height: 26px; */
 }
 
 h5 {
     font-size: 20px;
-    line-height: 22px;
+    /* line-height: 22px; */
 }
 
 h6 {
     font-size: 16px;
-    line-height: 18px;
+    /* line-height: 18px; */
 }
 
 p {
@@ -136,7 +137,7 @@ p {
     font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -241,6 +242,79 @@ a:hover {
 /* Dit zorgt ervoor dat de link verandert wanneer je er op geklikt hebt */
 a:visited {
     color: #1C5876;
+}
+
+
+/*--------------------------------------------------
+    De animaties binnen de website
+---------------------------------------------------*/
+/* Deze regel zorgt ervoor dat mensen die niet tegen animaties kunnen en dit uit hebben staan ook geen animaties te zien krijgen. Mensen die dit niet hebben ingesteld krijgen de animaties wel te zien! */
+@media (prefers-reduced-motion: no-preference) {
+    /* .animationFadeIn { 
+        animation: animationFadeIn linear;
+        animation-timeline: view();
+        animation-range: entry 100px;
+    }
+
+    @keyframes animationFadeIn {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    } */
+
+    .hiddenN {
+        opacity: 0;
+        transform: translateY(30%);
+        transition: transform 1000ms;
+    }
+
+    .hiddenIMG {
+        opacity: 0;
+        scale: .8;
+        transform: translateY(30%);
+        transition: all 1000ms;
+    }
+
+    .hiddenSL {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        transition: transform 2000ms;
+    }
+
+    .hiddenSR {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+        transition: transform 2000ms;
+    }
+
+    .showN {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .showIMG {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0);
+    }
+
+    .showSL {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+    .showSR {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
 }
 
 
