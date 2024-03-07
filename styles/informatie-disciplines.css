@@ -73,8 +73,8 @@ br.on {
     De breekpunten
 ---------------------------------------------------*/
 
-/* Tussenversie van mobiel en tablet (450px) */
-@media (min-width: 450px) {
+/* Tussenversie van mobiel en tablet (480px) */
+@media (min-width: 480px) {
     /* De disciplines */
     .photo {
         width: 380px;
@@ -239,8 +239,8 @@ br.on {
     /*----------------------------------------*/
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680PX) {
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
     /* De disciplines */
     .disciplines {
         grid-row-gap: 105px;

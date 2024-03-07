@@ -82,8 +82,8 @@ br.on {
     De breekpunten
 ---------------------------------------------------*/
 
-/* Tussenversie van mobiel en tablet (450px) */
-@media (min-width: 450px) {
+/* Tussenversie van mobiel en tablet (480px) */
+@media (min-width: 480px) {
     div.main {
         padding-left: 20px;
         padding-right: 20px;
@@ -241,8 +241,8 @@ br.on {
     }
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680PX) {
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
     div.main {
         padding-left: 200px;
         padding-right: 200px;
@@ -274,8 +274,8 @@ br.on {
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
     div.main {
-        padding-left: 250px;
-        padding-right: 250px;
+        padding-left: 256px;
+        padding-right: 256px;
     }
 
      /* De contactinformatie */

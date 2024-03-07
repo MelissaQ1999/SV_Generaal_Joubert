@@ -18,7 +18,7 @@ nav.subMenu {
         visibility: visible;
         background-color: #4E5C5B;
         position: absolute;
-        top: 85px;
+        top: 86px;
         z-index: 100;
         width: 100%;
         height: 60px;
@@ -27,19 +27,21 @@ nav.subMenu {
         left: 0;
     }
 
-    .subMenu ul {
-        justify-content: space-between;
-        display: table-cell;
-        vertical-align: middle;
+    .headerChildSub {
+        padding-left: 56px;
+        padding-right: 56px;
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
     }
 
     .subMenu li {
         display: inline-block;
-        margin-right: 35px;
-    }
-
-    ul.subNav-active {
-        padding-left: 50px;
+        margin-right: 36px;
     }
 
     a.subNav-item {
@@ -52,29 +54,45 @@ nav.subMenu {
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
     nav.subMenu {
-        height: 65px;
+        top: 92px;
+        height: 66px;
     }
 
-    ul.subNav-active {
-        padding-left: 100px;
+    .headerChildSub {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    .subMenu li {
+        margin-right: 38px;
     }
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680PX) {
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
     nav.subMenu {
-        height: 70px;
-        top: 100px;
+        height: 72px;
+        top: 104px;
     }
 
-    ul.subNav-active {
-        padding-left: 200px;
+    .headerChildSub {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1280px
+    }
+
+    .subMenu li {
+        margin-right: 40px;
     }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    ul.subNav-active {
-        padding-left: 250px;
+    nav.subMenu {
+        top: 120px;
+    }
+
+    .headerChildSub {
+        max-width: 1408px;
     }
 }

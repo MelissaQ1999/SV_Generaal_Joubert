@@ -1,22 +1,27 @@
 /*---------------------------------------------------------------------------------------
     In dit CSS-bestand vindt je de stijl voor de footer die voor elke pagina nodig is
 ----------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------
+    De keep & korrel
+---------------------------------------------------*/
 div.topArrow {
     display: grid;
     grid-template-rows: repeat(1, 1fr);
-    z-index: 1;
     transition: 1s ease-in-out;
+    margin-top: 56px;
 }
 
 div.topArrowB {
     background-color: var(--timberwolf);
     display: grid;
     grid-template-rows: repeat(1, 1fr);
-    z-index: 1;
     transition: 1s ease-in-out;
     box-shadow: 0px -20px 20px 10px rgba(209,213,208,2);
 }
 
+/* Voor de schaduw effecten rondom de keep en de korrel */
 div.topArrowB span.keepL, div.topArrowB a.topArrow, div.topArrowB span.keepR {
     box-shadow: 0px -2px 16px 0px rgba(0,0,0,0.48);
 }
@@ -37,6 +42,7 @@ span.keepR {
     grid-row: 1 / span 1;
 }
 
+/* Hier wordt de vormgeving van de "korrel" bepaald + het pijltje erin gezet */
 a.topArrow {
     display: block;
     height: 40px; 
@@ -50,11 +56,24 @@ a.topArrow {
     margin-right: auto;
 }
 
+a.topArrow:hover {
+    background-position-y: 40%;
+}
+
+
+/*--------------------------------------------------
+    De inhoud van de footer
+---------------------------------------------------*/
 /* De grote, kleur en positie van de footer */
 footer {
+    position: relative;
     width: 100%;
     background-color: var(--gunmetal);
-    box-shadow: inset 0px 20px 20px 0px rgb(12 36 49) !important;
+
+    /* Dit zorgt ervoor dat de achtergrond van de footer schermbreed blijft en er niet binnen/ buiten gaat */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
 }
 
 /* Hier wordt de tekst opmaak binnen de footer bepaald */
@@ -62,8 +81,6 @@ footer p, footer a {
     color: #FFF;
     font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 22px;
 }
 
 footer a:visited {
@@ -95,26 +112,36 @@ a.avg {
     text-decoration: underline;
 }
 
+.copy {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
 
 /*--------------------------------------------------
     Het grid systeem
 ---------------------------------------------------*/
-/* Het grid instellen */
+/* Flexbox toepassen */
 .footgrid {
-    display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-row-gap: 32px;
-    grid-auto-rows: auto auto;
-    grid-auto-columns: auto auto;
+    display: flex;
+    flex-wrap: wrap;
+	flex-direction: column;
+	row-gap: 32px;
+    justify-content: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    padding-left: 16px;
+    padding-right: 16px;
     padding-top: 24px;
     padding-bottom: 32px;
 }
 
 /* Het grid toepassen */
-.footerMenu, .footAdres, .footContact, .copy {
-    grid-column: 1 / span 4;
-    padding-left: 10px;
-    padding-right: 10px;
+.footerMenu, .footAdres, .footContact {
+    flex-basis: 100%;
     text-align: center;
 }
 
@@ -129,141 +156,190 @@ a.avg {
     }
 }
 
-/* Tussenversie van mobiel en tablet (450px) */
-@media (min-width: 450px) {
-    footer {
-        margin-top: 45px;
+/* Tussenversie van mobiel en tablet (480px) */
+@media (min-width: 480px) {
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 68px;
+    }
+    /*----------------------------------------*/
+
+    .copy {
+        padding-bottom: 36px;
     }
 
+    /* Het footer grid systeem */
     .footgrid {
-        padding-top: 25px;
+        padding-left: 22px;
+        padding-right: 22px;
+        padding-top: 32px;
     }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-    footer {
-        margin-top: 65px;
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 88px;
     }
 
-    footer p, footer a {
-        font-size: 15px;
-        line-height: 23px;
+    span.keepL, span.keepR{
+        height: 44px;
     }
 
-    .footerMenu {
-        grid-column: 1 / span 6;
+    a.topArrow {
+        height: 44px; 
+        width: 44px;
+    }
+    /*----------------------------------------*/
+
+    .copy {
+        padding-bottom: 40px;
     }
 
-    .footAdres {
-        grid-column: 7 / span 6;
-        margin-top: auto;
-        margin-bottom: auto;
+    /* Het footer grid systeem */
+    .footgrid {
+        flex-direction: row;
+        column-gap: 20px;
+        align-items: center;
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-top: 40px;
+    }
+    
+    .footerMenu, .footAdres {
+        flex-basis: 33%;
+    }
+    
+    .footContact {
+        max-width: 70%;
     }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    footer {
-        margin-top: 80px;
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 104px;
     }
 
+    span.keepL, span.keepR{
+        height: 48px;
+    }
+
+    a.topArrow {
+        height: 48px; 
+        width: 48px;
+    }
+    /*----------------------------------------*/
+
+    .copy {
+        padding-bottom: 42px;
+    }
+
+    /* Het footer grid systeem */
     .footgrid {
-        grid-row-gap: 35px;
-        padding-top: 35px;
-        padding-bottom: 20px;
+        flex-wrap: nowrap;
+        column-gap: 56px;
+        padding-top: 48px;
+        padding-bottom: 40px;
+        padding-left: 56px;
+        padding-right: 56px;
     }
 
     .footerMenu {
-        grid-column: 1 / span 4;
-        text-align: left;
-        padding-left: 50px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footAdres {
-        grid-column: 5 / span 4;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .footContact {
-        grid-column: 9 / span 4;
+        flex-basis: 33%;
+        max-width: 100%;
         text-align: left;
-        padding-right: 50px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    footer {
-        margin-top: 105px;
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 120px;
     }
 
-    footer p, footer a {
-        font-size: 16px;
-        line-height: 24px;
+    span.keepL, span.keepR{
+        height: 52px;
     }
 
+    a.topArrow {
+        height: 52px; 
+        width: 52px;
+    }
+    /*----------------------------------------*/
+
+    .copy {
+        padding-bottom: 44px;
+    }
+
+    /* Het footer grid systeem */
     .footgrid {
+        column-gap: 64px;
         padding-top: 40px;
-    }
-
-    .footerMenu {
-        padding-left: 100px;
-    }
-
-    .footContact {
-        padding-right: 100px;
+        padding-left: 120px;
+        padding-right: 120px;
+        padding-top: 56px;
     }
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680PX) {
-    footer {
-        margin-top: 135px;
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 136px;
     }
 
-    footer p, footer a {
-        font-size: 17px;
-        line-height: 26px;
+    span.keepL, span.keepR{
+        height: 56px;
     }
 
+    a.topArrow {
+        height: 56px; 
+        width: 56px;
+    }
+    /*----------------------------------------*/
+
+    .copy {
+        padding-bottom: 46px;
+    }
+
+    /* Het footer grid systeem */
     .footgrid {
-        padding-top: 50px;
-        padding-bottom: 25px;
-    }
-
-    .footerMenu {
+        column-gap: 80px;
         padding-left: 200px;
-    }
-
-    .footContact {
         padding-right: 200px;
+        padding-top: 60px;
+        padding-bottom: 48px;
+        max-width: 1280px;
     }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    footer {
-        margin-top: 150px;
+    /* De keep & korrel */
+    div.topArrow {
+        margin-top: 144px;
     }
+    /*----------------------------------------*/
 
+    .copy {
+        padding-bottom: 48px;
+    }
+    
+    /* Het footer grid systeem */
     .footgrid {
-        padding-top: 55px;
-    }
-
-    .footerMenu {
-        padding-left: 250px;
-    }
-
-    .footContact {
-        padding-right: 250px;
+        column-gap: 96px;
+        padding-left: 256px;
+        padding-right: 256px;
+        padding-top: 64px;
+        max-width: 1408px;
     }
 }

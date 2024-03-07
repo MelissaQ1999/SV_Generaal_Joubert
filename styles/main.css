@@ -39,6 +39,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Voor de achtergrond van elke pagina */
 body { 
     background-color: #FFF;
     width: 100%;
@@ -47,21 +48,19 @@ body {
     background-position-x: center;
     background-position-y: 30%;
     background-attachment: fixed;
+    background-size: auto;
     z-index: -100;
     scroll-behavior: smooth;
 }
 
-
+/* Voor de ruimte aan de zijkanten van het scherm */
 main {
     padding-left: 16px;
     padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* br {
-    display: block;
-    content: "";
-    margin-top: 24px;
-} */
 
 /*--------------------------------------------------
     Lader van de website
@@ -89,6 +88,7 @@ main {
     width: 200px;
 }
 
+
 /*--------------------------------------------------
     Lettertype 
 ---------------------------------------------------*/
@@ -104,32 +104,26 @@ h1, h2, h3, h4, h5, h6{
 
 h1 {
     font-size: 36px;
-    /* line-height: 40px; */
 }
 
 h2 {
     font-size: 32px;
-    /* line-height: 36px; */
 }
 
 h3 {
     font-size: 28px;
-    /* line-height: 32px; */
 }
 
 h4 {
     font-size: 24px;
-    /* line-height: 26px; */
 }
 
 h5 {
     font-size: 20px;
-    /* line-height: 22px; */
 }
 
 h6 {
     font-size: 16px;
-    /* line-height: 18px; */
 }
 
 p {
@@ -142,16 +136,64 @@ p {
     -moz-osx-font-smoothing: grayscale;
 }
 
+
+/*--------------------------------------------------
+    De afstanden binnen de content onderdelen
+---------------------------------------------------*/
+
+/* De ruimte tussen de (sub)menubalk en de paginatitel (H1) */
 h1.pageTitle, h1.pageTitleSub {
     text-align: center;
     margin-top: 48px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
+/* De ruimte tussen de paginatitel (H1) en de eerste paragraaftekst (p) */
 .pageIntro {
-    margin-top: 30px;
+    margin-top: 32px;
 }
+
+/* Het eerste kopje (H2) binnen een pagina na de pagina intro paragraaf */
+.afterIntro {
+    margin-top: 40px;
+}
+
+/* De afstand tussen de paginatitel (H1) en het eerste kopje (H2) van die pagina als er geen intro tekst tussen zit */
+.beginningGap {
+    margin-top: 40px;
+}
+
+/* De ruimte tussen een H2 kop en paragraaftekst (p) */
+.H2textGap {
+    margin-top: 16px;
+}
+
+/* De ruimte tussen een H3 kop en paragraaftekst (p) */
+.H3textGap {
+    margin-top: 12px;
+}
+
+/* De ruimte tussen bv. paragraafteksten binnen hetzelfde informatie stukje */
+.insideInfoGap {
+    margin-top: 24px;
+}
+
+/* De ruimte tussen stukjes content binnen hetzelfde onderwerp */
+.topicGap {
+    margin-top: 48px;
+}
+
+/* De ruimte tussen stukjes content van verschillende onderwerpen */
+.diffContentGap {
+    margin-top: 88px;
+}
+
+/* In het geval van een achtergrondkeur (background-color) voor stukjes content over verschillende onderwerpen, dan worden de volgende classes toegepast om dit op te delen */
+/* Voeg dit toe aan het bovenste element waar de ruimte tussen moet komen*/
+.diffContentGapB {
+    margin-top: 44px;
+    padding-top: 44px;
+}
+
 
 /*--------------------------------------------------
     Buttons & Link
@@ -162,7 +204,7 @@ h1.pageTitle, h1.pageTitleSub {
 }
 
 .bulletButton:hover {
-    cursor: pointer;
+    cursor: url("/svg/Target_aim1.svg") 12 12, pointer;
 }
 
 g text.ButtonText {
@@ -199,6 +241,7 @@ button.primary:hover {
     /* background-image: linear-gradient(to left, var(--primary) 100%); */
     box-shadow: 0px 0px 4px rgb(0 0 0 / 35%);
     background-position: right center;
+    cursor: url("/svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* Hier kun je de secundaire knop bewerken */
@@ -222,6 +265,7 @@ button.secondary {
 button.secondary:hover {
     border-color: var(--primary);
     box-shadow: inset 0px 0px 10px -2px, 0px 0px 10px 2px #000;
+    cursor: url("/svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* Hier kun je een link bewerken */
@@ -230,18 +274,60 @@ a {
     font-family: 'Verdana', Helvetica, sans-serif;
     font-weight: normal;
     font-size: 14px;
-    line-height: 22px;
+    line-height: 1.5;
 }
 
 /* Dit zorgt ervoor dat de link verandert wanneer je er met de muis overheen beweegt */
 a:hover {
     text-decoration: underline;
-    cursor: pointer;
+    cursor: url("/svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* Dit zorgt ervoor dat de link verandert wanneer je er op geklikt hebt */
 a:visited {
     color: #1C5876;
+}
+
+
+/*--------------------------------------------------
+    De gekleurde achtergrond vlakken
+---------------------------------------------------*/
+/* De gekleurde achtergrond achter de content stukjes */
+.sectionDivider {
+    position: absolute;
+    z-index: -1;
+    margin: 0px;
+	top: 60%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+}
+
+/* De gekleurde achtergrond vanuit de rechterkant gekomen */
+.sectionDividerR {
+    position: relative;
+	width: 90%;
+    height: 248px;
+    background: var(--aliceBlue) 0% 0% no-repeat padding-box;
+	border-radius: 124px 0px 0px 124px;
+	opacity: 1;
+    right: 0px !important;
+    margin-left: auto;
+}
+
+/* De gekleurde achtergrond vanuit de linkerkant gekomen */
+.sectionDividerL {
+    position: relative;
+    width: 90%;
+    height: 248px;
+    background: var(--mintCream) 0% 0% no-repeat padding-box;
+	border-radius: 0px 124px 124px 0px;
+	opacity: 1;
+    left: 0px !important;
+    margin-right: auto;
 }
 
 
@@ -266,54 +352,86 @@ a:visited {
         }
     } */
 
+    /* animatie voorop de tekst stukken */
     .hiddenN {
         opacity: 0;
         transform: translateY(30%);
-        transition: transform 1000ms;
-    }
+        -webkit-transform: translateY(30%);
+        -moz-transform: translateY(30%);
 
-    .hiddenIMG {
-        opacity: 0;
-        scale: .8;
-        transform: translateY(30%);
-        transition: all 1000ms;
-    }
-
-    .hiddenSL {
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateX(-100%);
-        transition: transform 2000ms;
-    }
-
-    .hiddenSR {
-        opacity: 0;
-        filter: blur(5px);
-        transform: translateX(100%);
-        transition: transform 2000ms;
+        transition: transform 1000ms ease-in;
+        -webkit-transition: transform 1000ms ease-in;
+        -moz-transition: transform 1000ms ease-in;
     }
 
     .showN {
         opacity: 1;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+    }
+
+    /* animatie voorop de afbeeldingen */
+    .hiddenIMG {
+        opacity: 0;
+        scale: .8;
+        transform: translateY(30%);
+        -webkit-transform: translateY(30%);
+        -moz-transform: translateY(30%);
+
+        transition: all 1000ms ease-in;
+        -webkit-transition: all 1000ms ease-in;
+        -moz-transition: all 1000ms ease-in;
     }
 
     .showIMG {
         opacity: 1;
         scale: 1;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+    }
+
+    /* animatie voorop de section divider die van links komt */
+    .hiddenSL {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+
+        transition: all 2000ms ease-in-out;
+        -webkit-transition: all 2000ms ease-in-out;
+        -moz-transition: all 2000ms ease-in-out;
     }
 
     .showSL {
         opacity: 1;
         filter: blur(0);
         transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+    }
+
+    /* animatie voorop de section divider die van rechts komt */
+    .hiddenSR {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+
+        transition: all 2000ms ease-in-out;
+        -webkit-transition: all 2000ms ease-in-out;
+        -moz-transition: all 2000ms ease-in-out;
     }
 
     .showSR {
         opacity: 1;
         filter: blur(0);
         transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
     }
 }
 
@@ -322,71 +440,181 @@ a:visited {
     De breekpunten
 ---------------------------------------------------*/
 
-/* Tussenversie van mobiel en tablet (450px) */
-@media (min-width: 450px) {
+/* Tussenversie van mobiel en tablet (480px) */
+@media (min-width: 480px) {
+    body {
+        background-size: 125%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 22px;
+        padding-right: 22px;
     }
     /*----------------------------------------*/
+
+    /* Lettertype */
+    h1 {
+        font-size: 40px;
+    }
     
-    h1.pageTitle, h1.pageTitleSub {
-        margin-top: 50px;
+    h2 {
+        font-size: 34px;
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    h4 {
+        font-size: 26px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+    
+    p, a {
+        font-size: 15px;
+    }
+    /*----------------------------------------*/
+
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, h1.pageTitleSub, .topicGap {
+        margin-top: 56px;
+    }
+
+    .pageIntro {
+        margin-top: 36px;
+    }
+
+    .afterIntro, .beginningGap {
+        margin-top: 46px;
+    }
+
+    .H2textGap {
+        margin-top: 20px;
+    }
+    
+    .H3textGap {
+        margin-top: 14px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 28px;
+    }
+    
+    .diffContentGap {
+        margin-top: 96px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 48px;
+            padding-top: 48px;
+        }
+    /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 26px;
+    }
+    /*----------------------------------------*/
+
+    /* De gekleurde achtergrond vlakken */
+
+    .sectionDividerR {
+        height: 284px;
+        border-radius: 142px 0px 0px 142px;
+    }
+    
+    .sectionDividerL {
+        height: 284px;
+        border-radius: 0px 142px 142px 0px;
     }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    body {
+        background-size: 115%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
-        padding-left: 35px;
-        padding-right: 35px;
+        padding-left: 36px;
+        padding-right: 36px;
     }
     /*----------------------------------------*/
 
+    /* Lettertype */
     h1 {
         font-size: 46px;
-        line-height: 52px;
     }
     
     h2 {
-        font-size: 36px;
-        line-height: 41px;
+        font-size: 38px;
     }
     
     h3 {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: 32px;
     }
     
     h4 {
-        font-size: 25px;
-        line-height: 28px;
+        font-size: 28px;
     }
     
     h5 {
-        font-size: 21px;
-        line-height: 24px;
+        font-size: 22px;
     }
     
     h6 {
-        font-size: 18px;
-        line-height: 21px;
+        font-size: 20px;
     }
     
     p, a {
-        font-size: 15px;
-        line-height: 23px;
+        font-size: 16px;
     }
+    /*----------------------------------------*/
 
-    h1.pageTitle, h1.pageTitleSub {
-        margin-top: 55px;
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, h1.pageTitleSub, .topicGap {
+        margin-top: 66px;
     }
 
     .pageIntro {
-        margin-top: 35px;
-        text-align: center;
+        margin-top: 44px;
     }
+
+    .afterIntro, .beginningGap {
+        margin-top: 56px;
+    }
+
+    .H2textGap {
+        margin-top: 24px;
+    }
+    
+    .H3textGap {
+        margin-top: 16px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 34px;
+    }
+    
+    .diffContentGap {
+        margin-top: 106px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 53px;
+            padding-top: 53px;
+        }
     /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 30px;
+    }
 
     button.primary, button.secondary {
         font-size: 19px;
@@ -395,157 +623,372 @@ a:visited {
         height: 55px;
         width: 150px;
     }
+    /*----------------------------------------*/
+
+    /* De gekleurde achtergrond vlakken */
+    .sectionDividerR {
+        height: 338px;
+        border-radius: 169px 0px 0px 169px;
+    }
+    
+    .sectionDividerL {
+        height: 338px;
+        border-radius: 0px 169px 169px 0px;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    body {
+        background-size: 100%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: 56px;
+        padding-right: 56px;
     }
     /*----------------------------------------*/
 
-    h1.pageTitle {
-        margin-top: 75px;
+    /* Lettertype */
+    h1 {
+        font-size: 54px;
+    }
+    
+    h2 {
+        font-size: 44px;
+    }
+    
+    h3 {
+        font-size: 36px;
+    }
+    
+    h4 {
+        font-size: 30px;
+    }
+    
+    h5 {
+        font-size: 24px;
+    }
+    
+    p, a {
+        font-size: 17px;
+    }
+    /*----------------------------------------*/
+
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, .topicGap {
+        margin-top: 80px;
     }
 
     h1.pageTitleSub {
-        margin-top: 135px;
+        margin-top: 140px; 
     }
 
     .pageIntro {
-        margin: 50px 45px 0px;
+        margin-top: 54px;
+    }
+
+    .afterIntro, .beginningGap {
+        margin-top: 68px;
+    }
+
+    .H2textGap {
+        margin-top: 30px;
+    }
+    
+    .H3textGap {
+        margin-top: 20px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 40px;
+    }
+    
+    .diffContentGap {
+        margin-top: 120px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 60px;
+            padding-top: 60px;
+        }
+    /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 34px;
+    }
+    /*----------------------------------------*/
+
+    /* De gekleurde achtergrond vlakken */
+    .sectionDividerR {
+        height: 392px;
+        border-radius: 196px 0px 0px 196px;
+    }
+    
+    .sectionDividerL {
+        height: 392px;
+        border-radius: 0px 196px 196px 0px;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    body {
+        background-size: 90%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 120px;
+        padding-right: 120px;
     }
     /*----------------------------------------*/
 
+    /* Lettertype */
     h1 {
-        font-size: 58px;
-        line-height: 66px;
+        font-size: 62px;
     }
     
     h2 {
-        font-size: 48px;
-        line-height: 55px;
+        font-size: 50px;
     }
     
     h3 {
-        font-size: 35px;
-        line-height: 40px;
+        font-size: 40px;
     }
     
     h4 {
-        font-size: 28px;
-        line-height: 32px;
+        font-size: 32px;
     }
     
     h5 {
-        font-size: 24px;
-        line-height: 27px;
+        font-size: 26px;
     }
     
     h6 {
-        font-size: 19px;
+        font-size: 22px;
     }
     
     p, a {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 18px;
     }
+    /*----------------------------------------*/
 
-    h1.pageTitle {
-        margin-top: 85px;
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, .topicGap {
+        margin-top: 94px;
     }
 
     h1.pageTitleSub {
-        margin-top: 150px;
+        margin-top: 160px; 
     }
 
     .pageIntro {
-        margin: 65px 85px 0px;
+        margin-top: 64px;
+    }
+
+    .afterIntro, .beginningGap {
+        margin-top: 80px;
+    }
+
+    .H2textGap {
+        margin-top: 36px;
+    }
+    
+    .H3textGap {
+        margin-top: 24px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 48px;
+    }
+    
+    .diffContentGap {
+        margin-top: 134px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 67px;
+            padding-top: 67px;
+        }
+    /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 38px;
+    }
+    /*----------------------------------------*/
+
+    /* De gekleurde achtergrond vlakken */
+    .sectionDividerR {
+        width: 85%;
+        height: 456px;
+        border-radius: 228px 0px 0px 228px;
+    }
+    
+    .sectionDividerL {
+        width: 85%;
+        height: 456px;
+        border-radius: 0px 228px 228px 0px;
     }
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680PX) {
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
+    body {
+        background-size: 80%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
         padding-left: 200px;
         padding-right: 200px;
     }
     /*----------------------------------------*/
 
+    /* Lettertype */
     h1 {
-        font-size: 70px;
-        line-height: 79px;
+        font-size: 72px;
     }
     
     h2 {
-        font-size: 55px;
-        line-height: 62px;
+        font-size: 58px;
     }
     
     h3 {
-        font-size: 40px;
-        line-height: 46px;
+        font-size: 46px;
     }
     
     h4 {
-        font-size: 32px;
-        line-height: 36px;
+        font-size: 36px;
     }
     
     h5 {
-        font-size: 26px;
-        line-height: 30px;
+        font-size: 28px;
     }
-    
-    h6 {
-        font-size: 20px;
-        line-height: 22px;
-    }
-    
-    p, a {
-        font-size: 17px;
-        line-height: 26px;
-    }
+    /*----------------------------------------*/
 
-    h1.pageTitle {
-        margin-top: 105px;
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, .topicGap {
+        margin-top: 110px;
     }
 
     h1.pageTitleSub {
-        margin-top: 175px;
+        margin-top: 182px; 
     }
 
     .pageIntro {
-        margin: 85px 130px 0px;
+        margin-top: 76px;
+    }
+
+    .afterIntro, .beginningGap {
+        margin-top: 92px;
+    }
+
+    .H2textGap {
+        margin-top: 42px;
+    }
+    
+    .H3textGap {
+        margin-top: 28px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 56px;
+    }
+    
+    .diffContentGap {
+        margin-top: 150px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 75px;
+            padding-top: 75px;
+        }
+    /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 44px;
+    }
+    /*----------------------------------------*/
+
+    /* De gekleurde achtergrond vlakken */
+    .sectionDividerR {
+        width: 80%;
+        height: 520px;
+        border-radius: 260px 0px 0px 260px;
+    }
+    
+    .sectionDividerL {
+        width: 80%;
+        height: 520px;
+        border-radius: 0px 260px 260px 0px;
     }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
+    body {
+        background-size: 75%;
+    }
+
+    /* Voor de ruimte aan de zijkanten van het scherm */
     main {
-        padding-left: 250px;
-        padding-right: 250px;
+        padding-left: 256px;
+        padding-right: 256px;
     }
     /*----------------------------------------*/
 
-    h1.pageTitle {
-        margin-top: 150px;
-    }
-
-    h1.pageTitleSub {
-        margin-top: 220px;
+    /* De afstanden binnen de content onderdelen */
+    h1.pageTitle, .topicGap {
+        margin-top: 128px;
     }
 
     .pageIntro {
-        margin: 100px 300px 0px;
+        margin-top: 88px;
+    }
+
+    .afterIntro, .beginningGap {
+        margin-top: 104px;
+    }
+
+    .H2textGap {
+        margin-top: 48px;
+    }
+    
+    .H3textGap {
+        margin-top: 32px;
+    }
+    
+    .insideInfoGap {
+        margin-top: 64px;
+    }
+    
+    .diffContentGap {
+        margin-top: 168px;
+    }
+    
+        .diffContentGapB {
+            margin-top: 84px;
+            padding-top: 84px;
+        }
+    /*----------------------------------------*/
+
+    /* Button */
+    .bulletButton {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 2220PX) {
+    .sectionDividerR {
+        max-width: 75%;
+    }
+    
+    .sectionDividerL {
+        max-width: 75%;
     }
 }

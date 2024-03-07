@@ -150,8 +150,8 @@ input#GKP-2:checked ~ .nav-dots label#GKP-dot-2 {
     }
 }
 
-/* Tussenversie van laptop en desktop (1680px) */
-@media (min-width: 1680px) {
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600px) {
     .nav label {
         opacity: 0;
     }
