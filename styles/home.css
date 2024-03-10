@@ -6,6 +6,7 @@
 @import 'main.css';
 @import 'header.css';
 @import 'footer.css';
+@import 'animaties.css';
 
 /* Het vlak voor de hoofd content wordt hier bewerkt */
 main {
@@ -232,6 +233,7 @@ div.logoSponsors {
 
 .sponsor:hover {
     box-shadow: 0px 0px 10px 0px #000000aa;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* Het grid instellen op de logo's van de sponsors */

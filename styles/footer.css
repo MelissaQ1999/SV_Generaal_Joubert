@@ -58,6 +58,7 @@ a.topArrow {
 
 a.topArrow:hover {
     background-position-y: 40%;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 }
 
 

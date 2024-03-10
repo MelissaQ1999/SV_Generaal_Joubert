@@ -175,6 +175,7 @@ a.nav-item {
 /* De opmaak van de hoofdmenu items als je er overheen beweegd */
 a.nav-item:hover {
     color: var(--primary);
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* De opmaak van de hoofdmenu items wanneer deze actief is */
@@ -195,6 +196,7 @@ a.subNav-item {
 /* De opmaak van de submenu items als je er overheen beweegd */
 a.subNav-item:hover {
     color: var(--orange);
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 }
 
 /* De opmaak van de submenu items wanneer deze actief is */
