@@ -16,13 +16,19 @@ $(document).ready(function(){
                 $('.mainMenu').addClass('act');
                 $('header').addClass('act');
                 $('a.logo').addClass('act');
+                toggleBodyScrolling(); // Schakel scrollen van de achtergrond uit
             }
 			else {
                 $('.mainMenu').removeClass('act');
                 $('header').removeClass('act');
                 $('a.logo').removeClass('act');
+                toggleBodyScrolling(); // Schakel scrollen van de achtergrond in
             }
     });
+
+    function toggleBodyScrolling() {
+        document.body.style.overflow = (document.body.style.overflow === "hidden") ? "auto" : "hidden";
+    }
 });
 
 
@@ -89,3 +95,35 @@ const observerSR = new IntersectionObserver((entries) => {
 
 const hiddenSRElements = document.querySelectorAll('.hiddenSR');
 hiddenSRElements.forEach((el) => observerSR.observe(el));
+
+
+const observerSP = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showSP');
+         } 
+        else {
+            entry.target.classList.remove('showSP');
+        }
+    });
+});
+
+const hiddenSPElements = document.querySelectorAll('.hiddenSP');
+hiddenSPElements.forEach((el) => observerSP.observe(el));
+
+
+const observerPT = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('showPT');
+         } 
+        // else {
+        //     entry.target.classList.remove('showPT');
+        // }
+    });
+});
+
+const hiddenPTElements = document.querySelectorAll('.hiddenPT');
+hiddenPTElements.forEach((el) => observerPT.observe(el));

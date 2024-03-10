@@ -22,6 +22,7 @@
         <script src="https://kit.fontawesome.com/60bf54ff8c.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="../scripts/main.js" defer></script>
+        <script src="../scripts/accommodatie.js" defer></script>
 
     </head>
 
@@ -42,7 +43,7 @@
                     <img src="../logo/logo_joubert.png" alt="Logo SV Generaal Joubert">
                 </a>
                 <!-- Het hamburger menu wordt hier aangemaakt -->
-                <a href="#" class="menuBtn" >
+                <a href="#0" class="menuBtn" >
                     <span class="lines"></span>
                 </a>
                 <!-- De menu items bevinden zich hieronder -->
@@ -125,61 +126,173 @@
         <!-- Hieronder begind de hoofd content van de website
         ––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <main>
+            <!-- Dit is voor de korte intro van de accommodatie -->
             <h1 class="pageTitleSub">Onze accommodatie</h1>
-            <p class="pageIntro">
+            <p class="pageIntro hiddenN">
                 Onze accommodatie is sinds de oprichting van de vereniging gevestigd in Ouderkerk aan den IJssel. Op de huidige locatie beschikken we over 15 schietbanen. Ook is er een ruime kantine, die beschikt over een aantal verschillende tafeltjes, een vergadertafel en een gezellige bar. Daarnaast is er nog een tafeltennistafel om ontspannen een balletje te slaan tussen het schieten door. Voor de vereniging is een parkeerterrein waar vrij geparkeerd kan worden.
             </p>
-            <section class="banen">
-                <div class="baan1tm3">
+
+            <!-- Dit is voor de drie verschillende banen opties en wat je daarop kunt schieten -->
+            <section class="banen afterIntro">
+                <div class="baan1tm3 hiddenN">
                     <h3>Baan 1 t/m 3</h3>
-                    <p class="normal">
-                        De volgende disciplines kun je hier schieten:
-                    </p>
-                    <p class="normal tab">
-                        - Luchtpistool 10 meter <br>
-                        - Luchtgeweer knielend 10 meter <br>
-                        - Klein kaliber pistool 10 meter
-                    </p> 
+                    <div class="baanText">
+                        <p class="H3textGap">
+                            De volgende disciplines kun je hier schieten:
+                        </p>
+                        <p class="tab">
+                            - Luchtpistool 10 meter <br>
+                            - Luchtgeweer knielend 10 meter <br>
+                            - Klein kaliber pistool 10 meter
+                        </p>
+                    </div>
                 </div>
-                <div class="baan4tm11">
+                <div class="baan4tm11 hiddenN">
                     <h3>Baan 4 t/m 11</h3>
-                    <p  class="natural">
-                        De volgende disciplines kun je hier schieten:
-                    </p>
-                    <p class="natural tab">
-                        - Klein kaliber geweer knielend 12 meter
-                    </p>
-                    <p class="onNatural">
-                        De volgende disciplines kun je hier schieten:
-                    </p>
-                    <p class="onNatural tab">
-                        - Klein kaliber geweer knielend 12 meter
-                    </p>
+                    <div class="baanText">
+                        <p  class="H3textGap">
+                            De volgende disciplines kun je hier schieten:
+                        </p>
+                        <p class="tab">
+                            - Klein kaliber geweer knielend 12 meter
+                        </p>
+                    </div>
                 </div>
-                <div class="baan12tm15">
+                <div class="baan12tm15 hiddenN">
                     <h3>Baan 12 t/m 15</h3>
-                    <p class="natural">
-                        De volgende disciplines kun je hier schieten:
-                    </p>
-                    <p class="natural tab">
-                        - Klein kaliber pistool 10 meter <br>
-                        - Klein kaliber pistool 25 meter <br>
-                        - Groot kaliber pistool/revolver 25 meter <br>
-                        - Klein kaliber karabijn staand 12 meter
-                    </p>
-                    <p class="onNatural">
-                        De volgende disciplines kun je hier schieten:
-                    </p>
-                    <p class="onNatural tab">
-                        - Klein kaliber pistool 10 meter <br>
-                        - Klein kaliber pistool 25 meter <br>
-                        - Groot kaliber pistool/revolver 25 meter<br>
-                        - Klein kaliber karabijn staand 12 meter
-                    </p>
+                    <div class="baanText">
+                        <p class="H3textGap">
+                            De volgende disciplines kun je hier schieten:
+                        </p>
+                        <p class="tab">
+                            - Klein kaliber pistool 10 meter <br>
+                            - Klein kaliber pistool 25 meter <br>
+                            - Groot kaliber pistool/revolver 25 meter <br>
+                            - Klein kaliber karabijn staand 12 meter
+                        </p>
+                    </div>
                 </div>
             </section>
-            <section class="fotoAcco">
-                <h2>Foto&#39s van de accommodatie</h2>
+
+            <section class="lidPromo topicGap">
+                <div class="promoText hiddenPT">
+                    <h2>Kom langs!</h2>
+                    <p>
+                        Benieuwd of de schietsport iets voor jou is?
+                        <br> 
+                        Of wil je kennismaken met onze vereniging?
+                        <br><br>
+                        Meld je dan aan voor een introductie!
+                    </p>
+                    <a href="...">
+                        <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                                <defs>
+                                    <style>                                   
+                                        .bulletButton g {
+                                            fill: url(#linear-gradientJA);
+                                        }
+                                        
+                                        .bulletButton g:hover {
+                                            fill: url(#linear-gradientJB);
+                                            /* filter: url(#ShadowBullet); */
+                                        }
+                                    </style>
+                                    <linearGradient id="linear-gradientJA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#ffda47" />
+                                        <stop offset="1" stop-color="#F4974E" />
+                                    </linearGradient>
+                                    <linearGradient id="linear-gradientJB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#F4974E" />
+                                        <stop offset="1" stop-color="#ffda47" />
+                                    </linearGradient>
+                                    <!-- <filter id="ShadowBullet">
+                                        <feDropShadow dx="0" dy="0" stdDeviation="0.8" />
+                                    </filter> -->
+                                </defs>
+                                <g>
+                                    <path id="JBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                                    <text x="11" y="27" class="ButtonText" fill="#000000">Aanmelden</text>
+                                </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="sectionDividerP">
+                    <div class="sectionDividerPromo hiddenSP"></div>
+                </div>
+            </section>
+
+            <!-- Dit is voor de afbeeldingen van de accommodatie -->
+            <section class="fotos diffContentGapB">
+                <div class="fotosAcco">
+                    <h2>Foto&#39s van de accommodatie</h2>
+                    <!-- Overlay-container voor volledig scherm weergave -->
+                    <div class="overlay-container" id="overlayContainer">
+                        <div class="overlay">
+                            <!-- Knop om de overlay te sluiten -->
+                            <div class="close-btn">&times;</div> 
+                            <!-- Pijltjes links en rechts -->
+                            <button class="arrowOverlay prevOverlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20">
+                                    <path id="Icon_ionic-arrow" data-name="Icon ionic-arrow" d="M4.071,10l8.937-7.561a1.275,1.275,0,0,0,0-2.018,1.92,1.92,0,0,0-2.391,0L.492,8.985a1.274,1.274,0,0,0-.049,1.971L10.61,19.583a1.922,1.922,0,0,0,2.391,0,1.275,1.275,0,0,0,0-2.018Z" transform="rotate(0)" fill="#fff"/>
+                                </svg>
+                            </button>
+                            <button class="arrowOverlay nextOverlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20">
+                                    <path id="Icon_ionic-arrow" data-name="Icon ionic-arrow" d="M4.071,10l8.937-7.561a1.275,1.275,0,0,0,0-2.018,1.92,1.92,0,0,0-2.391,0L.492,8.985a1.274,1.274,0,0,0-.049,1.971L10.61,19.583a1.922,1.922,0,0,0,2.391,0,1.275,1.275,0,0,0,0-2.018Z" transform="translate(14, 20) rotate(180)" fill="#fff"/>
+                                </svg>
+                            </button>
+                            <!-- De geselecteerde afbeelding wordt hier weergegeven -->
+                            <figure class="overlay-item">
+                                <img src="" alt="Enlarged Image" class="overlay-image">
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- Einde overlay-container -->
+
+                    <!-- Hoofdcarousel -->
+                    <div class="accoCarousel hiddenN">
+                        <div class="carousel-container">
+                            <div class="carousel">
+                                <div class="carousel-inner">
+                                    <figure class="carousel-item">
+                                        <img src="../images/kantine.jpg" alt="De kantine van de vereniging">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/schietbaan-12.jpg" alt="Schietbaan 12 met een 25 meter kaart">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/schietbaan-12tm15.jpg" alt="Het begin van schietbanen 12 tot en met 15">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/schietbaan-12tm15-achter.jpg" alt="Het schiet gedeelte van baan 12 tot en met 15">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/schietbaan-4tm11.jpg" alt="Het begin van schietbanen 4 tot en met 11">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/schietbaan-4tm11-achter.jpg" alt="Het schiet gedeelte van baan 4 tot en met 11">
+                                    </figure>
+                                    <figure class="carousel-item">
+                                        <img src="../images/kroon.jpg" alt="Het certificaat van het behaalde kroontje van de vereniging">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pijltje links -->
+                        <button class="carousel-control prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20">
+                                <path id="Icon_ionic-arrow" data-name="Icon ionic-arrow" d="M4.071,10l8.937-7.561a1.275,1.275,0,0,0,0-2.018,1.92,1.92,0,0,0-2.391,0L.492,8.985a1.274,1.274,0,0,0-.049,1.971L10.61,19.583a1.922,1.922,0,0,0,2.391,0,1.275,1.275,0,0,0,0-2.018Z" transform="rotate(0)" fill="#fff"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Pijltje rechts -->
+                        <button class="carousel-control next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 14 20">
+                                <path id="Icon_ionic-arrow" data-name="Icon ionic-arrow" d="M4.071,10l8.937-7.561a1.275,1.275,0,0,0,0-2.018,1.92,1.92,0,0,0-2.391,0L.492,8.985a1.274,1.274,0,0,0-.049,1.971L10.61,19.583a1.922,1.922,0,0,0,2.391,0,1.275,1.275,0,0,0,0-2.018Z" transform="translate(14, 20) rotate(180)" fill="#fff"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </section> 
         </main>
 
@@ -197,19 +310,19 @@
                 <nav class="footerMenu">
                     <ul class="footNav">
                         <li class="first">
-                            <a href="index.html">Home</a>
+                            <a href="../index.html">Home</a>
                         </li>
                         <li>
-                            <a href="pages/over-ons-accommodatie.html">Over ons</a>
+                            <a href="over-ons-accommodatie.html">Over ons</a>
                         </li>
                         <li>
-                            <a href="pages/informatie-disciplines.html">Informatie</a>
+                            <a href="informatie-disciplines.html">Informatie</a>
                         </li>
                         <li>
-                            <a href="pages/voor-leden.html">Voor leden</a>
+                            <a href="voor-leden.html">Voor leden</a>
                         </li>
                         <li class="last">
-                            <a href="pages/contact.html">Contact</a>
+                            <a href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </nav>
@@ -227,7 +340,7 @@
                     <p>Heb je vragen, wil je proefschieten of ben je geïnteresseerd om lid te worden?</p>
                     <br>
                     <p>Neem dan contact met ons op!</p>
-                    <a href="pages/contact.html">
+                    <a href="contact.html">
                         <!-- <button class="primary" type="button">Contact</button> -->
                         <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
                             <defs>
@@ -260,9 +373,9 @@
                         </svg>
                     </a>
                 </div>
-                <!-- De copyright regel -->
-                <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="/pages/privacyverklaring.html">Privacy statement</a></p>
             </div>
+            <!-- De copyright regel -->
+            <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="privacyverklaring.html">Privacy statement</a></p>
         </footer>
     </body>
 

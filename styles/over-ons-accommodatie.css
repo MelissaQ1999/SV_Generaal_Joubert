@@ -8,64 +8,257 @@
 @import 'subNav.css';
 @import 'footer.css';
 
+
 /*--------------------------------------------------
     CSS voor wat de vereniging te bieden heeft
 ---------------------------------------------------*/
 /* Het grid instellen voor de drie kopjes die horen bij de schietbanen */
 .banen {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-row-gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 24px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Het grid toepassen op de drie kopjes die horen bij de schietbanen */
 .baan1tm3, .baan4tm11, .baan12tm15 {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 4;
 }
 
-.banen div p {
+div.baanText p.tab {
     margin-top: 10px;
+    margin-left: 16px;
 }
 
-.onNatural {
-    display: none !important;
-}
 
 /*--------------------------------------------------
     CSS voor de foto's van de accommodatie
 ---------------------------------------------------*/
-.fotoAcco h3 {
+section.fotos {
+    background-color: var(--timberwolf);
+    /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+}
+
+div.fotosAcco {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 56px;
+}
+
+.fotosAcco h2 {
     text-align: center;
 }
+
+.carousel-item {
+    position: relative;
+    width: 168px;
+    height: 128px;
+    overflow: hidden;
+    margin-right: 16px;
+}
+
+.carousel-item:last-child {
+    margin-right: 0;
+}
+
+.carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.carousel-item:hover {
+    box-shadow: 0px 0px 10px 0px #000000aa;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+}
+
+/* Het carousel instellen voor de accommodatie foto's */
+.accoCarousel {
+    position: relative;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.carousel {
+    display: inline-flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-inner {
+    display: inline-flex;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    height: 100%; 
+    width: 24px;
+    color: #fff;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.carousel-control.prev svg,
+.carousel-control.next svg {
+    /* Voeg de schaduw toe aan de pijltjes */
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 1));
+}
+
+/* CSS code voor de foto overlay */
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay {
+    max-width: 80%;
+    max-height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 40px;
+    width: 40px;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+    font-size: 36px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 8px rgb(0 0 0);
+    z-index: 1001;
+}
+
+.overlay-item {
+    width: 75vw;
+    height: 50vw;
+}
+
+.overlay-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Het carousel instellen voor de accommodatie foto's */
+.accoCarousel {
+    position: relative;
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+/* Stijl voor de pijltjes links en rechts */
+.arrowOverlay {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    height: 60%; 
+    width: 24px;
+    color: #fff;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+    z-index: 1001;
+}
+
+.prevOverlay {
+    left: 0px;
+}
+
+.nextOverlay {
+    right: 0px;
+}
+
+.arrowOverlay.prevOverlay svg,
+.arrowOverlay.nextOverlay svg {
+    /* Voeg de schaduw toe aan de pijltjes */
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 1));
+}
+
 
 /*--------------------------------------------------
     De breekpunten
 ---------------------------------------------------*/
 
-/* Extra tussenversie van mobiel en tablet (338px) */
-@media (min-width: 338px) {
-    .tab1 {
-        display: none;
-    }
-}
-
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
     /* De schietbanen */
     .banen {
-        grid-row-gap: 30px;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        row-gap: 28px;
     }
 
-    .banen div p {
-        margin-top: 15px;
+    div.baanText p.tab {
+        margin-left: 20px;
     }
     /*----------------------------------------*/
+
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 22px;
+        margin-right: 22px;
+        padding-bottom: 68px;
+    }
+
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 32px;
+    }
+
+    .carousel-item {
+        width: 200px;
+        height: 152px;
+        margin-right: 18px;
+    }
 }
 
 /* Extra tussenversie van mobiel en tablet (510px) */
@@ -75,10 +268,9 @@
         text-align: center;
     }
 
-    .banen div p.natural, p.normal {
+    div.baanText {
+        display: inline-block;
         text-align: left;
-        display: flex;
-        justify-content: center;
     }
 }
 
@@ -86,24 +278,77 @@
 @media (min-width: 768px) {
     /* De schietbanen */
     .banen {
-        grid-row-gap: 35px;
-        margin-top: 45px;
-        margin-bottom: 45px;
+        row-gap: 34px;
     }
 
-    .banen div p {
-        margin-top: 20px;
+    div.baanText p.tab {
+        margin-left: 24px;
     }
     /*----------------------------------------*/
+
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 36px;
+        margin-right: 36px;
+        padding-bottom: 88px;
+    }
+
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 40px;
+    }
+
+    .carousel-item {
+        width: 248px;
+        height: 192px;
+        margin-right: 24px;
+    }
+
+    .carousel-control {
+        width: 40px;
+    }
+
+    .carousel-control.prev svg {
+        translate: -4px;
+        width: 24px;
+        height: 32px;
+    }
+    
+    .carousel-control.next svg {
+        translate: 4px;
+        width: 24px;
+        height: 32px;
+    }
+
+    .close-btn {
+        height: 48px;
+        width: 48px;
+        font-size: 48px;
+    }
+
+    .arrowOverlay {
+        width: 40px;
+    }
+
+    .arrowOverlay.prevOverlay svg {
+        translate: -4px;
+        width: 24px;
+        height: 32px;
+    }
+    
+    .arrowOverlay.nextOverlay svg {
+        translate: 4px;
+        width: 24px;
+        height: 32px;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
     /* De schietbanen */
     .banen {
-        grid-column-gap: 10px;
-        margin-top: 50px;
-        margin-bottom: 50px;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 24px;
     }
 
     .baan1tm3 {
@@ -118,37 +363,54 @@
         grid-column: 9 / span 4;
     }
 
-    .banen div p {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-    }
-
-    .onNatural {
-        display: unset !important;
-    }
-
-    p.natural {
-        display: none !important;
+    div.baanText p.tab {
+        margin-left: 28px;
     }
     /*----------------------------------------*/
-}
 
-/* Extra tussenversie van laptop (1110px) */
-@media (min-width: 1110px) {
-    .onNatural {
-        display: none !important;
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 56px;
+        margin-right: 56px;
+        padding-bottom: 104px;
     }
 
-    p.natural {
-        display: unset !important;
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 48px;
     }
 
-    .banen div p.natural {
-        display: flex !important;
-        flex-direction: row;
-        text-align: left;
+    .carousel-item {
+        width: 288px;
+        height: 224px;
+        margin-right: 28px;
+    }
+
+    .carousel-control {
+        height: 30%;
+    }
+
+    .close-btn {
+        height: 60px;
+        width: 60px;
+        font-size: 64px;
+    }
+
+    .arrowOverlay {
+        width: 48px;
+        height: 20%;
+    }
+
+    .arrowOverlay.prevOverlay svg {
+        translate: 0px;
+        width: 36px;
+        height: 42px;
+    }
+    
+    .arrowOverlay.nextOverlay svg {
+        translate: 0px;
+        width: 36px;
+        height: 42px;
     }
 }
 
@@ -156,43 +418,87 @@
 @media (min-width: 1280PX) {
     /* De schietbanen */
     .banen {
-        grid-row-gap: 40px;
-        margin-top: 65px;
-        margin-bottom: 65px;
+        column-gap: 40px;
     }
 
-    .banen div p {
-        margin-top: 30px;
+    div.baanText p.tab {
+        margin-left: 32px;
     }
     /*----------------------------------------*/
+
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 120px;
+        margin-right: 120px;
+        padding-bottom: 120px;
+    }
+
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 56px;
+    }
+
+    .carousel-item {
+        width: 336px;
+        height: 256px;
+        margin-right: 32px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
     /* De schietbanen */
     .banen {
-        grid-row-gap: 50px;
-        margin-top: 85px;
-        margin-bottom: 85px;
-    }
-
-    .banen div p {
-        margin-top: 35px;
+        max-width: 1310px;
+        column-gap: 48px;
     }
     /*----------------------------------------*/
+
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-bottom: 136px;
+    }
+
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 60px;
+        max-width: 1280px;
+    }
+
+    .carousel-item {
+        width: 392px;
+        height: 304px;
+        margin-right: 36px;
+    }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
     /* De schietbanen */
     .banen {
-        grid-row-gap: 60px;
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
-
-    .banen div p {
-        margin-top: 40px;
+        column-gap: 56px;
+        max-width: 1408px;
     }
     /*----------------------------------------*/
+
+    /* foto's van de accommodatie */
+    div.fotosAcco {
+        margin-left: 256px;
+        margin-right: 256px;
+        padding-bottom: 144px;
+    }
+
+    /* Het carousel */
+    .accoCarousel {
+        margin-top: 64px;
+        max-width: 1408px;
+    }
+
+    .carousel-item {
+        width: 464px;
+        height: 352px;
+        margin-right: 40px;
+    }
 }

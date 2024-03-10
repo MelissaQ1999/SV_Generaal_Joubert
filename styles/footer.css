@@ -50,7 +50,7 @@ a.topArrow {
     overflow: hidden;
     text-indent: 100%;
     white-space: nowrap;
-    background: var(--outerSpace) url(../svg/topArrow.svg) no-repeat center 50%;
+    background: var(--outerSpace) url(../svg/Arrow.svg) no-repeat center 50%;
     grid-row: 1 / span 1;
     margin-left: auto;
     margin-right: auto;
