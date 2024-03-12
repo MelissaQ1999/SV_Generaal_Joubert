@@ -184,6 +184,31 @@ div.fotosAcco {
     object-position: center center;
 }
 
+/* Indicatoren voor de foto's in de overlay */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: none;
+    border: 2px solid #fff;
+    margin: 0 6px;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+}
+
+.active {
+    background-color: var(--primary);
+}
+
 /* Het carousel instellen voor de accommodatie foto's */
 .accoCarousel {
     position: relative;

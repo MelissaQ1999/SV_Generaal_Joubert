@@ -52,6 +52,7 @@ body {
     background-size: auto;
     z-index: -100;
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 /* Voor de ruimte aan de zijkanten van het scherm */
@@ -148,8 +149,13 @@ h1.pageTitle, h1.pageTitleSub {
     margin-top: 48px;
 }
 
-/* De ruimte tussen de paginatitel (H1) en de eerste paragraaftekst (p) */
+/* De ruimte tussen de paginatitel (H1) en de into paragraaf (p) */
 .pageIntro {
+    margin-top: 32px;
+}
+
+/* De ruimte tussen de paginatitel (H1) en de eerste paragraaftekst (p) */
+.pageBeginP {
     margin-top: 32px;
 }
 
@@ -438,7 +444,7 @@ a:visited {
         margin-top: 56px;
     }
 
-    .pageIntro {
+    .pageIntro, .pageBeginP {
         margin-top: 36px;
     }
 
@@ -558,6 +564,10 @@ a:visited {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .pageBeginP {
+        margin-top: 44px;
     }
 
     .afterIntro, .beginningGap {
@@ -683,6 +693,10 @@ a:visited {
         max-width: 750px;
     }
 
+    .pageBeginP {
+        margin-top: 54px;
+    }
+
     .afterIntro, .beginningGap {
         margin-top: 68px;
     }
@@ -799,6 +813,10 @@ a:visited {
         max-width: 800px;
     }
 
+    .pageBeginP {
+        margin-top: 64px;
+    }
+
     .afterIntro, .beginningGap {
         margin-top: 80px;
     }
@@ -906,7 +924,7 @@ a:visited {
         margin-top: 182px; 
     }
 
-    .pageIntro {
+    .pageIntro, .pageBeginP {
         margin-top: 76px;
     }
 
@@ -990,7 +1008,7 @@ a:visited {
         margin-top: 128px;
     }
 
-    .pageIntro {
+    .pageIntro, .pageBeginP {
         margin-top: 88px;
     }
 

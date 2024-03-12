@@ -9,59 +9,86 @@
 @import 'footer.css';
 @import 'animaties.css';
 
-main {
-    overflow: hidden;
-}
-
-p.overhandiging {
-    margin-top: 20px;
+section.history {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* De opmaak van de foto's */
-figure {
-    margin-left: auto;
-    margin-right: auto;
+.oprichting figure, .overhandiging figure, .generaal figure {
+    position: relative;
+    width: auto;
+    height: 240px;
+    overflow: hidden;
+    margin-top: 24px;
 }
   
-.stone, .prijs {
-    width: 290px;
-    height: 193px;
-}
-  
-.stone img, .prijs img {
-    display: block;
+.prijzenSGJ img {
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
     object-fit: cover;
+    object-position: center center;
 }
+
+.sabel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: right;
+}
+
+.fotoP img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: top;
+}
+
 
 /*--------------------------------------------------
     Het grid systeem
 ---------------------------------------------------*/
 /* Het grid instellen */
-.history {
+.oprichting, .overhandiging, .generaal {
+    position: relative;
     display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-row-gap: 25px;
     grid-auto-rows: auto auto;
-    grid-auto-columns: auto auto;
-    margin-top: 30px;
 }
 
 /* Het grid toepassen */
-.oprichting, .stone, .overhandiging, .prijs {
-    grid-column: 1 / span 12;
+.oprichting p, .prijzenSGJ, .overhandiging p, .sabel, .overP, .fotoP, .uitsprakenP {
     text-align: left;
 }
 
-.stone {
-    grid-row: 4;
+.prijzenSGJ {
+    grid-row: 2;
 }
 
-.prijs {
+.oprichting p {
+    grid-row: 1;
+}
+
+.sabel {
     grid-row: 2;
+}
+
+.overhandiging p {
+    grid-row: 1;
+}
+
+.overP {
+    grid-row: 1;
+}
+
+.fotoP {
+    grid-row: 2;
+}
+
+.uitsprakenP {
+    grid-row: 3;
 }
 
 
@@ -71,109 +98,200 @@ figure {
 
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
-    .history {
-        grid-row-gap: 35px;
-        margin-top: 35px;
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        height: 264px;
+    }
+}
+
+@media (min-width: 600px) {
+    .prijzenSGJ img {
+        object-position: top;
     }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-    .stone, .prijs {
-        width: 350px;
-        height: 195px;
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        height: 300px;
+        width: 40%;
+        margin-top: auto;
     }
 
-    .history {
-        grid-row-gap: 35px;
-        margin-top: 45px;
+    .oprichting, .overhandiging, .generaal {
+        display: block;
     }
-    
-    p.overhandiging {
-        margin-top: 25px;
+
+    .prijzenSGJ, .fotoP {
+        float: left;
+        margin-bottom: 24px;
+        margin-right: 24px;
+    }
+
+    .sabel {
+        float: right;
+        margin-bottom: 24px;
+        margin-left: 24px;
+    }
+
+    .prijzenSGJ img {
+        object-position: center center;
+    }
+
+    .sabel img {
+        object-position: center center;
     }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    figure {
-        margin: auto 0px auto 0px;
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        height: 332px;
     }
 
-    .history {
-        grid-row-gap: 55px;
-        margin-top: 50px;
+    .prijzenSGJ, .fotoP {
+        margin-right: 40px;
     }
 
-    .oprichting {
-        grid-column: 1 / span 7;
-        text-align: left;
-    }
-    
-    .stone {
-        grid-row: 1;
-        grid-column: 8 / span 5;
-        margin-left: auto;
-        width: 335px;
-        height: 225px;
+    .sabel {
+        margin-left: 40px;
     }
 
-    .overhandiging {
-        grid-column: 6 / span 7;
-    }
-
-    p.overhandiging {
-        margin-top: 0px;
-    }
-    
-    .prijs {
-        grid-row: 2;
-        grid-column: 1 / span 5;
-        width: 335px;
-        height: 225px;
+    .uitsprakenP {
+        max-width: 80%;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    .history {
-        grid-row-gap: 75px;
-        margin-top: 65px;
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        height: 364px;
     }
 
-    p.oprichting, p.overhandiging {
+    .sabel img {
+        object-position: center center;
+    }
+
+    .uitsprakenP {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 1490px) {
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        width: auto;
         margin-top: auto;
         margin-bottom: auto;
     }
 
-    .stone, .prijs {
-        width: 385px;
-        height: 280px;
+    .prijzenSGJ, .sabel, .fotoP {
+        margin: 0;
+    }
+
+    .oprichting, .overhandiging, .generaal {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 48px;
+        grid-auto-columns: auto auto;
+        grid-auto-rows: auto auto;
+        align-items: center;
+    }
+    
+    .prijzenSGJ {
+        grid-row: 1;
+        grid-column: 1 / span 5;
+    }
+    
+    .oprichting p {
+        grid-row: 1;
+        grid-column: 6 / span 7;
+    }
+    
+    .sabel {
+        grid-row: 1;
+        grid-column: 8 / span 5;
+    }
+    
+    .overhandiging p {
+        grid-row: 1;
+        grid-column: 1 / span 7;
+    }
+    
+    .overP {
+        grid-row: 1;
+        grid-column: 6 / span 7;
+    }
+    
+    .fotoP {
+        grid-row: 1;
+        grid-column: 1 / span 5;
+    }
+    
+    .uitsprakenP {
+        grid-row: 2;
+        grid-column: 1 / span 12;
+    }
+
+    .sabel img {
+        object-position: right;
     }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
-    .history {
-        grid-row-gap: 90px;
-        margin-top: 85px;
+    section.history {
+        max-width: 1280px;
     }
 
-    .stone, .prijs {
-        width: 425px;
-        height: 305px;
+    .oprichting, .overhandiging, .generaal {
+        column-gap: 56px;
     }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    .history {
-        grid-row-gap: 115px;
-        margin-top: 100px;
+    section.history {
+        max-width: 1408px;
     }
 
-    .stone, .prijs {
-        width: 525px;
-        height: 385px;
+    .oprichting figure, .overhandiging figure, .generaal figure {
+        height: 448px;
+    }
+
+    .oprichting, .overhandiging, .generaal {
+        column-gap: 64px;
+    }
+
+    .prijzenSGJ {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+    
+    .oprichting p {
+        grid-row: 1;
+        grid-column: 7 / span 7;
+    }
+    
+    .sabel {
+        grid-row: 1;
+        grid-column: 7 / span 7;
+    }
+    
+    .overhandiging p {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+    
+    .overP {
+        grid-row: 1;
+        grid-column: 7 / span 6;
+    }
+    
+    .fotoP {
+        grid-row: 1;
+        grid-column: 1 / span 6;
+    }
+
+    .uitsprakenP {
+        max-width: 60%;
     }
 }
