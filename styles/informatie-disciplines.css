@@ -10,62 +10,58 @@
 @import 'animaties.css';
 @import 'slides.css';
 
+/* Het vlak voor de hoofd content wordt hier bewerkt */
+main {
+    overflow: hidden;
+}
 
 /*--------------------------------------------------
     CSS voor de discipline stukjes
 ---------------------------------------------------*/
-/* De opmaak van de foto's */
-.dicsciplines figure {
-    margin-right: auto;
+article {
     position: relative;
 }
-  
-.photo {
-    width: 290px;
-    height: 190px;
+
+/* De opmaak van de foto's */
+figure.photo {
+    position: relative;
+    width: auto;
+    height: 240px;
+    overflow: hidden;
+    margin-top: 16px;
 }
   
 .photo img {
-    display: block;
+    position: absolute;
     width: 100%;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
     object-fit: cover;
-    cursor: pointer;
+    object-position: center center;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 }
 
-/* De opmaak van de tekst */
-h2.web {
-    display: none;
+.H2textGapD {
+    margin-bottom: 16px;
 }
 
-h2.H3 {
-    margin-top: 35px;
-}
-
-br.on {
-    display: none;
-}
-
-.dTekst {
-    margin-top: 15px;
+.wanneer, .textD {
+    margin-top: 16px;
 }
 
 /* Het grid instellen voor de disciplines */
-.disciplines {
+.LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+    position: relative;
     display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-row-gap: 25px;
+	grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Het grid toepassen op de disciplines */
-.photo, .oddT, .evenT {
-    grid-column: 1 / span 12;
+.photo, .oddTP, .oddTH .evenTP, .evenTH {
+    grid-column: 1 / span 4;
     text-align: left;
 }
 
@@ -77,209 +73,259 @@ br.on {
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
     /* De disciplines */
-    .photo {
-        width: 380px;
-        height: 240px;
+    figure.photo {
+        height: 272px;
     }
 
-    .disciplines {
-        grid-row-gap: 35px;
-        margin-top: 35px;
-        margin-bottom: 35px;
+    .H2textGapD {
+        margin-bottom: 20px;
     }
 
-    .data {
-        display: inline;
-    }
-    
-    .afstand {
-        display: inline;
-        margin-left: 21px;
-    }
-    
     .wanneer {
-        display: inline;
-        margin-left: 9px;
-    }
-    
-    .wanneerD {
-        margin-top: -20px;
-        margin-left: 96px;
+        margin-top: 17px;
     }
 
-    br.on {
-        display: unset;
+    .textD {
+        margin-top: 20px;
     }
-    /*----------------------------------------*/
+}
+
+@media (min-width: 600px) {
+    /* De disciplines */
+    figure.photo {
+        height: 288px;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
     /* De disciplines */
-    .photo {
-        width: 295px;
-        height: 220px;
+    figure.photo {
+        height: 300px;
+        margin-top: 0px;
     }
 
-    .disciplines {
-        grid-row-gap: 55px;
-        margin-top: 55px;
-        margin-bottom: 55px;
+    .H2textGapD {
+        margin-bottom: 24px;
     }
 
-    h2.web {
-        display: revert;
-        margin-bottom: 25px;
+    .afstand {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 29px;
     }
 
-    h2.app {
-        display: none;
+    .wanneer {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 14px;
     }
 
-    .wanneerD {
-        margin-left: 105px;
+    .textD {
+        margin-top: 22px;
     }
 
-    .dTekst {
-        margin-top: 20px;
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 36px;
+        align-items: center;
     }
 
-    .disciplines figure, .disciplines section {
-        margin-top: auto;
-        margin-bottom: auto;
+    .oddI {
+        grid-row: 2;
+        grid-column: 1 / span 4;
+    }
+    
+    .oddTP {
+        grid-row: 2;
+        grid-column: 5 / span 4;
     }
 
+    .oddTH {
+        grid-row: 1;
+        grid-column: 1 / span 8;
+    }
+
+    .evenTH {
+        grid-row: 1;
+        grid-column: 1 / span 8;
+    }
+
+    .evenTP {
+        grid-row: 2;
+        grid-column: 1 / span 4;
+    }
+    
     .evenI {
-        margin-left: auto;
-        margin-right: 0px;
+        grid-row: 2;
+        grid-column: 5 / span 4;
+    }
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+    /* De disciplines */
+    figure.photo {
+        height: 332px;
+    }
+
+    .H2textGapD {
+        margin-bottom: 30px;
+    }
+
+    .afstand {
+        column-gap: 33px;
+    }
+
+    .wanneer {
+        margin-top: 19px;
+        column-gap: 18px;
+    }
+
+    .textD {
+        margin-top: 26px;
+    }
+
+    .oddTP, .evenTP {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 392px;
+    }
+
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 50px;
     }
 
     .oddI {
         grid-column: 1 / span 6;
     }
     
-    .oddT {
+    .oddTP {
         grid-column: 7 / span 6;
     }
 
-    .evenT {
+    .oddTH {
+        grid-row: 1;
+        grid-column: 1 / span 12;
+    }
+
+    .evenTH {
+        grid-row: 1;
+        grid-column: 1 / span 12;
+    }
+
+    .evenTP {
         grid-column: 1 / span 6;
-    }
-
-    .n1 {
-        grid-row: 2;
-    }
-
-    .n2 {
-        grid-row: 4;
-    }
-
-    .n3 {
-        grid-row: 6;
     }
     
     .evenI {
         grid-column: 7 / span 6;
     }
-    /*----------------------------------------*/
-}
 
-/* Laptop-versie (1024px) */
-@media (min-width: 1024px) {
-    /* De disciplines */
-    .disciplines {
-        grid-row-gap: 75px;
-        margin-top: 75px;
-        margin-bottom: 75px;
+    .sectionDivider {
+        top: 59%;
     }
-
-    .photo {
-        width: 385px;
-        height: 278px;
-    }
-
-    h2.web {
-        margin-bottom: 30px;
-    }
-
-    .afstand {
-        margin-left: 31px;
-    }
-    
-    .wanneer {
-        margin-left: 19px;
-    }
-
-    .wanneerD {
-        margin-left: 115px;
-    }
-    /*----------------------------------------*/
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
     /* De disciplines */
-    .disciplines {
-        grid-row-gap: 85px;
-        margin-top: 85px;
-        margin-bottom: 85px;
+    figure.photo {
+        height: 364px;
     }
 
-    .photo {
-        width: 450px;
-        height: 324px;
+    .H2textGapD {
+        margin-bottom: 36px;
     }
 
-    h2.web {
-        margin-bottom: 35px;
+    .afstand {
+        column-gap: 40px;
     }
 
-    .wanneerD {
-        margin-left: 119px;
+    .wanneer {
+        margin-top: 20px;
+        column-gap: 24px;
     }
-    /*----------------------------------------*/
+
+    .textD {
+        margin-top: 30px;
+    }
+
+    .oddTP, .evenTP {
+        min-height: 456px;
+    }
+
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        column-gap: 64px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
     /* De disciplines */
-    .disciplines {
-        grid-row-gap: 105px;
-        margin-top: 105px;
-        margin-bottom: 105px;
+    figure.photo {
+        height: 406px;
     }
 
-    .photo {
-        width: 535px;
-        height: 386px;
+    .H2textGapD {
+        margin-bottom: 42px;
     }
 
-    h2.web {
-        margin-bottom: 45px;
+    .oddTP, .evenTP {
+        display: block;
+        min-height: auto;
     }
 
-    .wanneerD {
-        margin-left: 123px;
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        column-gap: 80px;
+        max-width: 1330px;
+        min-height: 520px;
     }
-    /*----------------------------------------*/
+
+    .oddI {
+        grid-row: 1 / span 2;
+    }
+
+    .oddTH {
+        grid-column: 7 / span 6;
+    }
+
+    .evenTH {
+        grid-column: 1 / span 6;
+    }
+    
+    .evenI {
+        grid-row: 1 / span 2;
+    }
+
+    .sectionDivider {
+        top: 50%;
+    }    
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
     /* De disciplines */
-    .disciplines {
-        grid-row-gap: 150px;
-        margin-top: 150px;
-        margin-bottom: 150px;
+    figure.photo {
+        height: 448px;
     }
 
-    .photo {
-        width: 625px;
-        height: 450px;
+    .H2textGapD {
+        margin-bottom: 48px;
     }
 
-    h2.web {
-        margin-bottom: 50px;
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        column-gap: 96px;
+        max-width: 1408px;
     }
-    /*----------------------------------------*/
+}
+
+@media (min-width: 2070PX) {
+    .LP, .LG, .KG, .KKG, .KKK, .KKP, .GKP {
+        max-width: 1558px;
+    }
 }

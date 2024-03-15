@@ -43,24 +43,34 @@
 
 	opacity: 1;
     z-index: 9;
-    cursor: pointer;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
 
     transition: opacity .2s;
-
-    color: #FFF;
-    font-size: 50pt;
-    font-family: 'Verdana', sans-serif;
-    text-shadow: 0px 0px 15px rgb(119, 119, 119);
 }
 
-.nav label.next span { 
+.slider-control svg {
+    top: 50%;
+    border: none;
+    background: none;
+    height: 100%; 
+    width: 20px;
+    color: #fff;
+    cursor: url("../svg/Target_aim1.svg") 12 12, pointer;
+}
+
+.prev {
+    left: 4px;
+}
+
+.next {
+    right: 4px;
     text-align: right;
-    right: 0;
 }
 
-.nav label span {
-    position: absolute;
-    padding-top: 20%;
+.slider-control.prev svg,
+.slider-control.next svg {
+    /* Voeg de schaduw toe aan de pijltjes */
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 1));
 }
 
 input:checked + .slide-container  .slide {
@@ -82,8 +92,8 @@ input:checked + .slide-container .nav label {
 
 .nav-dots .nav-dot {
 	top: -5px;
-	width: 11px;
-	height: 11px;
+	width: 10px;
+	height: 10px;
 	margin: 0 4px;
 	position: relative;
 	border-radius: 100%;
@@ -137,22 +147,34 @@ input#GKP-2:checked ~ .nav-dots label#GKP-dot-2 {
 ---------------------------------------------------*/
 
 /* Tablet-versie (768px) */
-@media (min-width: 768px) {
-    .nav label span {
-        padding-top: 22%;
+@media (min-width: 1024px) {
+    .prev {
+        left: 6px;
+    }
+    
+    .next {
+        right: 6px;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280px) {
-    .nav label span {
-        padding-top: 25%;
+    .slider-control svg {
+        width: 24px;
+    }
+    
+    .prev {
+        left: 8px;
+    }
+    
+    .next {
+        right: 8px;
     }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600px) {
-    .nav label {
+    /* .nav label {
         opacity: 0;
-    }
+    } */
 }

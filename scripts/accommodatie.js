@@ -68,11 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const overlayContainer = document.getElementById('overlayContainer');
     const overlay = overlayContainer.querySelector('.overlay');
-    const closeButton = overlay.querySelector('.close-btn');
+    const closeButton = overlayContainer.querySelector('.close-btn');
     const overlayImage = overlay.querySelector('.overlay-image');
     const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevButtonOverlay = overlay.querySelector('.prevOverlay');
-    const nextButtonOverlay = overlay.querySelector('.nextOverlay');
+    const prevButtonOverlay = overlayContainer.querySelector('.prevOverlay');
+    const nextButtonOverlay = overlayContainer.querySelector('.nextOverlay');
     const carouselIndicators = overlay.querySelector('.carousel-indicators');
 
     // Functie om de index van de huidige afbeelding te vinden
@@ -148,13 +148,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Event listener voor het sluiten van de overlay wanneer er buiten de afbeelding wordt geklikt
-    overlayContainer.addEventListener('click', function (event) {
-        if (!overlay.contains(event.target)) {
-            overlayContainer.style.display = 'none';
-            toggleBodyScrolling(); // Schakel scrollen van de achtergrond in
-        }
-    });
+    // // Event listener voor het sluiten van de overlay wanneer er buiten de afbeelding wordt geklikt
+    // overlayContainer.addEventListener('click', function (event) {
+    //     if (!overlay.contains(event.target)) {
+    //         overlayContainer.style.display = 'none';
+    //         toggleBodyScrolling(); // Schakel scrollen van de achtergrond in
+    //     }
+    // });
 
     // Event listener voor het sluiten van de overlay wanneer op het sluitknopje wordt geklikt
     closeButton.addEventListener('click', function () {

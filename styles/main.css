@@ -347,7 +347,7 @@ a:visited {
 
 .promoText {
     position: relative;
-    height: 248px;
+    height: 288px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -377,12 +377,24 @@ a:visited {
     background: var(--nyanza) 0% 0% no-repeat padding-box;
     opacity: 1;
     width: 98%;
-    height: 248px;
-    border-radius: 0px 124px 124px 0px;
+    height: 288px;
+    border-radius: 0px 144px 144px 0px;
     left: 0;
 }
 
 /* Extra breakpoint versies voor de promo achtergrond */
+/* Extra breakpoint versies voor de promo achtergrond */
+@media (min-width: 340px) {
+    .sectionDividerPromo {
+        height: 248px;
+        border-radius: 0px 124px 124px 0px;
+    }
+
+    .promoText {
+        height: 248px;
+    }
+}
+
 @media (min-width: 360px) {
     .sectionDividerPromo {
         width: 95%;

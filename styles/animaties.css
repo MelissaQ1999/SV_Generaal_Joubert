@@ -11,9 +11,9 @@
         -webkit-transform: translateY(30%);
         -moz-transform: translateY(30%);
 
-        transition: transform 1000ms ease-in;
-        -webkit-transition: transform 1000ms ease-in;
-        -moz-transition: transform 1000ms ease-in;
+        transition: transform 1000ms ease-out;
+        -webkit-transition: transform 1000ms ease-out;
+        -moz-transition: transform 1000ms ease-out;
     }
 
     .showN {
@@ -26,10 +26,10 @@
     /* animatie voorop de afbeeldingen */
     .hiddenIMG {
         opacity: 0;
-        scale: .8;
-        transform: translateY(30%);
-        -webkit-transform: translateY(30%);
-        -moz-transform: translateY(30%);
+        scale: .9;
+        transform: translateY(20%);
+        -webkit-transform: translateY(20%);
+        -moz-transform: translateY(20%);
 
         transition: all 1000ms ease-in;
         -webkit-transition: all 1000ms ease-in;
@@ -52,17 +52,17 @@
         -webkit-transform: translateX(-100%);
         -moz-transform: translateX(-100%);
 
-        transition: all 2000ms 1s ease-in-out;
-        -webkit-transition: all 1s 2000ms ease-in-out;
-        -moz-transition: all 1s 2000ms ease-in-out;
+        transition: all 2000ms 1ms ease-in-out;
+        -webkit-transition: all 2000ms 1ms ease-in-out;
+        -moz-transition: all 2000ms 1ms ease-in-out;
     }
 
     .showSL {
         opacity: 1;
         filter: blur(0);
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
     }
 
     /* animatie voorop de section divider die van rechts komt */
@@ -73,17 +73,17 @@
         -webkit-transform: translateX(100%);
         -moz-transform: translateX(100%);
 
-        transition: all 2000ms 1s ease-in-out;
-        -webkit-transition: all 2000ms 1s ease-in-out;
-        -moz-transition: all 2000ms 1s ease-in-out;
+        transition: all 2000ms 1ms ease-in-out;
+        -webkit-transition: all 2000ms 1ms ease-in-out;
+        -moz-transition: all 2000ms 1ms ease-in-out;
     }
 
     .showSR {
         opacity: 1;
         filter: blur(0);
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
-        -moz-transform: translateX(0);
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
     }
 
     /* animatie voorop de promo tekst */
@@ -113,12 +113,19 @@
     .showSP {
         opacity: 1;
         width: 98% !important;
-        height: 248px !important;
-        border-radius: 0px 124px 124px 0px !important;
+        height: 288px !important;
+        border-radius: 0px 144px 144px 0px !important;
         left: 0;
     }
 
     /* Extra breakpoint versies voor de promo achtergrond animatie */
+    @media (min-width: 340px) {
+        .sectionDividerPromo {
+            height: 248px !important;
+            border-radius: 0px 124px 124px 0px !important;
+        }
+    }
+
     @media (min-width: 360px) {
         .hiddenSP {
             width: 100px !important;

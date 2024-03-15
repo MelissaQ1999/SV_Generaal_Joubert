@@ -262,32 +262,26 @@ section.history {
     }
 
     .prijzenSGJ {
-        grid-row: 1;
         grid-column: 1 / span 6;
     }
     
     .oprichting p {
-        grid-row: 1;
-        grid-column: 7 / span 7;
+        grid-column: 7 / span 6;
     }
     
     .sabel {
-        grid-row: 1;
-        grid-column: 7 / span 7;
+        grid-column: 7 / span 6;
     }
     
     .overhandiging p {
-        grid-row: 1;
         grid-column: 1 / span 6;
     }
     
     .overP {
-        grid-row: 1;
         grid-column: 7 / span 6;
     }
     
     .fotoP {
-        grid-row: 1;
         grid-column: 1 / span 6;
     }
 
