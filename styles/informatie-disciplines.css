@@ -28,7 +28,7 @@ figure.photo {
     width: auto;
     height: 240px;
     overflow: hidden;
-    margin-top: 16px;
+    margin-bottom: 24px;
 }
   
 .photo img {
@@ -60,7 +60,7 @@ figure.photo {
 }
 
 /* Het grid toepassen op de disciplines */
-.photo, .oddTP, .oddTH .evenTP, .evenTH {
+.photo, .oddTP, .oddTH, .evenTP, .evenTH {
     grid-column: 1 / span 4;
     text-align: left;
 }
@@ -102,7 +102,7 @@ figure.photo {
     /* De disciplines */
     figure.photo {
         height: 300px;
-        margin-top: 0px;
+        margin-bottom: 0px;
     }
 
     .H2textGapD {

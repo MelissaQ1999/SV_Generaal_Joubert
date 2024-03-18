@@ -726,9 +726,9 @@ div.logoSponsors {
     }
 
     .watBiedenWij {
+        max-width: 1408px;
         column-gap: 56px;
         margin-top: 88px;
-        max-width: 1408px;
     }
     /*----------------------------------------*/
 

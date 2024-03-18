@@ -32,6 +32,18 @@ $(document).ready(function(){
 });
 
 
+// ----- Dit zorgt ervoor dat de link kleur veranderd wanneer die geklikt is ----- //
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.link');
+
+    links.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            this.classList.add('clicked');
+        });
+    });
+});
+
+
 // ----- Voor het uitvoeren van de animaties door de website heen ----- //
 const observerN = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

@@ -291,7 +291,11 @@ a:hover {
 }
 
 /* Dit zorgt ervoor dat de link verandert wanneer je er op geklikt hebt */
-a:visited {
+/* a:visited {
+    color: #1C5876;
+} */
+
+.link.clicked {
     color: #1C5876;
 }
 

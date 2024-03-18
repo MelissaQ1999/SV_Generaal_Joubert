@@ -9,73 +9,61 @@
 @import 'footer.css';
 @import 'animaties.css';
 
+/* Het vlak voor de hoofd content wordt hier bewerkt */
 main {
-    padding: 0px;
+    overflow: hidden;
 }
 
-div.main {
-    padding-left: 15px;
-    padding-right: 15px;
-    
-}
 
 /*--------------------------------------------------
     CSS voor de contactinformatie
 ---------------------------------------------------*/
+.openingstijden p, .adres p, .gegevens p {
+    margin-bottom: 8px;
+}
+
+.openingstijden p:last-child, .adres p:last-child, .gegevens p:last-child {
+    margin-bottom: 0px;
+}
+
 /* Het grid instellen voor de drie kopjes die horen bij de contactinformatie */
 .contactinformatie {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-row-gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 24px;
     grid-auto-rows: auto auto;
     grid-auto-columns: auto auto;
-    margin-top: 35px;
-    margin-bottom: 45px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Het grid toepassen op de drie kopjes die horen bij de contactinformatie */
 .openingstijden, .adres, .gegevens {
-    grid-column: 1 / span 12;
+    grid-column: 1 / span 4;
 }
 
-.contactinformatie section p {
-    margin-top: 5px;
-}
-
-.contactinformatie section p.top {
-    margin-top: 10px;
-}
-
-.contactinformatie section p a {
-    color: #0A0A0A;
-}
-
-.contactinformatie section p a:visited {
-    color: #0A0A0A;
-}
 
 /*--------------------------------------------------
     CSS voor de iframe
 ---------------------------------------------------*/
 iframe {
-    height: 200px;
-    width: 100vw;
+    height: 248px;
+    /* Dit zorgt ervoor dat de Google Maps de voledige schermbreete aanneemt */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
 }
+
 
 /*-------------------------------------------------------
     CSS voor alles wat hoort bij het contactformulier
 --------------------------------------------------------*/
-.formTitel {
-        margin-top: 45px;
-        margin-bottom: 15px;
-}
 
-br.on {
-    display: none;
-}
-
-.contactformulier button {
-    margin-top: 15px;
+.formRequired {
+    margin-top: 32px;
 }
 
 
@@ -92,25 +80,17 @@ br.on {
 
     /* De contactinformatie */
     .contactinformatie {
-        grid-row-gap: 30px;
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
-
-    .contactinformatie section p.top { 
-        margin-top: 15px;
+        row-gap: 28px;
     }
     /*----------------------------------------*/
 
     iframe {
-        height: 220px;
+        height: 284px;
     }
+    /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
+
 }
 
 /* Extra tussenversie van mobiel en tablet (510px) */
@@ -122,62 +102,43 @@ br.on {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-    div.main {
-        padding-left: 35px;
-        padding-right: 35px;
-    }
-
     /* De contactinformatie */
     .contactinformatie {
-        grid-row-gap: 35px;
-        margin-top: 45px;
-        margin-bottom: 55px;
+        grid-template-columns: repeat(8, 1fr);
+        row-gap: 34px;
     }
 
-    .contactinformatie section p {
-        margin-top: 10px;
-    }
-
-    .contactinformatie section p.top {
-        margin-top: 20px;
+    .openingstijden, .adres, .gegevens {
+        grid-column: 2 / span 6;
     }
     /*----------------------------------------*/
 
     iframe {
-        height: 250px;
+        height: 238px;
     }
+    /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 55px;
-        margin-bottom: 25px;
-    }
-
-    br.on {
-        display: unset;
-    }
-
-    .contactformulier button {
-        margin-top: 20px;
+    .formInfo {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    div.main {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
     /* De contactinformatie */
     .contactinformatie {
-        grid-column-gap: 30px;
-        margin-top: 50px;
-        margin-bottom: 75px;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 24px;
     }
 
     .openingstijden {
         grid-column: 1 / span 4;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .adres {
@@ -187,125 +148,65 @@ br.on {
     .gegevens {
         grid-column: 9 / span 4;
     }
-
-    .contactinformatie section p.top {
-        margin-top: 30px;
-    }
     /*----------------------------------------*/
 
     iframe {
-        height: 300px;
+        height: 392px;
     }
+    /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 75px;
-        margin-bottom: 30px;
-    }
-
-    .contactformulier button {
-        margin-top: 25px;
+    .formInfo {
+        max-width: 750px;
     }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    div.main {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-
     /* De contactinformatie */
     .contactinformatie {
-        grid-column-gap: 40px;
-        margin-top: 65px;
-        margin-bottom: 85px;
-    }
-
-    .contactinformatie section p.top {
-        margin-top: 30px;
+        column-gap: 40px;
     }
     /*----------------------------------------*/
 
     iframe {
-        height: 350px;
+        height: 456px;
     }
+    /*----------------------------------------*/
     
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 85px;
-        margin-bottom: 35px;
-    }
-
-    .contactformulier button {
-        margin-top: 30px;
+    .formInfo {
+        max-width: 800px;
     }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
-    div.main {
-        padding-left: 200px;
-        padding-right: 200px;
-    }
-
     /* De contactinformatie */
     .contactinformatie {
-        grid-column-gap: 50px;
-        margin-top: 85px;
-        margin-bottom: 105px;
-    }
-
-    .contactinformatie section p.top {
-        margin-top: 35px;
+        max-width: 1280px;
+        column-gap: 48px;
     }
     /*----------------------------------------*/
 
     iframe {
-        height: 400px;
+        height: 520px;
     }
+    /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 105px;
-        margin-bottom: 45px;
-    }
+    
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    div.main {
-        padding-left: 256px;
-        padding-right: 256px;
-    }
-
-     /* De contactinformatie */
+    /* De contactinformatie */
     .contactinformatie {
-        grid-column-gap: 60px;
-        margin-top: 100px;
-        margin-bottom: 150px;
-    }
-
-    .contactinformatie section p {
-        margin-top: 12px;
-    }
-
-    .contactinformatie section p.top {
-        margin-top: 40px;
+        column-gap: 56px;
+        max-width: 1408px;
     }
     /*----------------------------------------*/
 
-    iframe {
-        height: 450px;
-    }
-
     /* Alles wat hoort bij het contactformulier */
-    .formTitel {
-        margin-top: 150px;
-        margin-bottom: 50px;
-    }
-
-    .contactformulier button {
-        margin-top: 35px;
-    }
+    
 }

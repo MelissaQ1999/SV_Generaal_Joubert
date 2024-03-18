@@ -9,9 +9,32 @@
 @import 'footer.css';
 @import 'animaties.css';
 
-.logoSticky svg {
+article.lidmaatschap {
+    position: relative;
+}
+
+/* voor het logo van de vereniging */
+object.logoSticky {
+    display: none;
     height: 200px;
     width: auto;
+}
+
+/* de lidmaatschap tekst */
+.introductie, .aspirant, .volledig {
+    text-align: left;
+}
+
+.stappen {
+    margin-left: 16px;
+}
+
+.stap {
+    margin-top: 32px;
+}
+
+.stapText {
+    margin-top: 8px;
 }
 
 /*--------------------------------------------------
@@ -20,30 +43,150 @@
 
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
-
+    .stappen {
+        margin-left: 20px;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    .introductie, .aspirant, .volledig {
+        max-width: 90%;
+    }
 
+    .stappen {
+        margin-left: 28px;
+    }
+    
+    .stap {
+        margin-top: 34px;
+    }
+    
+    .stapText {
+        margin-top: 10px;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    .stappen {
+        margin-left: 34px;
+    }
     
+    .stap {
+        margin-top: 36px;
+    }
+    
+    .stapText {
+        margin-top: 12px;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        position: absolute;
+        right: 0;
+        width: 14%;
+        height: 100%;
+    }
+
+    object.logoSticky {
+        display: block;
+        position: sticky;
+        top: 240px;
+        height: auto;
+        width: 100%;
+    }
+
+    /* de lidmaatschap tekst */
+    .introductie, .aspirant, .volledig {
+        max-width: 900px;
+    }
+
+    .stappen {
+        margin-left: 40px;
+    }
     
+    .stap {
+        margin-top: 38px;
+    }
+    
+    .stapText {
+        margin-top: 14px;
+    }
+}
+
+@media (min-width: 1320PX) {
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        width: 16%;
+    }
+}
+
+@media (min-width: 1380PX) {
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        width: 18%;
+    }
+}
+
+@media (min-width: 1480PX) {
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        width: 20%;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
+    article.lidmaatschap {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        width: 22%;
+    }
+
+    object.logoSticky {
+        top: 260px;
+    }
+
+    /* de lidmaatschap tekst */
+    .stappen {
+        margin-left: 48px;
+    }
     
+    .stap {
+        margin-top: 40px;
+    }
+    
+    .stapText {
+        margin-top: 16px;
+    }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    
+    article.lidmaatschap {
+        max-width: 1408px;
+    }
+
+    /* voor het logo van de vereniging */
+    .objectLogo {
+        width: 24%;
+    }
+
+    object.logoSticky {
+        top: 280px;
+    }
+
+    /* de lidmaatschap tekst */
+    .stappen {
+        margin-left: 56px;
+    }
 }
