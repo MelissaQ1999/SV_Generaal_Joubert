@@ -1,0 +1,30 @@
+<svg version="1.1" id="contact-illu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 959 600" xml:space="preserve">
+	<style type="text/css">
+		.st0{fill:#FA3838;}
+		.st1{fill:#DB3333;}
+		.st2{fill:#EAEAEA;}
+		.st3{fill:#F2F2F2;}
+		.st4{fill:#424242;}
+	</style>
+	<g id="flag">
+		<path id="flag-zone" class="st0" d="M424,75.5v347c0,15.5,12.7,28,28.4,28H736v-375H424z"/>
+		<path id="flag-bottom" class="st1" d="M478.4,422.5c0,15.5-12.7,28-28.4,28h283.6l0,0c15.7,0,28.4-12.5,28.4-28H478.4z"/>
+		<rect id="bar-shadow" x="424" y="81.2" class="st1" width="312" height="9.5"/>
+	</g>
+	<g id="gun">
+		<g>
+			<rect y="46.7" class="st2" width="396.3" height="56.9"/>
+			<rect y="75" class="st3" width="396.3" height="28.7"/>
+		</g>
+		<g>
+			<rect y="103.6" class="st3" width="264.7" height="20.8"/>
+			<rect y="103.6" class="st3" width="264.7" height="9"/>
+		</g>
+		<polygon class="st2" points="353,19.8 370.6,19.8 370.6,46.7 328.3,46.7"/>
+		<polygon class="st3" points="317.3,46.7 359.6,46.7 359.6,38.3 325,38.3"/>
+		<polygon class="st3" points="396.3,81.5 396.3,68 403.6,68 403.6,81.6"/>
+	</g>
+	<g id="bar">
+		<path id="flagpole" class="st4" d="M768.3,63.3c-4.2,0-7.9,1.9-10.1,4.7H403.6v13.6h354.5c2.3,2.8,5.9,4.7,10.1,4.7c6.9,0,12.5-5.1,12.5-11.4C780.8,68.4,775.2,63.3,768.3,63.3z"/>
+	</g>
+</svg>

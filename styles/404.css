@@ -6,97 +6,111 @@
 @import 'main.css';
 @import 'header.css';
 @import 'footer.css';
-@import 'animaties.css';
 
-
+/* Het vlak voor de hoofd content wordt hier bewerkt */
 body {
-    background: var(--timberwolf);
-    /* font-family: 'Georgia', Times, serif; */
-    font-family: 'Verdana', Helvetica, sans-serif;
+  background: var(--timberwolf);
+}
+
+div.main {
+  overflow: hidden;
+}
+
+
+/*--------------------------------------------------
+    CSS voor de melding
+---------------------------------------------------*/
+h1.error {
+  color: #fff;
+  position: relative;
+  height: auto;
+  width: 100%;
+  z-index: 2;
+  font-family: 'Verdana', Helvetica, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 4rem;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+  margin-top: 48px;
+}
+
+.pistool {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .bericht {
-    position: absolute;
-    max-width: 490px;
-    text-align: center;
-    top: 18rem;
-    left: 44rem;
-    z-index: 1;
+  position: absolute;
+  max-width: 50%;
+  text-align: center;
+  top: 16%;
+  left: 32%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.bericht h2 {
+  font-size: 24px;
+  color: #000;
 }
 
 .bericht p {
-    margin-top: 32px;
+  color: #000;
 }
 
-p.reload {
-    color: #fff;
-    position: absolute;
-    top: 0;bottom: 0;right: 0;left: 0;
-    /* margin: auto; */
-    height: 20px;
-    width: 100%;
-    z-index: 2;
-    text-align:center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 6rem;
-    text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
-    transform-origin: center center;
-    transform: scale(0);-webkit-transform: scale(0);
-    animation: animateA 1 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.4s;
+/* CSS voor de button naar de homepagina */
+.button {
+  position: relative;
+  text-align: center;
+  opacity: 0;
 }
 
-@keyframes animateA {
-    0%{transform: scale(0);-webkit-transform: scale(0);}
-    100%{transform: scale(1);-webkit-transform: scale(1);}
-}
+
+/*--------------------------------------------------
+    CSS voor het pistool met vlag
+---------------------------------------------------*/
 
 #contact-illu {
-    position: absolute;
-    width: 1600px;
-    top: 0%;
-    left: 0%;
-    right: 0;
+  position: relative;
+  width: 160%;
+  left: -40%;
 }
 
+/* Dit is om het path van de vlag aan te passen */
+path#flag-zone {
+  d: path("M 424 75.5 v 505 c 0 15.5 12.7 28 28.4 28 H 736 v -530 H 424 Z");
+}
+
+path#flag-bottom {
+  d: path("M 478.4 580.5 c 0 15.5 -12.7 28 -28.4 28 h 283.6 l 0 0 c 15.7 0 28.4 -12.5 28.4 -28 H 478.4 Z");
+}
+
+/* Hier wordt het pistool en de vlag "ingekleurd" */
 .st0{fill:#FA3838;}
 .st1{fill:#DB3333;}
 .st2{fill:#F2F2F2;}
 .st3{fill:#EAEAEA;}
 .st4{fill:#424242;}
-.st5{fill:rgba(19,19,19,0.2);}
 
-#contact-illu .gdot {
-  transform: scale(0);
-  -webkit-transform: scale(0);
+
+/*--------------------------------------------------
+    CSS voor de animaties
+---------------------------------------------------*/
+
+@keyframes animateA {
+  0%{transform: scale(0);-webkit-transform: scale(0);}
+  100%{transform: scale(1);-webkit-transform: scale(1);}
 }
 
-#contact-illu .gdot{
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
+h1.error {
   transform-origin: center center;
-  -webkit-transform-origin: center center;
+  transform: scale(0);-webkit-transform: scale(0);
+  animation: 1 animateA 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 0.4s;
 }
 
-
-@keyframes animatetheDots {
-  0%{
-    transform: scale(0);
-    -webkit-transform: scale(0);
-    -moz-transform: scale(0);
-  }
-  20%,60%{
-    opacity: 1;
-  }
-  100%{
-    transform: scale(2);
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    opacity: 0;
-  }
-}
 
 @keyframes animateGun {
   0%{
@@ -112,13 +126,14 @@ p.reload {
 }
 
 #contact-illu #gun {
-  animation: 1 animateGun 0.6s ease-out forwards;
-  -webkit-animation: 1 animateGun 0.6s ease-out forwards;
-  -moz-animation: 1 animateGun 0.6s ease-out forwards;
+  animation: 1 animateGun 0.6s ease-out forwards 0.6s;
+  -webkit-animation: 1 animateGun 0.6s ease-out forwards 0.6s;
+  -moz-animation: 1 animateGun 0.6s ease-out forwards 0.6s;
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
 }
+
 
 @keyframes animateBar {
   0%{
@@ -138,13 +153,13 @@ p.reload {
   transform: scaleX(0);
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
-  animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 0.6s;
-  -webkit-animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 0.6s;
-  -moz-animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 0.6s;
+  animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
+  -webkit-animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
+  -moz-animation: 1 animateBar 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
 }
 
 
-@keyframes animateZone {
+@keyframes animateFlag {
   0%{
     transform: scaleY(0);
     -webkit-transform: scaleY(0);
@@ -157,58 +172,249 @@ p.reload {
   }
 }
 
-#contact-illu #zone {
+#contact-illu #flag {
   transform-origin: top;
   transform: scaleY(0);
   -webkit-transform: scaleY(0);
   -moz-transform: scaleY(0);
-  animation: 1 animateZone 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
-  -webkit-animation: 1 animateZone 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
-  -moz-animation: 1 animateZone 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1s;
+  animation: 1 animateFlag 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.4s;
+  -webkit-animation: 1 animateFlag 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.4s;
+  -moz-animation: 1 animateFlag 0.4s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.4s;
 }
 
-@keyframes animateShadow {
+
+@keyframes animateBericht {
   0%{
-    transform: scaleY(0);
-    -webkit-transform: scaleY(0);
-    -moz-transform: scaleY(0);
+    opacity: 0 !important;
   }
   100%{
-    transform: scaleY(1);
-    -webkit-transform: scaleY(1);
-    -moz-transform: scaleY(1);
+    opacity: 1;
   }
 }
 
-#contact-illu #bar-shadow {
-  transform-origin: top;
-  transform: scaleY(0);
-  -webkit-transform: scaleY(0);
-  -moz-transform: scaleY(0);
-  animation: 1 animateShadow 0.1s ease-out forwards 0.9s;
-  -webkit-animation: 1 animateShadow 0.1s ease-out forwards 0.9s;
-  -moz-animation: 1 animateShadow 0.1s ease-out forwards 0.9s;
+.bericht, .button {
+  animation: 1 animateBericht 0.6s ease-out forwards 1.8s;
+  -webkit-animation: 1 animateBericht 0.6s ease-out forwards 1.8s;
+  -moz-animation: 1 animateBericht 0.6s ease-out forwards 1.8s;
 }
 
-@keyframes animateBack {
-  0%{
-    transform: scaleY(0);
-    -webkit-transform: scaleY(0);
-    -moz-transform: scaleY(0);
+
+/*--------------------------------------------------
+    De breekpunten
+---------------------------------------------------*/
+
+@media (min-width: 340px) {
+  /* Dit is om het path van de vlag aan te passen */
+  path#flag-zone {
+    d: path("M 424 75.5 v 405 c 0 15.5 12.7 28 28.4 28 H 736 v -430 H 424 Z");
   }
-  100%{
-    transform: scaleY(1);
-    -webkit-transform: scaleY(1);
-    -moz-transform: scaleY(1);
+
+  path#flag-bottom {
+    d: path("M 478.4 480.5 c 0 15.5 -12.7 28 -28.4 28 h 283.6 l 0 0 c 15.7 0 28.4 -12.5 28.4 -28 H 478.4 Z");
+  }
+
+  .button {
+    margin-top: -12%;
+}
+}
+
+@media (min-width: 364px) {
+  /* Dit is om het path van de vlag aan te passen */
+  path#flag-zone {
+    d: path("M 424 75.5 v 347 c 0 15.5 12.7 28 28.4 28 H 736 v -375 H 424 Z");
+  }
+
+  path#flag-bottom {
+    d: path("M 478.4 422.5 c 0 15.5 -12.7 28 -28.4 28 h 283.6 l 0 0 c 15.7 0 28.4 -12.5 28.4 -28 H 478.4 Z");
+  }
+
+  .bericht {
+    top: 18%;
+  }
+
+  .button {
+    margin-top: -80px;
   }
 }
 
-#contact-illu #back {
-  transform-origin: bottom;
-  transform: scaleY(0);
-  -webkit-transform: scaleY(0);
-  -moz-transform: scaleY(0);
-  animation: 1 animateBack 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.3s;
-  -webkit-animation: 1 animateBack 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.3s;
-  -moz-animation: 1 animateBack 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53) forwards 1.3s;
+@media (min-width: 450px) {
+  h1.error {
+    font-size: 4.8rem;
+  }
+
+  .bericht h2 {
+    font-size: 28px;
+  }
+
+  .button {
+    position: absolute;
+    min-width: 50%;
+    top: 50%;
+    left: 32%;
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 590px) {
+  h1.error {
+    font-size: 5rem;
+  }
+
+  .bericht h2 {
+    font-size: 30px;
+  }
+
+  .bericht {
+    max-width: 48%;
+    left: 32.5%;
+  }
+
+  #contact-illu {
+    width: 150%;
+    left: -34%;
+  }
+
+  path#flag-zone {
+    d: path("M 424 67 v 307 c 0 15.5 12.7 28 28.4 28 H 736 v -315 H 424 Z");
+  }
+
+  path#flag-bottom {
+    d: path("M 478.4 374 c 0 15.5 -12.7 28 -28.4 28 h 283.6 l 0 0 c 15.7 0 28.4 -12.5 28.4 -28 H 478.4 Z");
+  }
+
+  .button {
+    top: 46%;
+  }
+}
+
+/* Tablet-versie (768px) */
+@media (min-width: 768px) {
+  h1.error {
+    font-size: 5.2rem;
+  }
+
+  #contact-illu {
+    width: 140%;
+    left: -28%;
+  }
+
+  .bericht {
+    max-width: 44%;
+    left: 34.6%;
+  }
+
+  .bericht h2 {
+    font-size: 38px;
+  }
+}
+
+@media (min-width: 900px) {
+  h1.error {
+    font-size: 5.4rem;
+  }
+
+  .bericht {
+    max-width: 41%;
+    left: 36%;
+  }
+
+  .bericht h2 {
+    font-size: 40px;
+  }
+
+  #contact-illu {
+    width: 130%;
+    left: -22%;
+  }
+}
+
+/* Laptop-versie (1024px) */
+@media (min-width: 1024px) {
+  h1.error {
+    font-size: 5.8rem;
+    margin-top: 56px;
+  }
+
+  .bericht {
+    max-width: 36%;
+    left: 38.5%;
+  }
+
+  .bericht h2 {
+    font-size: 44px;
+  }
+
+  #contact-illu {
+    width: 115%;
+    left: -13%;
+  }
+}
+
+/* Grotere laptopversie (1280px) */
+@media (min-width: 1280PX) {
+  .pistool {
+    max-width: 1300px;
+  }
+
+  #contact-illu {
+    width: 100%;
+    left: 0%;
+  }
+
+  .bericht {
+    max-width: 31%;
+    left: 45%;
+  }
+
+  .bericht h2 {
+    font-size: 50px;
+  }
+
+  .button {
+    min-width: 33%;
+    left: 44%;
+  }
+}
+
+@media (min-width: 1555px) {
+  .pistool {
+      max-width: 1350px;
+  }
+}
+
+/* Tussenversie van laptop en desktop (1600px) */
+@media (min-width: 1600PX) {
+  .pistool {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1750PX) {
+  .pistool {
+    max-width: 1500px;
+  }
+
+  .bericht h2 {
+    font-size: 58px;
+  }
+}
+
+/* Desktop versie (1920px) */
+@media (min-width: 1920PX) {
+  .pistool {
+    min-width: 1550px;
+    max-width: 80%;
+  }
+
+  path#flag-zone {
+    d: path("M 424 31 v 307 c 0 15.5 12.7 28 28.4 28 H 736 v -285 H 424 Z");
+  }
+
+  path#flag-bottom {
+    d: path("M 478.4 338 c 0 15.5 -12.7 28 -28.4 28 h 283.6 l 0 0 c 15.7 0 28.4 -12.5 28.4 -28 H 478.4 Z");
+  }
+
+  .button {
+    top: 42%;
+  }
 }
