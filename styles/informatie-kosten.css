@@ -10,21 +10,52 @@
 @import 'animaties.css';
 
 
-table, th, td {
-    border: none;
-    border-collapse: collapse;
+/* Het vlak voor de hoofd content wordt hier bewerkt */
+main {
+    overflow: hidden;
 }
-  
-table {
+
+/* Het grid instellen */
+section.kosten {
+    position: relative;
+    display: grid;
+	grid-template-columns: repeat(4, 1fr);
+    row-gap: 48px;
+    grid-auto-rows: auto auto;
+    grid-auto-columns: auto auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Het grid toepassen */
+.contributieSVGJ, .contributieKNSA {
+    position: relative;
+    grid-column: 1 / span 4;
+    display: grid;
+    align-content: center;
+}
+
+/* De opmaak van de tabel voor de kosten */
+table.SVGJ, table.KNSA, table.extra {
+    position: relative;
     width: 100%;
 }
 
 table.SVGJ {
-    max-width: 458px;
+    max-width: 460px;
 }
 
 table.KNSA {
-    max-width: 478px;
+    max-width: 480px;
+}
+
+table.extra {
+    max-width: 448px;
+}
+
+table, th, td {
+    border: none;
+    border-collapse: collapse;
 }
   
 th, td {
@@ -33,16 +64,46 @@ th, td {
 }
   
 tr:hover {
-    background-color: #D6EEEE;
+    background-color: var(--nyanza);
 }
+
+.sectionDivider {
+    top: 50%;
+}
+
+section.overigeKosten {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Het grid toepassen */
+.extra, .extraInfo {
+    grid-column: 1 / span 4;
+}
+
 
 /*--------------------------------------------------
     De breekpunten
 ---------------------------------------------------*/
 
+@media (min-width: 396px) {
+    .contributieSVGJ {
+        height: 248px;
+    }
+}
+
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
+    section.kosten {
+        row-gap: 56px;
+    }
 
+    .contributieSVGJ {
+        height: 284px;
+    }
 }
 
 /* Extra tussenversie van mobiel en tablet (510px) */
@@ -50,29 +111,173 @@ tr:hover {
     h2.beginningGap {
         text-align: center;
     }
+
+    section.kosten {
+        row-gap: 66px;
+        justify-items: center;
+    }
+
+    table.SVGJ, table.KNSA {
+        min-width: 448px;
+    }
+
+    section.overigeKosten {
+        justify-items: center;
+    }
+
+    .extraInfo p {
+        text-align: center;
+    }
 }
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
+    section.kosten {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    /* Het grid toepassen */
+    .contributieSVGJ, .contributieKNSA {
+        grid-column: 1 / span 8;
+        height: 338px;
+    }
 
+    section.overigeKosten {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    
+    /* Het grid toepassen */
+    .extra, .extraInfo {
+        grid-column: 1 / span 8;
+    }
+
+    .extraInfo {
+        max-width: 85%;
+    }
 }
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
+    section.kosten {
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 40px;
+    }
+
+    .contributieSVGJ, .contributieKNSA {
+        height: 392px;
+    }
+
+    /* Het grid toepassen */
+    .contributieSVGJ {
+        position: static;
+        grid-column: 1 / span 6;
+        grid-row: 1;
+    }
+
+    .contributieKNSA {
+        position: static;
+        grid-column: 7 / span 6;
+        grid-row: 1;
+    }
+
+    .sectionDivider {
+        left: 0;
+    }
+
+    .sectionDividerL {
+        width: 50%;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .sectionDividerR {
+        width: 50%;
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    section.overigeKosten {
+        grid-template-columns: repeat(12, 1fr);
+    }
     
+    /* Het grid toepassen */
+    .extra, .extraInfo {
+        grid-column: 1 / span 12;
+    }
+
+    .extraInfo {
+        max-width: 75%;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
+    section.kosten {
+        column-gap: 56px;
+    }
+
+    .contributieSVGJ, .contributieKNSA {
+        height: 456px;
+    }
+
+    table.SVGJ, table.extra {
+        max-width: 504px;
+    }
     
+    table.KNSA {
+        max-width: 512px;
+    }
+
+    .extraInfo {
+        max-width: 65%;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
-    
+    section.kosten {
+        max-width: 1280px;
+        column-gap: 72px;
+        justify-items: normal;
+    }
+
+    .contributieSVGJ, .contributieKNSA {
+        height: 520px;
+    }
+
+    table.SVGJ {
+        margin-left: 4%;
+        margin-right: auto;
+    }
+
+    table.KNSA {
+        margin-left: auto;
+        margin-right: 4%;
+    }
+
+    section.overigeKosten {
+        max-width: 1280px;
+    }
 }
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    
+    section.kosten {
+        max-width: 1408px;
+        column-gap: 88px;
+    }
+
+    table.SVGJ {
+        margin-left: 8%;
+    }
+
+    table.KNSA {
+        margin-right: 8%;
+    }
+
+    section.overigeKosten {
+        max-width: 1408px;
+    }
+
+    .extraInfo {
+        max-width: 55%;
+    }
 }
