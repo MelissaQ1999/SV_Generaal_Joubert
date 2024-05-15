@@ -19,9 +19,16 @@ div.PDFs {
     margin-right: auto;
 }
 
+/* Dit is voor de afmeetingen voor de PDF */
 .pdfD, .pdfZ {
     width: 100%;
     height: 380px;
+}
+
+/* Dit is voor de afbeeldingen wanneer de PDF niet werkt */
+img.pdfD, img.pdfZ {
+    object-fit: cover;
+    object-position: top;
 }
 
 .pdfZ {
@@ -77,6 +84,7 @@ div.PDFs {
         max-width: 840px;
     }
 
+    /* Grid wordt aangemaakt on de PDF's naast elkaar te zetten */
     div.PDFs {
         display: grid;
         column-gap: 24px;
@@ -94,27 +102,62 @@ div.PDFs {
         height: 580px;
     }
 
+    /* Het grid wordt toegepast */
     .pdfD {
         grid-column: 1 / span 6;
+        display: grid;
+        grid-template-rows: 80px auto;
     }
 
     .pdfZ {
         grid-column: 7 / span 6;
+        display: grid;
+        grid-template-rows: 80px auto;
     }
 
-    object.pdfD p {
+    /* Hier onder wordt alles bewerkt qua tekst en afbeeldingen voor als de PDF niet werkt */
+    .pdfD p.pdfError {
         position: absolute;
         max-width: 775px;
     }
 
-    object.pdfZ {
-        position: relative;
+    /* Dit is voor de afbeeldingen als de PDF niet werkt */
+    p.imgD img, p.imgZ img {
+        width: 100%;
+        height: 500px;
     }
 
-    object.pdfZ p {
+    p.imgD, p.imgZ {
+        grid-row: 2;
+    }
+
+    img.pdfD, img.pdfZ {
+        overflow-y: scroll;
+    }
+
+    /* Dit is voor de download link */
+    p.imgD a, p.imgZ a {
         position: absolute;
-        left: 0;
-        top: 13%;
+    }
+}
+
+@media (min-width: 1200PX) {
+    .pdfD, .pdfZ {
+        height: 600px;
+    }
+
+    p.imgD img, p.imgZ img {
+        height: 520px;
+    }
+}
+
+@media (min-width: 1250PX) {
+    .pdfD, .pdfZ {
+        height: 610px;
+    }
+
+    p.imgD img, p.imgZ img {
+        height: 540px;
     }
 }
 
@@ -122,6 +165,20 @@ div.PDFs {
 @media (min-width: 1280PX) {
     .pdfD, .pdfZ {
         height: 620px;
+    }
+
+    .pdfD p.pdfError {
+        max-width: 780px;
+    }
+}
+
+@media (min-width: 1400PX) {
+    .pdfD, .pdfZ {
+        height: 640px;
+    }
+
+    p.imgD img, p.imgZ img {
+        height: 560px;
     }
 }
 
@@ -135,6 +192,10 @@ div.PDFs {
     .pdfD, .pdfZ {
         height: 680px;
     }
+
+    p.imgD img, p.imgZ img {
+        height: 600px;
+    }
 }
 
 /* Desktop versie (1920px) */
@@ -146,5 +207,9 @@ div.PDFs {
 
     .pdfD, .pdfZ {
         height: 740px;
+    }
+
+    p.imgD img, p.imgZ img {
+        height: 660px;
     }
 }

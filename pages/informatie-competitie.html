@@ -135,7 +135,7 @@
         ––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <main>
             <h1 class="pageTitleSub">Competitie</h1>
-            <p class="pageIntro">
+            <p class="pageIntro hiddenN">
                 Voor elk van de disciplines die wij aanbieden zijn er het hele jaar door competities tussen de verenigingsleden onderling. Je schiet tegen medeschutters die vergelijkbare prestaties behalen. Door een klasseringsysteem zal je namelijk altijd uitkomen in een klasse met schutters die op een vergelijkbaar niveau presteren. Schiet je voldoende keren binnen een wedstrijd, dan win je een prijs. Er zijn per jaar 4 competities om in mee te schieten.
             </p>
             <section class="kalender afterIntro">
@@ -144,26 +144,83 @@
                     Hieronder staan de wedstrijdkalenders voor de dinsdag en zaterdag. Het betreft hier de interne wedstrijden van de leden van sv. Generaal Joubert. Tijdens de reguliere schietdagen wordt je score automatisch meegeteld in één van de vier wedstrijden die er per jaar worden georganiseerd.
                 </p>
             </section>
+            
+            <!-- Hier worden de wedstrijdkalenders weergegeven -->
             <div class="PDFs insideInfoGap">
+                <!-- Dit is voor de dinsdag kalender -->
                 <object class="pdfD"
-                    data="../files/Wedstrijdkalender-Dinsdag.pdf#view=fitH,100"
+                    data="../files/Wedstrijdkalender-Dinsdag.pdf#view=fitH&toolbar=1"
                     type="application/pdf"
+                    name="Wedstrijdkalender Dinsdag"
                     width="100%"
                     height="500px">
-                    <p>
-                        Oeps! Het lijkt erop dat je browser het schot heeft gemist om dit PDF-document weer te geven. Geen zorgen, je kunt nog steeds de wedstrijdkalender van onze schietvereniging bekijken en zien wanneer we onze doelen gaan raken!<br><a href="../files/Wedstrijdkalender-Dinsdag.pdf">Bekijk hier de dinsdag kalender!</a>
+                    <!-- Dit is de tekst en afbeelding die weergegeven wordt wanneer een browser de PDF niet kan inladen -->
+                    <p class="pdfError">
+                        <i>Oeps! Het lijkt erop dat je browser het schot heeft gemist om het als PDF-document weer te geven. Geen zorgen, je kunt de wedstrijdkalender van onze vereniging nu als foto bekijken of de PDF downloaden om te zien wanneer we onze doelen gaan raken!</i>
+                    </p>
+                    <p class="imgD">
+                        <img class="pdfD" src="../files/Wedstrijdkalender-Dinsdag.jpg" alt="Wedstrijdkalender dinsdag"><a href="../files/Wedstrijdkalender-Dinsdag.pdf">Download hier de dinsdag kalender!</a>
                     </p>
                 </object>
+
+                <!-- Dit is voor de zaterdag kalender -->
                 <object class="pdfZ"
-                    data="../files/Wedstrijdkalender-Zaterdag.pdf#view=fitH,100"
+                    data="../files/Wedstrijdkalender-Zaterdag.pdf#view=fitH&toolbar=1"
                     type="application/pdf"
+                    name="Wedstrijdkalender Zaterdag"
                     width="100%"
                     height="500px">
-                    <p>
-                        <a href="../files/Wedstrijdkalender-Zaterdag.pdf">Bekijk hier de zaterdag kalender!</a>
+                    <!-- Dit is de tekst en afbeelding die weergegeven wordt wanneer een browser de PDF niet kan inladen -->
+                    <p class="imgZ">
+                        <img class="pdfZ" src="../files/Wedstrijdkalender-Zaterdag.jpg" alt="Wedstrijdkalender zaterdag"><a href="../files/Wedstrijdkalender-Zaterdag.pdf">Download hier de zaterdag kalender!</a>
                     </p>
                 </object>
             </div>
+
+            <!-- Dit is voor de korte promo om je aan te melden voor een proefles -->
+            <section class="lidPromo topicGap">
+                <div class="promoText hiddenPT">
+                    <h2>Kom langs!</h2>
+                    <p>
+                        Benieuwd of de schietsport iets voor jou is?
+                        <br> 
+                        Of wil je kennismaken met onze vereniging?
+                        <br><br>
+                        Meld je dan aan voor een introductie!
+                    </p>
+                    <a class="bulletButton" href="404.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                            <defs>
+                                <style>                                   
+                                    .bulletButton g {
+                                        fill: url(#linear-gradientPA);
+                                    }
+                                    
+                                    .bulletButton g:hover {
+                                        fill: url(#linear-gradientPB);
+                                        /* filter: url(#ShadowBullet); */
+                                    }
+                                </style>
+                                <linearGradient id="linear-gradientPA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#ffda47" />
+                                    <stop offset="1" stop-color="#F4974E" />
+                                </linearGradient>
+                                <linearGradient id="linear-gradientPB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#F4974E" />
+                                    <stop offset="1" stop-color="#ffda47" />
+                                </linearGradient>
+                            </defs>
+                            <g>
+                                <path id="PBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                                <text x="11" y="26.5" class="ButtonText" fill="#000000">Aanmelden</text>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+                <div class="sectionDividerP">
+                    <div class="sectionDividerPromo hiddenSP"></div>
+                </div>
+            </section>
         </main>
 
         <!-- Hieronder begind de footer van de website

@@ -48,6 +48,7 @@ body {
     background-position-x: center;
     background-position-y: 30%;
     background-attachment: fixed;
+    -webkit-background-attachment: fixed;
     background-size: auto;
     z-index: -100;
     scroll-behavior: smooth;
