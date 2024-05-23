@@ -64,7 +64,181 @@ iframe {
 
 .formRequired {
     margin-top: 32px;
+    margin-bottom: 8px;
 }
+
+.formButtons {
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+    position: relative;
+    z-index: -1;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+
+.formButtons div {
+    background-color: #FFF;
+}
+
+.algemeen, .introductie {
+    width: 50%;
+    height: 40px;
+    border: 1px solid var(--timberwolf);
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.algemeen p, .introductie p {
+    font-size: medium;
+    color: #000;
+}
+
+.formButtons div.activeFormBtn {
+    background-color: var(--timberwolf);
+    border: none;
+    /* box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
+    -webkit-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
+    -moz-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%); */
+}
+
+div.formulier {
+    background-color: var(--timberwolf);
+    /* Dit zorgt ervoor dat de achtergrond de voledige schermbreete aanneemt */
+    --child-width: 100vw;
+    margin-left: calc(-.5 * var(--child-width) + 50%);
+    width: var(--child-width);
+    /* box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
+    -webkit-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
+    -moz-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%); */
+}
+
+form {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 56px;
+    padding-top: 8px;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+    width: auto;
+}
+
+fieldset.bericht {
+    margin-bottom: 0px !important;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 4px;
+}
+  
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border: none;
+    border-bottom: 1.5px solid #000;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    border: none;
+    border-bottom: 1.5px solid #000;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
+
+input#telefoonnummer {
+    width: 60%;
+}
+
+.flex-container, .adresgegevens {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px; /* Voor wat ruimte tussen de velden */
+}
+
+.flex-item {
+    flex: 1 1 100%; /* Neemt 100% breedte op mobiel */
+    min-width: 60%;
+}
+
+.flex-item.small {
+    flex: 1 1 40%;
+    min-width: 30%;
+    max-width: 40%;
+}
+
+input:hover, textarea:hover {
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: var(--primary) auto 1px;
+}
+
+input.error-border,
+textarea.error-border {
+    border-bottom: 2.5px solid var(--warning);
+}
+
+input.valid-border,
+textarea.valid-border {
+    border-bottom: 2.5px solid var(--sucsess);
+}
+
+.error {
+    color: var(--warning);
+    font-family: 'Verdana', Helvetica, sans-serif;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+button[type="submit"] {
+    background-color: var(--timberwolf);
+    color: var(--timberwolf);
+    border: none;
+}
+
+.nationaliteitField {
+    position: relative;
+}
+
+.nationaliteitFieldNew {
+    position: relative;
+    margin-top: 8px;
+}
+
+.nationaliteitField button, .nationaliteitFieldNew button {
+    position: absolute;
+    background: none;
+    color: #000;
+    border: none;
+    font-size: 32px;
+    top: 1px;
+    right: 10px;
+    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
+}
+
+/* .nationaliteitField button:hover {
+    background-color: #c9302c;
+} */
 
 
 /*--------------------------------------------------
@@ -90,13 +264,44 @@ iframe {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
+    form {
+        margin-left: 22px;
+        margin-right: 22px;
+        padding-bottom: 68px;
+    }
 
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"] {
+        height: 44px;
+    }
+
+    .nationaliteitField button, .nationaliteitFieldNew button {
+        font-size: 34px;
+        top: 2px;
+    }
 }
 
 /* Extra tussenversie van mobiel en tablet (510px) */
 @media (min-width: 510px) {
-    .openingstijden, .adres, .gegevens, .contactformulier {
+    .openingstijden, .adres, .gegevens, .formTitel, .formInfo {
         text-align: center;
+    }
+}
+
+@media (min-width: 620px) {
+    .formButtons, .formulier {
+        max-width: 620px;
+        --child-width: auto !important;
+        margin-left: auto !important;
+        margin-right: auto;
+    }
+
+    div.topArrowB {
+        background: none;
+        box-shadow: none;
+        margin-top: 68px;
     }
 }
 
@@ -123,6 +328,23 @@ iframe {
         max-width: 700px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    form {
+        margin-left: 36px;
+        margin-right: 36px;
+        padding-bottom: 88px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"] {
+        height: 48px;
+    }
+
+    div.topArrowB {
+        margin-top: 88px;
     }
 }
 
@@ -159,6 +381,23 @@ iframe {
     .formInfo {
         max-width: 750px;
     }
+
+    form {
+        margin-left: 56px;
+        margin-right: 56px;
+        padding-bottom: 104px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"] {
+        height: 52px;
+    }
+
+    div.topArrowB {
+        margin-top: 104px;
+    }
 }
 
 /* Grotere laptopversie (1280px) */
@@ -178,6 +417,23 @@ iframe {
     .formInfo {
         max-width: 800px;
     }
+
+    form {
+        margin-left: 120px;
+        margin-right: 120px;
+        padding-bottom: 120px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"] {
+        height: 56px;
+    }
+
+    div.topArrowB {
+        margin-top: 120px;
+    }
 }
 
 /* Tussenversie van laptop en desktop (1600px) */
@@ -195,7 +451,15 @@ iframe {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    
+    form {
+        margin-left: 200px;
+        margin-right: 200px;
+        padding-bottom: 136px;
+    }
+
+    div.topArrowB {
+        margin-top: 136px;
+    }
 }
 
 /* Desktop versie (1920px) */
@@ -208,5 +472,13 @@ iframe {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    
+    form {
+        margin-left: 256px;
+        margin-right: 256px;
+        padding-bottom: 144px;
+    }
+
+    div.topArrowB {
+        margin-top: 144px;
+    }
 }

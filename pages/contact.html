@@ -22,6 +22,7 @@
         <script src="https://kit.fontawesome.com/60bf54ff8c.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="../scripts/main.js" defer></script>
+        <script src="../scripts/contact.js" defer></script>
 
     </head>
 
@@ -144,6 +145,124 @@
                     Vul ons <b>introductie formulier</b> in wanneer je graag een keer wilt komen proefschieten, zodat wij gelijk alle benodigde gegevens hebben om snel een afspraak te kunnen maken.
                 </p>
                 <p class="formRequired"><i>De velden met een &#42; zijn verplicht!</i></p>
+                
+                <div class="formButtons">
+                    <div class="algemeen"><p>Algemeen</p></div>
+                    <div class="introductie activeFormBtn"><p>Introductie</p></div>
+                </div>
+
+                <div class="formulier">
+                    <form id="contactForm" action="form-handler.php" method="post" enctype="application/x-www-form-urlencoded" autocomplete="on" novalidate>
+                        <fieldset>
+                            <label for="voornaam">Voornaam(en)*</label>
+                            <input type="text" id="voornaam" name="voornaam" placeholder="Uw voornaam" required>
+                            <div class="error" id="voornaamError"></div>
+                    
+                            <label for="achternaam">Achternaam*</label>
+                            <input type="text" id="achternaam" name="achternaam" placeholder="Uw achternaam" required>
+                            <div class="error" id="achternaamError"></div>
+
+                            <div class="flex-container">
+                                <div class="flex-item small">
+                                    <label for="geboortedatum">Geboortedatum*</label>
+                                    <input type="date" id="geboortedatum" name="geboortedatum" required>
+                                    <div class="error" id="geboortedatumError"></div>
+                                </div>
+                        
+                                <div class="flex-item">
+                                    <label for="geboorteplaats">Geboorteplaats*</label>
+                                    <input type="text" id="geboorteplaats" name="geboorteplaats" placeholder="Uw geboorteplaats" required>
+                                    <div class="error" id="geboorteplaatsError"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                                
+                        <fieldset class="adresgegevens">
+                            <div class="flex-item">
+                                <label for="straatnaam">Straatnaam*</label>
+                                <input type="text" id="straatnaam" name="straatnaam" placeholder="Uw straatnaam" required>
+                                <div class="error" id="straatnaamError"></div>
+                            </div>
+                            <div class="flex-item small">
+                                <label for="huisnummer">Huisnummer*</label>
+                                <input type="text" id="huisnummer" name="huisnummer" placeholder="123 A" required>
+                                <div class="error" id="huisnummerError"></div>
+                            </div>
+                            <div class="flex-item small">
+                                <label for="postcode">Postcode*</label>
+                                <input type="text" id="postcode" name="postcode" placeholder="1234 AB" required>
+                                <div class="error" id="postcodeError"></div>
+                            </div>
+                            <div class="flex-item">
+                                <label for="woonplaats">Woonplaats*</label>
+                                <input type="text" id="woonplaats" name="woonplaats" placeholder="Uw woonplaats" required>
+                                <div class="error" id="woonplaatsError"></div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label for="burgerlijkeStaat">Burgerlijke staat*</label>
+                            <input type="text" id="burgerlijkeStaat" name="burgerlijkeStaat" placeholder="Ongehuwd" required>
+                            <div class="error" id="burgerlijkeStaatError"></div>
+                            
+                            <div id="nationaliteitFields">
+                                <label for="nationaliteit1">Nationaliteit(en)*</label>
+                                <div class="nationaliteitField">
+                                    <input type="text" id="nationaliteit1" name="nationaliteit[]" placeholder="Nederlands" required>
+                                    <button type="button" id="addNationaliteitField">+</button>
+                                    <div class="error" id="nationaliteitError"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label for="email">E-mailadres*</label>
+                            <input type="email" id="email" name="email" placeholder="voorbeeld@domein.com" required>
+                            <div class="error" id="emailError"></div>
+                    
+                            <label for="telefoonnummer">Telefoonnummer*</label>
+                            <input type="tel" id="telefoonnummer" name="telefoonnummer" placeholder="0612345678" required>
+                            <div class="error" id="telefoonnummerError"></div>
+                        </fieldset>
+                        
+                        <fieldset class="bericht">
+                            <label for="opmerkingen">Opmerkingen</label>
+                            <textarea id="opmerkingen" name="opmerkingen" rows="4" placeholder="Uw opmerkingen..."></textarea>
+                        </fieldset>
+                                
+                        <button type="submit">
+                            <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                                <defs>
+                                    <style>                                   
+                                        .bulletButton g {
+                                            fill: url(#linear-gradientPSA);
+                                        }
+                                          
+                                        .bulletButton g:hover {
+                                            fill: url(#linear-gradientPSB);
+                                            /* filter: url(#ShadowBullet); */
+                                        }
+                                    </style>
+                                    <linearGradient id="linear-gradientPSA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#ffda47" />
+                                        <stop offset="1" stop-color="#F4974E" />
+                                    </linearGradient>
+                                    <linearGradient id="linear-gradientPSB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#F4974E" />
+                                        <stop offset="1" stop-color="#ffda47" />
+                                    </linearGradient>
+                                    <!-- <filter id="ShadowBullet">
+                                        <feDropShadow dx="0" dy="0" stdDeviation="0.8" />
+                                    </filter> -->
+                                </defs>
+                                <g>
+                                    <path id="PSBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                                    <text x="15" y="26" class="ButtonText" fill="#000000">Verzenden</text>
+                                </g>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </section>
         </main>
 
