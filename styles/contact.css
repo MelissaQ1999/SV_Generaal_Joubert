@@ -99,12 +99,28 @@ iframe {
     color: #000;
 }
 
-.formButtons div.activeFormBtn {
-    background-color: var(--timberwolf);
+/* CSS om de active button vorm te geven */
+.activeFormBtn {
+    background-color: var(--timberwolf) !important;
     border: none;
-    /* box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
-    -webkit-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%);
-    -moz-box-shadow: -1px 0px 12px 0px rgb(0 0 0 / 35%); */
+}
+
+/* CSS om de cursor voor niet-actieve knoppen te wijzigen */
+.formButtons div {
+    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
+}
+
+.formButtons .activeFormBtn {
+    cursor: default;
+}
+
+/* Code om de formulieren te verbergen en weer te geven */
+#algemeenFormContainer, #introductieFormContainer {
+    display: none;
+}
+
+#algemeenFormContainer.active, #introductieFormContainer.active {
+    display: block;
 }
 
 div.formulier {
@@ -129,6 +145,10 @@ fieldset {
     border: none;
     margin-bottom: 20px;
     width: auto;
+}
+
+#algemeenForm fieldset {
+    margin-bottom: 0px;
 }
 
 fieldset.bericht {
@@ -235,10 +255,6 @@ button[type="submit"] {
     right: 10px;
     cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
 }
-
-/* .nationaliteitField button:hover {
-    background-color: #c9302c;
-} */
 
 
 /*--------------------------------------------------
