@@ -72,7 +72,6 @@ iframe {
     margin-left: calc(-.5 * var(--child-width) + 50%);
     width: var(--child-width);
     position: relative;
-    z-index: -1;
 
     display: flex;
     flex-direction: row;
@@ -92,6 +91,7 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
 }
 
 .algemeen p, .introductie p {
@@ -100,27 +100,10 @@ iframe {
 }
 
 /* CSS om de active button vorm te geven */
-.activeFormBtn {
+.active {
     background-color: var(--timberwolf) !important;
     border: none;
-}
-
-/* CSS om de cursor voor niet-actieve knoppen te wijzigen */
-.formButtons div {
-    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
-}
-
-.formButtons .activeFormBtn {
-    cursor: default;
-}
-
-/* Code om de formulieren te verbergen en weer te geven */
-#algemeenFormContainer, #introductieFormContainer {
-    display: none;
-}
-
-#algemeenFormContainer.active, #introductieFormContainer.active {
-    display: block;
+    cursor: auto;
 }
 
 div.formulier {
@@ -192,6 +175,7 @@ input#telefoonnummer {
     display: flex;
     flex-wrap: wrap;
     column-gap: 10px; /* Voor wat ruimte tussen de velden */
+    justify-content: space-between;
 }
 
 .flex-item {
@@ -284,6 +268,15 @@ button[type="submit"] {
         margin-left: 22px;
         margin-right: 22px;
         padding-bottom: 68px;
+        padding-top: 10px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    fieldset {
+        margin-bottom: 24px;
     }
 
     input[type="text"],
@@ -307,17 +300,27 @@ button[type="submit"] {
 }
 
 @media (min-width: 620px) {
-    .formButtons, .formulier {
+    .formButtons, .formulier, .formRequired {
         max-width: 620px;
         --child-width: auto !important;
         margin-left: auto !important;
         margin-right: auto;
     }
 
+    form {
+        margin-left: 32px;
+        margin-right: 32px;
+        padding-bottom: 40px;
+    }
+
     div.topArrowB {
         background: none;
         box-shadow: none;
         margin-top: 68px;
+    }
+
+    div.topArrowB span.keepL, div.topArrowB a.topArrow, div.topArrowB span.keepR {
+        box-shadow: none;
     }
 }
 
@@ -340,6 +343,10 @@ button[type="submit"] {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
+    .algemeen, .introductie {
+        height: 42px;
+    }
+
     .formInfo {
         max-width: 700px;
         margin-left: auto;
@@ -347,16 +354,38 @@ button[type="submit"] {
     }
 
     form {
-        margin-left: 36px;
-        margin-right: 36px;
-        padding-bottom: 88px;
+        margin-left: 42px;
+        margin-right: 42px;
+        padding-bottom: 48px;
+        padding-top: 12px;
+    }
+
+    label {
+        margin-top: 24px;
+        margin-bottom: 6px;
+    }
+
+    fieldset {
+        margin-bottom: 30px;
     }
 
     input[type="text"],
     input[type="date"],
     input[type="email"],
     input[type="tel"] {
-        height: 48px;
+        height: 50px;
+    }
+
+    .flex-item {
+        flex: 1 1 60%;
+        min-width: 50%;
+        max-width: 57%;
+    }
+
+    .flex-item.small {
+        flex: 1 1 40%;
+        min-width: 30%;
+        max-width: 37%;
     }
 
     div.topArrowB {
@@ -394,21 +423,32 @@ button[type="submit"] {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
+    .algemeen, .introductie {
+        height: 44px;
+    }
+
     .formInfo {
         max-width: 750px;
     }
 
     form {
-        margin-left: 56px;
-        margin-right: 56px;
-        padding-bottom: 104px;
+        padding-bottom: 56px;
+    }
+
+    label {
+        margin-top: 28px;
+        margin-bottom: 8px;
+    }
+
+    fieldset {
+        margin-bottom: 36px;
     }
 
     input[type="text"],
     input[type="date"],
     input[type="email"],
     input[type="tel"] {
-        height: 52px;
+        height: 56px;
     }
 
     div.topArrowB {
@@ -430,21 +470,12 @@ button[type="submit"] {
     /*----------------------------------------*/
     
     /* Alles wat hoort bij het contactformulier */
+    .algemeen, .introductie {
+        height: 46px;
+    }
+
     .formInfo {
         max-width: 800px;
-    }
-
-    form {
-        margin-left: 120px;
-        margin-right: 120px;
-        padding-bottom: 120px;
-    }
-
-    input[type="text"],
-    input[type="date"],
-    input[type="email"],
-    input[type="tel"] {
-        height: 56px;
     }
 
     div.topArrowB {
@@ -467,11 +498,6 @@ button[type="submit"] {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    form {
-        margin-left: 200px;
-        margin-right: 200px;
-        padding-bottom: 136px;
-    }
 
     div.topArrowB {
         margin-top: 136px;
@@ -488,11 +514,6 @@ button[type="submit"] {
     /*----------------------------------------*/
 
     /* Alles wat hoort bij het contactformulier */
-    form {
-        margin-left: 256px;
-        margin-right: 256px;
-        padding-bottom: 144px;
-    }
 
     div.topArrowB {
         margin-top: 144px;

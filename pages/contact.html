@@ -155,7 +155,7 @@
                 <div class="formulier">
                     <!-- Hieronder begint het algemene contactformulier -->
                     <div id="algemeenFormContainer">
-                        <form id="algemeenForm" action="form-handler.php" method="post" autocomplete="on" novalidate>
+                        <form id="algemeenForm" action="../scripts/algemeen-form-handler.php" method="post" autocomplete="on" novalidate>
                             <fieldset>
                                 <label for="naam">Naam*</label>
                                 <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
@@ -204,8 +204,8 @@
                     </div>
 
                     <!-- Hieronder begint het introductie contactformulier -->
-                    <div id="introductieFormContainer">
-                        <form id="introductieForm" action="form-handler.php" method="post" autocomplete="on" novalidate>
+                    <div id="introductieFormContainer" style="display: none;">
+                        <form id="introductieForm" action="../scripts/introductie-form-handler.php" method="post" autocomplete="on" novalidate>
                             <fieldset>
                                 <label for="voornaam">Voornaam(en)*</label>
                                 <input type="text" id="voornaam" name="voornaam" placeholder="Uw voornaam" required>

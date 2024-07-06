@@ -7,28 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const algemeenFormContainer = document.getElementById('algemeenFormContainer');
     const introductieFormContainer = document.getElementById('introductieFormContainer');
 
-    // Function to toggle forms
-    function toggleForms(formContact) {
-        if (formContact.target.closest('#algemeenBtn')) {
-            algemeenFormContainer.classList.add('active');
-            introductieFormContainer.classList.remove('active');
-            algemeenBtn.classList.add('activeFormBtn');
-            introductieBtn.classList.remove('activeFormBtn');
-        } else if (formContact.target.closest('#introductieBtn')) {
-            introductieFormContainer.classList.add('active');
-            algemeenFormContainer.classList.remove('active');
-            introductieBtn.classList.add('activeFormBtn');
-            algemeenBtn.classList.remove('activeFormBtn');
-        }
-    }
+    // Show the algemeen form by default
+    algemeenFormContainer.style.display = 'block';
+    algemeenBtn.classList.add('active');
 
-    // Add event listeners to buttons
-    algemeenBtn.addEventListener('click', toggleForms);
-    introductieBtn.addEventListener('click', toggleForms);
-
-    // Initially show the general form
-    algemeenFormContainer.classList.add('active');
-    algemeenBtn.classList.add('activeFormBtn');
+    // Add event listeners to toggle forms
+    algemeenBtn.addEventListener('click', () => {
+        algemeenFormContainer.style.display = 'block';
+        introductieFormContainer.style.display = 'none';
+        algemeenBtn.classList.add('active');
+        introductieBtn.classList.remove('active');
+    });
+      
+    introductieBtn.addEventListener('click', () => {
+        algemeenFormContainer.style.display = 'none';
+        introductieFormContainer.style.display = 'block';
+        algemeenBtn.classList.remove('active');
+        introductieBtn.classList.add('active');
+    });
 });
 
 
@@ -42,43 +38,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
     introductieForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        if (validateFormI()) {
+        const geboortedatumInput = document.getElementById('geboortedatum');
+        if (isValidDate(geboortedatumInput.value)) {
+            const formattedDate = new Date(geboortedatumInput.value).toISOString().split('T')[0];
+            geboortedatumInput.value = formattedDate;
+        }
+        if (validateIntroductieForm()) {
             alert('Formulier is correct ingevuld en wordt verzonden.');
             introductieForm.submit();
         }
     });
-
+  
     addNationaliteitFieldBtn.addEventListener('click', function() {
         nationaliteitCount++;
         const newField = document.createElement('div');
         newField.className = 'nationaliteitFieldNew';
         newField.innerHTML = `<input type="text" id="nationaliteit${nationaliteitCount}" name="nationaliteit[]" placeholder="Nederlands" required>
-                              <button type="button" class="removeNationaliteitField">&times;</button>`;
+                                <button type="button" class="removeNationaliteitField">&times;</button>`;
         nationaliteitFields.appendChild(newField);
-
+    
         // Voeg een event listener toe aan de nieuwe verwijder-knop
         newField.querySelector('.removeNationaliteitField').addEventListener('click', function() {
             newField.remove();
         });
     });
 
-    function validateFormI() {
-        let isValidI = true;
+    function isValidDate(dateString) {
+        console.log(`Validating date: ${dateString}`);
+        const dateParts = dateString.split('-');
+        if (dateParts.length !== 3) {
+            return false;
+        }
+        const year = parseInt(dateParts[0], 10);
+        const month = parseInt(dateParts[1], 10);
+        const day = parseInt(dateParts[2], 10);
+        if (isNaN(day) || isNaN(month) || isNaN(year)) {
+            return false;
+        }
+        if (day < 1 || day > 31) {
+            return false;
+        }
+        if (month < 1 || month > 12) {
+            return false;
+        }
+        if (year < 1900 || year > 2024) {
+            return false;
+        }
+        
+        // Check if the date is valid (e.g. February 30 is not valid)
+        const date = new Date(year, month - 1, day);
+        if (date.getDate() !== day || date.getMonth() !== month - 1 || date.getFullYear() !== year) {
+            return false;
+        }
+        
+        return true;
+    }
+  
+    function validateIntroductieForm() {
+        let isValid = true;
 
         const fieldsToValidateI = [
-            { id: 'voornaam', errorId: 'voornaamError', validation: value => value.trim() !== '', errorMessage: 'Voer uw voornaam(en) in' },
-            { id: 'achternaam', errorId: 'achternaamError', validation: value => value.trim() !== '', errorMessage: 'Voer uw achternaam in' },
-            { id: 'geboortedatum', errorId: 'geboortedatumError', validation: value => value.trim() !== '', errorMessage: 'Voer uw geboortedatum in (DD/MM/JJJJ)' },
-            { id: 'geboorteplaats', errorId: 'geboorteplaatsError', validation: value => value.trim() !== '', errorMessage: 'Voer uw geboorteplaats in' },
-            { id: 'straatnaam', errorId: 'straatnaamError', validation: value => value.trim() !== '', errorMessage: 'Voer uw straatnaam in' },
-            { id: 'huisnummer', errorId: 'huisnummerError', validation: value => value.trim() !== '', errorMessage: 'Voer uw huisnummer in' },
-            { id: 'postcode', errorId: 'postcodeError', validation: value => /^[1-9][0-9]{3}\s?[A-Z]{2}$/.test(value), errorMessage: 'Voer een geldige postcode in (1234 AB)' },
-            { id: 'woonplaats', errorId: 'woonplaatsError', validation: value => value.trim() !== '', errorMessage: 'Voer uw woonplaats in' },
-            { id: 'burgerlijkeStaat', errorId: 'burgerlijkeStaatError', validation: value => value.trim() !== '', errorMessage: 'Voer uw burgerlijke staat in' },
+            { id: 'voornaam', errorId: 'voornaamError', validation: value => value.trim()!== '', errorMessage: 'Voer uw voornaam(en) in' },
+            { id: 'achternaam', errorId: 'achternaamError', validation: value => value.trim()!== '', errorMessage: 'Voer uw achternaam in' },
+            { id: 'geboortedatum', errorId: 'geboortedatumError', validation: isValidDate, errorMessage: 'Voer uw geboortedatum in (DD/MM/JJJJ)' },
+            { id: 'geboorteplaats', errorId: 'geboorteplaatsError', validation: value => value.trim()!== '', errorMessage: 'Voer uw geboorteplaats in' },
+            { id: 'straatnaam', errorId: 'straatnaamError', validation: value => value.trim()!== '', errorMessage: 'Voer uw straatnaam in' },
+            { id: 'huisnummer', errorId: 'huisnummerError', validation: value => value.trim()!== '', errorMessage: 'Voer uw huisnummer in' },
+            { id: 'postcode', errorId: 'postcodeError', validation: value => /^[1-9][0-9]{3}\s?[A-Z]{2}$/.test(value.toUpperCase()), errorMessage: 'Voer een geldige postcode in (1234 AB)'},
+            { id: 'woonplaats', errorId: 'woonplaatsError', validation: value => value.trim()!== '', errorMessage: 'Voer uw woonplaats in' },
+            { id: 'burgerlijkeStaat', errorId: 'burgerlijkeStaatError', validation: value => value.trim()!== '', errorMessage: 'Voer uw burgerlijke staat in' },
             { id: 'introductie-email', errorId: 'introductie-emailError', validation: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), errorMessage: 'Voer een geldig e-mailadres in' },
             { id: 'telefoonnummer', errorId: 'telefoonnummerError', validation: value => /^\+?\d+$/.test(value), errorMessage: 'Voer een geldig telefoonnummer in' }
         ];
-
+    
         fieldsToValidateI.forEach(field => {
             const inputElement = document.getElementById(field.id);
             const errorElement = document.getElementById(field.errorId);
@@ -86,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorElement.textContent = field.errorMessage;
                 inputElement.classList.add('error-border');
                 inputElement.classList.remove('valid-border');
-                isValidI = false;
+                isValid = false;
             } else {
                 errorElement.textContent = '';
                 inputElement.classList.remove('error-border');
@@ -94,6 +126,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        const formElements = document.querySelectorAll('#introductieForm [required]');
+        formElements.forEach(element => {
+            const field = fieldsToValidateI.find(field => field.id === element.id);
+            if (field) {
+                const errorElement = document.getElementById(field.errorId);
+                if (!field.validation(element.value)) {
+                    errorElement.textContent = field.errorMessage;
+                    element.classList.add('error-border');
+                    isValid = false;
+                } else {
+                    errorElement.textContent = '';
+                    element.classList.remove('error-border');
+                }
+            }
+        });
+    
         const nationaliteitFields = document.querySelectorAll('[name="nationaliteit[]"]');
         const nationaliteitError = document.getElementById('nationaliteitError');
         let nationaliteitenValid = true;
@@ -109,34 +157,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         if (!nationaliteitenValid) {
             nationaliteitError.textContent = 'Voer uw nationaliteit(en) in';
-            isValidI = false;
+            isValid = false;
         } else {
             nationaliteitError.textContent = '';
         }
 
-        return isValidI;
+        return isValid;
     }
 
+  
     // Algemeen formulier gerelateerde variabelen en functies
     const algemeenForm = document.getElementById('algemeenForm');
 
     algemeenForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        if (validateFormA()) {
+        if (validateAlgemeenForm()) {
             alert('Formulier is correct ingevuld en wordt verzonden.');
             algemeenForm.submit();
         }
     });
-
-    function validateFormA() {
-        let isValidA = true;
+  
+    function validateAlgemeenForm() {
+        let isValid = true;
 
         const fieldsToValidateA = [
-            { id: 'naam', errorId: 'naamError', validation: value => value.trim() !== '', errorMessage: 'Voer uw naam in' },
+            { id: 'naam', errorId: 'naamError', validation: value => value.trim()!== '', errorMessage: 'Voer uw naam in' },
             { id: 'algemeen-email', errorId: 'algemeen-emailError', validation: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), errorMessage: 'Voer een geldig e-mailadres in' },
-            { id: 'bericht', errorId: 'berichtError', validation: value => value.trim() !== '', errorMessage: 'Voer uw bericht in' }
+            { id: 'bericht', errorId: 'berichtError', validation: value => value.trim()!== '', errorMessage: 'Voer uw bericht in' }
         ];
-
+    
         fieldsToValidateA.forEach(field => {
             const inputElement = document.getElementById(field.id);
             const errorElement = document.getElementById(field.errorId);
@@ -144,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorElement.textContent = field.errorMessage;
                 inputElement.classList.add('error-border');
                 inputElement.classList.remove('valid-border');
-                isValidA = false;
+                isValid = false;
             } else {
                 errorElement.textContent = '';
                 inputElement.classList.remove('error-border');
@@ -152,6 +201,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        return isValidA;
+        const formElements = document.querySelectorAll('#algemeenForm [required]');
+        formElements.forEach(element => {
+            const field = fieldsToValidateA.find(field => field.id === element.id);
+            if (field) {
+                const errorElement = document.getElementById(field.errorId);
+                if (!field.validation(element.value)) {
+                    errorElement.textContent = field.errorMessage;
+                    element.classList.add('error-border');
+                    isValid = false;
+                } else {
+                    errorElement.textContent = '';
+                    element.classList.remove('error-border');
+                }
+            }
+        });
+    
+        return isValid;
     }
 });
