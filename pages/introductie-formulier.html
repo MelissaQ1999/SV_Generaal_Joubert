@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+    <head>
+        <!-- Algemene meta & link tags
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+        <meta name="theme-color" content="#38494D">
+
+        <title>sv Generaal Joubert | Introductie aanmeldformulier</title>
+        <meta name="SV Generaal Joubert | Schietvereniging | Introductie aanmeldformulier">
+        <meta name="keywords" content="aanmeldformulier,inschrijven,aanmelden,schietsport proberen,schietsportvereniging,SV Generaal Joubert,schieten,schietvereniging">
+        <meta name="description" content="Benieuwd of de schietsport iets voor jou is? 
+        Of wil je kennismaken met onze vereniging? Meld je dan aan voor een introductie bij SV Generaal Joubert!">
+        <link rel="icon" type="image/x-icon" href="../logo/favicon.ico?v=2">
+        <link rel="shortcut icon" type="image/x-icon" href="../logo/favicon.ico?v=2">
+        <link rel="apple-touch-icon" href="../logo/apple-touch-icon.png">
+        <link rel="canonical" href="http://www.svgeneraaljoubert.nl">
+        <link rel="stylesheet" type="text/css" href="../styles/introductie-formulier.css">
+
+        <!-- Scripts 
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="https://kit.fontawesome.com/60bf54ff8c.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="../scripts/main.js" defer></script>
+        <script src="../scripts/introductie-formulier.js" defer></script>
+
+    </head>
+
+    <!-- Dit is de HTML voor het introductie formulier
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <body>
+        <!-- Hieronder wordt de lader van de site aangeroepen -->
+        <div id="doc-loader">
+            <div id="loaderInner"></div>
+        </div>
+
+        <!-- Hieronder begind het menu
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <header>
+            <!-- Hier bevindt zich het logo -->
+            <a href="../index.html" class="logo">
+                <img src="../logo/logo_joubert.png" alt="Logo SV Generaal Joubert">
+            </a>
+            <!-- Het hamburger menu wordt hier aangemaakt -->
+            <a href="#0" id="sluitForm">
+                <span class="close-button"></span>
+            </a>
+		</header>
+
+        <!-- Hieronder begind de hoofd content van de website
+        ––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <main>
+            <!-- de introductie voor de lidmaatschap pagina -->
+            <h1 class="pageTitle">Introductie formulier</h1>
+            <p class="pageIntro hiddenN">
+                Vul ons introductie formulier in als je graag een keer proef wilt komen schieten, zodat wij gelijk alle benodigde gegevens hebben om snel een afspraak met u te kunnen maken.
+                <br><br>
+                Ben je jonger dan 18 jaar, stuur dan een <a href="mailto:info@svgeneraaljoubert.nl">e-mail</a>.   
+            </p>
+            <p class="formRequired"><i>De velden met een &#42; zijn verplicht!</i></p>
+
+            <div class="formulier">
+
+                <!-- Hieronder begint het introductie aanmeldformulier -->
+                <div id="introductieFormContainer">
+                    <form id="introductieForm" action="../scripts/introductie-form-handler.php" method="post" autocomplete="on" novalidate>
+                        <fieldset>
+                            <label for="voornaam">Voornaam(en)*</label>
+                            <input type="text" id="voornaam" name="voornaam" placeholder="Uw voornaam" required>
+                            <div class="error" id="voornaamError"></div>
+                    
+                            <label for="achternaam">Achternaam*</label>
+                            <input type="text" id="achternaam" name="achternaam" placeholder="Uw achternaam" required>
+                            <div class="error" id="achternaamError"></div>
+
+                            <div class="flex-container">
+                                <div class="flex-item small">
+                                    <label for="geboortedatum">Geboortedatum*</label>
+                                    <input type="date" id="geboortedatum" name="geboortedatum" placeholder="dd/mm/jjjj" required>
+                                    <div class="error" id="geboortedatumError"></div>
+                                </div>
+                        
+                                <div class="flex-item">
+                                    <label for="geboorteplaats">Geboorteplaats*</label>
+                                    <input type="text" id="geboorteplaats" name="geboorteplaats" placeholder="Uw geboorteplaats" required>
+                                    <div class="error" id="geboorteplaatsError"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                                
+                        <fieldset class="adresgegevens">
+                            <div class="flex-item">
+                                <label for="straatnaam">Straatnaam*</label>
+                                <input type="text" id="straatnaam" name="straatnaam" placeholder="Uw straatnaam" required>
+                                <div class="error" id="straatnaamError"></div>
+                            </div>
+                            <div class="flex-item small">
+                                <label for="huisnummer">Huisnummer*</label>
+                                <input type="text" id="huisnummer" name="huisnummer" placeholder="123 A" required>
+                                <div class="error" id="huisnummerError"></div>
+                            </div>
+                            <div class="flex-item small">
+                                <label for="postcode">Postcode*</label>
+                                <input type="text" id="postcode" name="postcode" placeholder="1234 AB" required>
+                                <div class="error" id="postcodeError"></div>
+                            </div>
+                            <div class="flex-item">
+                                <label for="woonplaats">Woonplaats*</label>
+                                <input type="text" id="woonplaats" name="woonplaats" placeholder="Uw woonplaats" required>
+                                <div class="error" id="woonplaatsError"></div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label for="burgerlijkeStaat">Burgerlijke staat*</label>
+                            <input type="text" id="burgerlijkeStaat" name="burgerlijkeStaat" placeholder="Ongehuwd" required>
+                            <div class="error" id="burgerlijkeStaatError"></div>
+                            
+                            <div id="nationaliteitFields">
+                                <label for="nationaliteit1">Nationaliteit(en)*</label>
+                                <div class="nationaliteitField">
+                                    <input type="text" id="nationaliteit1" name="nationaliteit[]" placeholder="Nederlands" required>
+                                    <button type="button" id="addNationaliteitField">+</button>
+                                    <div class="error" id="nationaliteitError"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label for="introductie-email">E-mailadres*</label>
+                            <input type="email" id="introductie-email" name="introductie-email" placeholder="voorbeeld@domein.com" required>
+                            <div class="error" id="introductie-emailError"></div>
+                    
+                            <label for="telefoonnummer">Telefoonnummer*</label>
+                            <input type="tel" id="telefoonnummer" name="telefoonnummer" placeholder="0612345678" required>
+                            <div class="error" id="telefoonnummerError"></div>
+                        </fieldset>
+                        
+                        <fieldset class="bericht">
+                            <label for="opmerkingen">Opmerkingen</label>
+                            <textarea id="opmerkingen" name="opmerkingen" rows="4" placeholder="Uw opmerkingen..."></textarea>
+                        </fieldset>
+                        
+                        <input type="hidden" name="origin" value="introductie-formulier">
+                        <button type="submit">
+                            <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                                <defs>
+                                    <style>                                   
+                                        .bulletButton g {
+                                            fill: url(#linear-gradientIFA);
+                                        }
+                                        
+                                        .bulletButton g:hover {
+                                            fill: url(#linear-gradientIFB);
+                                        }
+                                    </style>
+                                    <linearGradient id="linear-gradientIFA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#ffda47" />
+                                        <stop offset="1" stop-color="#F4974E" />
+                                    </linearGradient>
+                                    <linearGradient id="linear-gradientIFB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                        <stop offset="0" stop-color="#F4974E" />
+                                        <stop offset="1" stop-color="#ffda47" />
+                                    </linearGradient>
+                                </defs>
+                                <g>
+                                    <path id="IFBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                                    <text x="15" y="26" class="ButtonText" fill="#000000">Verzenden</text>
+                                </g>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            
+        </main>
+
+        <!-- Hieronder begind de footer van de website
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- dit is voor de keep korel die je terug brengt naar de top -->
+        <div class="topArrowB">
+            <span class="keepL"></span>
+            <a class="topArrow" href="#">top</a>
+            <span class="keepR"></span>
+        </div>
+        <footer>
+            <div class="footgrid">
+                <!-- Dit zijn de hoofd menu items, vanaf hier kun je ook meteen naar de verschillende pagina's -->
+                <nav class="footerMenu">
+                    <ul class="footNav">
+                        <li class="first">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="over-ons-accommodatie.html">Over ons</a>
+                        </li>
+                        <li>
+                            <a href="informatie-disciplines.html">Informatie</a>
+                        </li>
+                        <li>
+                            <a href="voor-leden.html">Voor leden</a>
+                        </li>
+                        <li class="last">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Hier staan de adresgegevens + e-mail -->
+                <div class="footAdres">
+                    <p>SV Generaal Joubert</p>
+                    <p>Dekkerstraat 16</p>
+                    <p>2935 XC Ouderkerk aan den IJssel</p>
+                    <p>
+                        <a href="mailto:info@svgeneraaljoubert.nl">info@svgeneraaljoubert.nl</a>
+                    </p>
+                </div>
+                <!-- De call to action voor de contactpagina, zodat nieuwe leden gemakelijk kunnen aanmelden -->
+                <div class="footContact">
+                    <p>Heb je vragen, wil je proefschieten of ben je geïnteresseerd om lid te worden?</p>
+                    <br>
+                    <p>Neem dan contact met ons op!</p>
+                    <a href="contact.html">
+                        <!-- <button class="primary" type="button">Contact</button> -->
+                        <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                            <defs>
+                                <style>                                   
+                                    .bulletButton g {
+                                        fill: url(#linear-gradientContactA);
+                                    }
+                                    
+                                    .bulletButton g:hover {
+                                        fill: url(#linear-gradientContactB);
+                                        /* filter: url(#ShadowBullet); */
+                                    }
+                                </style>
+                                <linearGradient id="linear-gradientContactA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#ffda47" />
+                                    <stop offset="1" stop-color="#F4974E" />
+                                </linearGradient>
+                                <linearGradient id="linear-gradientContactB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                    <stop offset="0" stop-color="#F4974E" />
+                                    <stop offset="1" stop-color="#ffda47" />
+                                </linearGradient>
+                                <!-- <filter id="ShadowBullet">
+                                    <feDropShadow dx="0" dy="0" stdDeviation="0.8" />
+                                </filter> -->
+                            </defs>
+                            <g>
+                                <path id="ContactBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                                <text x="20" y="26" class="ButtonText" fill="#000000">Contact</text>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- De copyright regel -->
+            <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="privacyverklaring.html">Privacy statement</a></p>
+        </footer>
+        <!-- Hieronder begind de pop-up van de formulieren
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- De pop-up container -->
+        <div id="popup-overlay"></div>
+        <div id="popup-container">
+            <div id="popup">
+                <h2>Bedankt voor je aanmelding!</h2>
+                <p class="H2textGap">Het formulier is succesvol verzonden. Wij zullen zo snel mogelijk contact met u opnemen.</p>
+                <button id="close-popup" type="button">
+                    <svg class="PopUpBulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                        <defs>
+                            <style>                                   
+                                .PopUpBulletButton g {
+                                    fill: url(#linear-gradientPopUpA);
+                                }
+                                
+                                .PopUpBulletButton g:hover {
+                                    fill: url(#linear-gradientPopUpB);
+                                }
+                            </style>
+                            <linearGradient id="linear-gradientPopUpA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#ffda47" />
+                                <stop offset="1" stop-color="#F4974E" />
+                            </linearGradient>
+                            <linearGradient id="linear-gradientPopUpB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#F4974E" />
+                                <stop offset="1" stop-color="#ffda47" />
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <path id="PopUpBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                            <text x="23" y="26" class="ButtonText" fill="#000000">Sluiten</text>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </body>
+
+</html>

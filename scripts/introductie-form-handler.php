@@ -1,7 +1,7 @@
 <?php
 function validate_input($input) {
     if ($input === null) {
-        return ''; // return an empty string if input is null
+        return ''; // Retourneert een lege string als de invoer nul is
     }
     if (is_array($input)) {
         foreach ($input as & $value) {
@@ -9,7 +9,7 @@ function validate_input($input) {
         }
         return $input;
     } else {
-        // Apply validation logic to the input string
+        // Past validatielogica toe op de input string
         $input = trim($input);
         $input = strip_tags($input);
         $input = htmlspecialchars($input);
@@ -18,7 +18,7 @@ function validate_input($input) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Receive form data
+    // Formuliergegevens worden hier ontvangen
     $voornaam = validate_input($_POST['voornaam']);
     $achternaam = validate_input($_POST['achternaam']);
     $geboortedatum = validate_input($_POST['geboortedatum']);
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefoonnummer = validate_input($_POST['telefoonnummer']);
     $opmerkingen = $_POST['opmerkingen'];
 
-    // Validate input data
+    // Valideerd de invoergegevens
     $errors = array();
 
     if (empty($voornaam) || !preg_match("/^[a-zA-Z ]+$/", $voornaam)) {
@@ -85,13 +85,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (count($errors) > 0) {
-        // Display error messages
+        // Foutmeldingen weergeven
         foreach ($errors as $error) {
             echo "<p>$error</p>";
         }
     } else {
         $email_from = $visitor_email;
-        // Format email content
+        // E-mailinhoud opmaken
         $email_body = "
         <html>
         <head>
@@ -116,7 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>
         ";
 
-        // Plain-text version of email body
+        // Plain-text versie van de email body
         $email_body_text = "Aanmelding proefschieten:\n\n"
             . "Voornaam(en): $voornaam\n"
             . "Achternaam: $achternaam\n"
@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             . "Telefoonnummer: $telefoonnummer\n"
             . "Opmerkingen: $opmerkingen\n";
 
-        // Email settings
+        // Email instellingen
         $to = 'melissaqvandijk1999@gmail.com';
         $subject = 'Aanmelding proefschieten';
         $headers = "MIME-Version: 1.0". "\r\n";
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Er is een fout opgetreden bij het verzenden van de e-mail.";
         }
         
-        // Send confirmation email
+        // Verstuurd een bevestigingsmail
         $confirmation_email = "
         <html>
         <head>
@@ -182,8 +182,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Er is een fout opgetreden bij het verzenden van de bevestigingsmail.";
         }
         
-        // Redirect naar de contactpagina
-        header('Location:../pages/contact.html');
-        exit;
+        // Redirect naar de contactpagina of de promo stuken
+        if (isset($_POST['origin'])) {
+            $origin = $_POST['origin'];
+            if ($origin == 'contact') {
+                $referrer = '../pages/contact.html';
+            } elseif ($origin == 'introductie-formulier') {
+                $referrer = isset($_GET['referrer'])? $_GET['referrer'] : '../pages/introductie-formulier.html';
+            }
+            header('Location: '. $referrer);
+            exit;
+        }
     }
 }

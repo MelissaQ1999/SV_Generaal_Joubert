@@ -26,7 +26,7 @@
 
     </head>
 
-    <!-- Dit is de HTML voor de thuispagina
+    <!-- Dit is de HTML voor de contact pagina
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <body>
         <!-- Hieronder wordt de lader van de site aangeroepen -->
@@ -138,7 +138,7 @@
 
             <!-- Dit is het stukje voor de contactformulieren -->
             <section class="contactformulier diffContentGap">
-                <h2 class="formTitel">Contactformulier</h2>
+                <h2 class="formTitel" id="contactIntro">Contactformulier</h2>
                 <p class="formInfo H2textGap hiddenN">
                     Vul ons <b>algemene formulier</b> in als al je vragen nog niet beantwoord zijn of als je graag nog wat extra informatie wilt hebben. Wij zullen zo snel mogelijk reageren.
                     <br><br>
@@ -167,7 +167,9 @@
 
                                 <label for="onderwerp">Onderwerp</label>
                                 <input type="text" id="onderwerp" name="onderwerp" placeholder="Het onderwerp"> 
+                            </fieldset>
 
+                            <fieldset>
                                 <label for="bericht">Bericht*</label>
                                 <textarea id="bericht" name="bericht" rows="4" placeholder="Uw bericht..." required></textarea>
                                 <div class="error" id="berichtError"></div>
@@ -282,7 +284,8 @@
                                 <label for="opmerkingen">Opmerkingen</label>
                                 <textarea id="opmerkingen" name="opmerkingen" rows="4" placeholder="Uw opmerkingen..."></textarea>
                             </fieldset>
-                                    
+                            
+                            <input type="hidden" name="origin" value="contact">
                             <button type="submit">
                                 <svg class="bulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
                                     <defs>
@@ -397,6 +400,44 @@
             <!-- De copyright regel -->
             <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="privacyverklaring.html">Privacy statement</a></p>
         </footer>
+
+        <!-- Hieronder begind de pop-up van de formulieren
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- De pop-up container -->
+        <div id="popup-overlay"></div>
+        <div id="popup-container">
+            <div id="popup">
+                <h2>Gelukt!</h2>
+                <p class="H2textGap">Uw formulier is succesvol verzonden. Wij zullen zo snel mogelijk contact met u opnemen.</p>
+                <button id="close-popup" type="button">
+                    <svg class="PopUpBulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                        <defs>
+                            <style>                                   
+                                .PopUpBulletButton g {
+                                    fill: url(#linear-gradientPopUpA);
+                                }
+                                
+                                .PopUpBulletButton g:hover {
+                                    fill: url(#linear-gradientPopUpB);
+                                }
+                            </style>
+                            <linearGradient id="linear-gradientPopUpA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#ffda47" />
+                                <stop offset="1" stop-color="#F4974E" />
+                            </linearGradient>
+                            <linearGradient id="linear-gradientPopUpB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#F4974E" />
+                                <stop offset="1" stop-color="#ffda47" />
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <path id="PopUpBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                            <text x="23" y="26" class="ButtonText" fill="#000000">Sluiten</text>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </body>
 
 </html>

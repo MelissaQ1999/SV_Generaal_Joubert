@@ -1,9 +1,9 @@
 <?php
 function validate_input($input) {
     if ($input === null) {
-        return ''; // return an empty string if input is null
+        return ''; // Retourneert een lege string als de invoer nul is
     } else {
-        // Apply validation logic to the input string
+        // Past validatielogica toe op de input string
         $input = trim($input);
         $input = strip_tags($input);
         $input = htmlspecialchars($input);
@@ -12,13 +12,13 @@ function validate_input($input) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Receive form data
+    // Formuliergegevens worden hier ontvangen
     $naam = validate_input($_POST['naam']);
     $visitor_email = validate_input($_POST['algemeen-email']);
     $onderwerp = $_POST['onderwerp'];
     $bericht = validate_input($_POST['bericht']);
 
-    // Validate input data
+    // Valideerd de invoergegevens
     $errors = array();
 
     if (empty($naam) || !preg_match("/^[a-zA-Z ]+$/", $naam)) {
@@ -34,13 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (count($errors) > 0) {
-        // Display error messages
+        // Foutmeldingen weergeven
         foreach ($errors as $error) {
             echo "<p>$error</p>";
         }
     } else {
-        $email_from = $visitor_email; // define $email_from here
-        // Format email content
+        $email_from = $visitor_email;
+        // E-mailinhoud opmaken
         $email_body = "
         <html>
         <head>
@@ -55,13 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </html>
         ";
 
-        // Plain-text version of email body
+        // Plain-text versie van de email body
         $email_body_text = "Onderwerp: $onderwerp\n"
             . "Naam: $naam\n"
             . "E-mailadres: $visitor_email\n"
             . "Bericht: $bericht\n";
 
-        // Email settings
+        // Email instellingen
         $to = 'melissaqvandijk1999@gmail.com';
         $subject = $onderwerp;
         $headers = "MIME-Version: 1.0". "\r\n";
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Er is een fout opgetreden bij het verzenden van de e-mail.";
         }
         
-        // Send confirmation email
+        // Verstuurd een bevestigingsmail
         $confirmation_email = "
         <html>
         <head>

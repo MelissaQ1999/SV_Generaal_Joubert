@@ -291,7 +291,7 @@ span.menuDivider {
         align-items: center;
     }
 
-    a.logo img{
+    a.logo img {
         height: 76px;
         margin-left: 0px;
     }
@@ -306,7 +306,7 @@ span.menuDivider {
         width: auto;
     }
 
-    nav.mainMenu{
+    nav.mainMenu {
 		opacity: 1;
         color: #000;
         transform: scale(1);
@@ -358,7 +358,7 @@ span.menuDivider {
         padding-right: 120px;
     }
 
-    a.logo img{
+    a.logo img {
         height: 82px;
     }
 
@@ -379,7 +379,7 @@ span.menuDivider {
         max-width: 1280px
     }
 
-    a.logo img{
+    a.logo img {
         height: 92px;
         top: 3px;
     }
@@ -399,7 +399,7 @@ span.menuDivider {
         max-width: 1408px;
     }
 
-    a.logo img{
+    a.logo img {
         height: 105px;
     }
 }

@@ -1,36 +1,27 @@
-// ----- In dit JavaScript bestand vindt je de code die nodig is voor de werking van de contactformulieren ----- //
+// ----- In dit JavaScript bestand vindt je de code die nodig is voor de werking van het introductie formulier ----- //
 
-// ----- Voor het swichten naar een ander formulier ----- //
-document.addEventListener('DOMContentLoaded', function() {
-    const algemeenBtn = document.getElementById('algemeenBtn');
-    const introductieBtn = document.getElementById('introductieBtn');
-    const algemeenFormContainer = document.getElementById('algemeenFormContainer');
-    const introductieFormContainer = document.getElementById('introductieFormContainer');
-
-    // Toont standaard het algemene formulier
-    algemeenFormContainer.style.display = 'block';
-    algemeenBtn.classList.add('active');
-
-    // Voegt event listeners toe om tussen formulieren te schakelen
-    algemeenBtn.addEventListener('click', () => {
-        algemeenFormContainer.style.display = 'block';
-        introductieFormContainer.style.display = 'none';
-        algemeenBtn.classList.add('active');
-        introductieBtn.classList.remove('active');
-    });
-      
-    introductieBtn.addEventListener('click', () => {
-        algemeenFormContainer.style.display = 'none';
-        introductieFormContainer.style.display = 'block';
-        algemeenBtn.classList.remove('active');
-        introductieBtn.classList.add('active');
-    });
+// Add an event listener to the close button
+document.getElementById('sluitForm').addEventListener('click', function() {
+    var referrer = getParameterByName('referrer');
+    
+    if (referrer) {
+        window.location.href = referrer;
+    } else {
+        window.history.back();
+    }
 });
-
+    
 
 // ----- Voor de validatie van de contactformulieren ----- //
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Store the referrer in localStorage when the page loads
+    const referrer = getParameterByName('referrer');
+    if (referrer) {
+        localStorage.setItem('referrer', referrer);
+    }
+
+    // Pop-up gerelateerde variabelen en functies
     const popupContainer = document.getElementById('popup-container');
     const popupOverlay = document.getElementById('popup-overlay');
     const closePopupButton = document.getElementById('close-popup');
@@ -54,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             geboortedatumInput.value = formattedDate;
         }
         if (validateIntroductieForm()) {
-            currentForm = 'introductieForm';
             showPopup(); // <--- Roept de showPopup() functie aan
         }
     });
@@ -180,68 +170,30 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-  
-    // Algemeen formulier gerelateerde variabelen en functies
-    const algemeenForm = document.getElementById('algemeenForm');
-
-    algemeenForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateAlgemeenForm()) {
-            currentForm = 'algemeenForm';
-            showPopup(); // <--- Roept de showPopup() functie aan
-        }
-    });
-  
-    function validateAlgemeenForm() {
-        let isValid = true;
-
-        const fieldsToValidateA = [
-            { id: 'naam', errorId: 'naamError', validation: value => value.trim()!== '', errorMessage: 'Voer uw naam in' },
-            { id: 'algemeen-email', errorId: 'algemeen-emailError', validation: value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), errorMessage: 'Voer een geldig e-mailadres in' },
-            { id: 'bericht', errorId: 'berichtError', validation: value => value.trim()!== '', errorMessage: 'Voer uw bericht in' }
-        ];
-    
-        fieldsToValidateA.forEach(field => {
-            const inputElement = document.getElementById(field.id);
-            const errorElement = document.getElementById(field.errorId);
-            if (!field.validation(inputElement.value)){
-                errorElement.textContent = field.errorMessage;
-                inputElement.classList.add('error-border');
-                inputElement.classList.remove('valid-border');
-                isValid = false;
-            } else {
-                errorElement.textContent = '';
-                inputElement.classList.remove('error-border');
-                inputElement.classList.add('valid-border');
-            }
-        });
-
-        const formElements = document.querySelectorAll('#algemeenForm [required]');
-        formElements.forEach(element => {
-            const field = fieldsToValidateA.find(field => field.id === element.id);
-            if (field) {
-                const errorElement = document.getElementById(field.errorId);
-                if (!field.validation(element.value)) {
-                    errorElement.textContent = field.errorMessage;
-                    element.classList.add('error-border');
-                    isValid = false;
-                } else {
-                    errorElement.textContent = '';
-                    element.classList.remove('error-border');
-                }
-            }
-        });
-    
-        return isValid;
-    }
-
     closePopupButton.addEventListener('click', () => {
         popupContainer.style.display = 'none';
         popupOverlay.style.display = 'none';
-        if (currentForm === 'algemeenForm') {
-            algemeenForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
-        } else if (currentForm === 'introductieForm') {
-            introductieForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
+        introductieForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
+
+        // Get the referrer from localStorage and redirect
+        const referrer = localStorage.getItem('referrer');
+        if (referrer) {
+            localStorage.removeItem('referrer'); // Remove the referrer from localStorage
+            window.location.href = referrer;
+        } else {
+            window.history.back();
         }
     });
 });
+
+// Add the getParameterByName function if it doesn't exist
+if (!getParameterByName) {
+    function getParameterByName(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+}

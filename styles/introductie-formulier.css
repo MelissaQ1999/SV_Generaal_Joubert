@@ -1,10 +1,9 @@
 /*---------------------------------------------------------------------------------
-    In dit CSS-bestand vindt je de stijl voor de Contact pagina
+    In dit CSS-bestand vindt je de stijl voor het introductie aanmeldformulier
 ----------------------------------------------------------------------------------*/
 
 /* Hier kunt u alle stylesheets importeren */
 @import 'main.css';
-@import 'header.css';
 @import 'subNav.css';
 @import 'footer.css';
 @import 'animaties.css';
@@ -15,46 +14,65 @@ main {
 }
 
 
-/*--------------------------------------------------
-    CSS voor de contactinformatie
----------------------------------------------------*/
-.openingstijden p, .adres p, .gegevens p {
-    margin-bottom: 8px;
+/*-------------------------------------------------------
+    CSS voor de fomulier header
+--------------------------------------------------------*/
+/* De grote, kleur en positie van de header worden hier bepaald */
+header {
+    background-color: var(--outerSpace);
+    height: 60px;
+    width: auto;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    top: 0;
+    z-index: 100;
+    padding-right: 16px;
+    padding-left: 16px;
 }
 
-.openingstijden p:last-child, .adres p:last-child, .gegevens p:last-child {
-    margin-bottom: 0px;
+/* De positie en grootte van het logo */
+a.logo img {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 50px;
 }
 
-/* Het grid instellen voor de drie kopjes die horen bij de contactinformatie */
-.contactinformatie {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 24px;
-    grid-auto-rows: auto auto;
-    grid-auto-columns: auto auto;
-    margin-left: auto;
-    margin-right: auto;
+#sluitForm {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    display: block;
+    z-index: 101;
 }
 
-/* Het grid toepassen op de drie kopjes die horen bij de contactinformatie */
-.openingstijden, .adres, .gegevens {
-    grid-column: 1 / span 4;
+.close-button {
+    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
+    width: 100%;
+    position: absolute;
+    top: 50%;
 }
 
-
-/*--------------------------------------------------
-    CSS voor de iframe
----------------------------------------------------*/
-iframe {
-    height: 248px;
-    /* Dit zorgt ervoor dat de Google Maps de voledige schermbreete aanneemt */
-    --child-width: 100vw;
-    margin-left: calc(-.5 * var(--child-width) + 50%);
-    width: var(--child-width);
-    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
-    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
-    -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.48), inset 0px -2px 16px 0px rgba(0,0,0,0.48);
+.close-button::before,
+.close-button::after {
+    content: ''; /* Maak een pseudo-element voor de bovenste lijn */
+    position: absolute;
+    left: 24%;
+    width: 32px;
+    height: 4px;
+    background-color: #FFF;
+}
+  
+.close-button::before {
+    transform: rotate(45deg); /* Draait de lijn 45 graden */
+}
+  
+.close-button::after {
+    transform: rotate(-45deg); /* Draait de lijn -45 graden */
 }
 
 
@@ -65,45 +83,6 @@ iframe {
 .formRequired {
     margin-top: 32px;
     margin-bottom: 8px;
-}
-
-.formButtons {
-    --child-width: 100vw;
-    margin-left: calc(-.5 * var(--child-width) + 50%);
-    width: var(--child-width);
-    position: relative;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-}
-
-.formButtons div {
-    background-color: #FFF;
-}
-
-.algemeen, .introductie {
-    width: 50%;
-    height: 40px;
-    border: 1px solid var(--timberwolf);
-    border-radius: 12px 12px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: url(../svg/Target_aim1.svg) 12 12, pointer;
-}
-
-.algemeen p, .introductie p {
-    font-size: medium;
-    color: #000;
-}
-
-/* CSS om de active button vorm te geven */
-.active {
-    background-color: var(--timberwolf) !important;
-    border: none;
-    cursor: auto;
 }
 
 div.formulier {
@@ -125,10 +104,6 @@ fieldset {
     border: none;
     margin-bottom: 20px;
     width: auto;
-}
-
-#algemeenForm fieldset {
-    margin-bottom: 0px;
 }
 
 fieldset.bericht {
@@ -296,23 +271,23 @@ button[type="submit"] {
 
 /* Tussenversie van mobiel en tablet (480px) */
 @media (min-width: 480px) {
-    div.main {
-        padding-left: 20px;
-        padding-right: 20px;
+    /* de fomulier header */
+    header {
+        height: 64px;
+        padding-right: 22px;
+        padding-left: 22px;
     }
 
-    /* De contactinformatie */
-    .contactinformatie {
-        row-gap: 28px;
+    .close-button::before, .close-button::after {
+        width: 36px;
+    }
+
+    a.logo img {
+        height: 56px;
     }
     /*----------------------------------------*/
-
-    iframe {
-        height: 284px;
-    }
-    /*----------------------------------------*/
-
-    /* Alles wat hoort bij het contactformulier */
+    
+    /* Alles wat hoort bij het aanmeldformulier */
     form {
         margin-left: 22px;
         margin-right: 22px;
@@ -354,15 +329,9 @@ button[type="submit"] {
     }
 }
 
-/* Extra tussenversie van mobiel en tablet (510px) */
-@media (min-width: 510px) {
-    .openingstijden, .adres, .gegevens, .formTitel, .formInfo {
-        text-align: center;
-    }
-}
-
+/* Extra tussenversie van mobiel en tablet (620px) */
 @media (min-width: 620px) {
-    .formButtons, .formulier, .formRequired {
+    .formulier, .formRequired {
         max-width: 620px;
         --child-width: auto !important;
         margin-left: auto !important;
@@ -388,33 +357,30 @@ button[type="submit"] {
 
 /* Tablet-versie (768px) */
 @media (min-width: 768px) {
-    /* De contactinformatie */
-    .contactinformatie {
-        grid-template-columns: repeat(8, 1fr);
-        row-gap: 34px;
+    /* de fomulier header */
+    header {
+        height: 72px;
+        padding-right: 36px;
+        padding-left: 36px;
     }
 
-    .openingstijden, .adres, .gegevens {
-        grid-column: 2 / span 6;
+    #sluitForm {
+        height: 45px;
+        width: 45px;
+    }
+
+    .close-button::before, .close-button::after {
+        width: 42px;
+        height: 5px;
+        left: 16%;
+    }
+
+    a.logo img {
+        height: 64px;
     }
     /*----------------------------------------*/
-
-    iframe {
-        height: 238px;
-    }
-    /*----------------------------------------*/
-
-    /* Alles wat hoort bij het contactformulier */
-    .algemeen, .introductie {
-        height: 42px;
-    }
-
-    .formInfo {
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
+    
+    /* Alles wat hoort bij het aanmeldformulier */
     form {
         margin-left: 42px;
         margin-right: 42px;
@@ -475,42 +441,30 @@ button[type="submit"] {
 
 /* Laptop-versie (1024px) */
 @media (min-width: 1024px) {
-    /* De contactinformatie */
-    .contactinformatie {
-        grid-template-columns: repeat(12, 1fr);
-        column-gap: 24px;
+    /* de fomulier header */
+    header {
+        height: 86px;
+        padding-right: 56px;
+        padding-left: 56px;
     }
 
-    .openingstijden {
-        grid-column: 1 / span 4;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+    a.logo img {
+        height: 76px;
     }
 
-    .adres {
-        grid-column: 5 / span 4;
-    } 
-
-    .gegevens {
-        grid-column: 9 / span 4;
+    #sluitForm {
+        height: 45px;
+        width: 45px;
     }
-    /*----------------------------------------*/
 
-    iframe {
-        height: 392px;
+    .close-button::before, .close-button::after {
+        width: 48px;
+        height: 6px;
+        left: 6%;
     }
     /*----------------------------------------*/
-
-    /* Alles wat hoort bij het contactformulier */
-    .algemeen, .introductie {
-        height: 44px;
-    }
-
-    .formInfo {
-        max-width: 750px;
-    }
-
+    
+    /* Alles wat hoort bij het aanmeldformulier */
     form {
         padding-bottom: 56px;
     }
@@ -551,26 +505,29 @@ button[type="submit"] {
 
 /* Grotere laptopversie (1280px) */
 @media (min-width: 1280PX) {
-    /* De contactinformatie */
-    .contactinformatie {
-        column-gap: 40px;
+    /* de fomulier header */
+    header {
+        height: 92px;
+        padding-right: 120px;
+        padding-left: 120px;
+    }
+
+    a.logo img {
+        height: 82px;
+    }
+
+    #sluitForm {
+        height: 50px;
+        width: 50px;
+    }
+
+    .close-button::before, .close-button::after {
+        width: 52px;
+        height: 7px;
     }
     /*----------------------------------------*/
-
-    iframe {
-        height: 456px;
-    }
-    /*----------------------------------------*/
-    
-    /* Alles wat hoort bij het contactformulier */
-    .algemeen, .introductie {
-        height: 46px;
-    }
-
-    .formInfo {
-        max-width: 800px;
-    }
-
+       
+    /* Alles wat hoort bij het aanmeldformulier */
     div.topArrowB {
         margin-top: 120px;
     }
@@ -586,19 +543,29 @@ button[type="submit"] {
 
 /* Tussenversie van laptop en desktop (1600px) */
 @media (min-width: 1600PX) {
-    /* De contactinformatie */
-    .contactinformatie {
-        max-width: 1280px;
-        column-gap: 48px;
+    /* de fomulier header */
+    header {
+        height: 104px;
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+
+    a.logo img {
+        height: 92px;
+    }
+
+    #sluitForm {
+        height: 55px;
+        width: 55px;
+    }
+
+    .close-button::before, .close-button::after {
+        width: 56px;
+        left: 4%;
     }
     /*----------------------------------------*/
 
-    iframe {
-        height: 520px;
-    }
-    /*----------------------------------------*/
-
-    /* Alles wat hoort bij het contactformulier */
+    /* Alles wat hoort bij het aanmeldformulier */
 
     div.topArrowB {
         margin-top: 136px;
@@ -615,14 +582,29 @@ button[type="submit"] {
 
 /* Desktop versie (1920px) */
 @media (min-width: 1920PX) {
-    /* De contactinformatie */
-    .contactinformatie {
-        column-gap: 56px;
-        max-width: 1408px;
+    /* de fomulier header */
+    header {
+        height: 120px;
+        padding-right: 256px;
+        padding-left: 256px;
+    }
+
+    a.logo img {
+        height: 105px;
+    }
+
+    #sluitForm {
+        height: 60px;
+        width: 60px;
+    }
+
+    .close-button::before, .close-button::after {
+        width: 64px;
+        height: 8px;
     }
     /*----------------------------------------*/
 
-    /* Alles wat hoort bij het contactformulier */
+    /* Alles wat hoort bij het aanmeldformulier */
 
     div.topArrowB {
         margin-top: 144px;

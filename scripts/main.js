@@ -139,3 +139,12 @@ const observerPT = new IntersectionObserver((entries) => {
 
 const hiddenPTElements = document.querySelectorAll('.hiddenPT');
 hiddenPTElements.forEach((el) => observerPT.observe(el));
+
+
+function setReferrer() {
+    var referrer = window.location.href;
+    var formLink = document.getElementById('form-link');
+    formLink.href += '?referrer=' + encodeURIComponent(referrer);
+}
+
+window.onload = setReferrer;
