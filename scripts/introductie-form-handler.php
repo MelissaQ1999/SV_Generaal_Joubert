@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Voer een geldig e-mailadres in";
     }
 
-    if (empty($telefoonnummer) || !preg_match("/^\+?\d+$/", $telefoonnummer)){
+    if (empty($telefoonnummer) || (!filter_var($telefoonnummer, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/^\+?\d+$/'))))) {
         $errors[] = "Voer een geldig telefoonnummer in";
     }
 

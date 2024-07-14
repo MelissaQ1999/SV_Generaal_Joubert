@@ -3,12 +3,18 @@
 ----------------------------------------------------------------------------------*/
 
 /* Hier kunt u alle stylesheets importeren */
+@import 'animaties.css';
 @import 'main.css';
 @import 'header.css';
 @import 'subNav.css';
 @import 'footer.css';
-@import 'animaties.css';
 
+/* animatie voorop de tekst stukken die voor deze pagina net wat anders moet */
+@media (prefers-reduced-motion: no-preference) {
+    .hiddenN {
+        transition-delay: 500ms;
+    }
+}
 
 section.kalender h2 {
     word-break: break-word;
