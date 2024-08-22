@@ -275,7 +275,7 @@ button[type="submit"] {
     text-align: center;
 }
 
-#close-popup {
+.close-popup {
     background: none;
     border: none;
 }

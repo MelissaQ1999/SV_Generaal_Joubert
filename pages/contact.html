@@ -78,6 +78,82 @@
         </script>
     </head>
 
+    <head>
+        <!-- Algemene metadata
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#38494D">
+
+        <!-- Pagina specifieke metadata
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <title></title>
+        <meta name="description" content="">
+        <meta name="category" content="Sport, Schietsport, Vereniging, Sportvereniging">
+        <meta name="copyright" content="© 2024 SV Generaal Joubert">
+        <meta name="publisher" content="SV Generaal Joubert">
+        <meta name="author" content="Melissa van Dijk, in samenwerking met SV Generaal Joubert">
+
+        <!-- Link tags
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="icon" type="image/x-icon" href="../logo/favicon.ico?v=2">
+        <link rel="shortcut icon" type="image/x-icon" href="../logo/favicon.ico?v=2">
+        <link rel="apple-touch-icon" href="../logo/apple-touch-icon.png">
+        <link rel="canonical" href="https://www.svgeneraaljoubert.nl/pages/">
+
+        <!-- Open Graph data - voor als de website wordt gedeeld op Facebook
+        –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta property="og:locale" content="nl_NL">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="SV Generaal Joubert - Schietvereniging">
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="https://SV_Generaal_Joubert/logo/apple-touch-icon.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:url" content="https://www.svgeneraaljoubert.nl/pages/">
+
+        <!-- Twitter Cards metadata - voor als de website wordt gedeeld op Twitter/X
+        –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="https://melissaq1999.github.io/SV_Generaal_Joubert/logo/apple-touch-icon.png">
+
+        <!-- CSS en JavaScript bestanden
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="stylesheet" type="text/css" href="../styles/">
+        <script src="https://kit.fontawesome.com/60bf54ff8c.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="../scripts/main.js" defer></script>
+
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "SportsClub",
+                "name": "",
+                "description": "",
+                "image": "https://melissaq1999.github.io/SV_Generaal_Joubert/logo/apple-touch-icon.png",
+                "url": "https://www.svgeneraaljoubert.nl/pages/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Dekkerstraat 16",
+                    "addressLocality": "Ouderkerk aan den IJssel",
+                    "addressRegion": "Zuid-Holland",
+                    "postalCode": "2935 XC",
+                    "addressCountry": "Netherlands"
+                },
+                "openingHours": "Tu 19:00-23:00, Sa 16:00-23:00",
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "0180-682415",
+                    "email": "info@svgeneraaljoubert.nl"
+                }
+            }
+        </script>
+    </head>
+
     <!-- Dit is de HTML voor de contact pagina
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <body>
@@ -453,43 +529,6 @@
             <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="privacyverklaring.html">Privacy statement</a></p>
         </footer>
 
-        <!-- Hieronder begind de pop-up van de formulieren
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <!-- De pop-up container -->
-        <div id="popup-overlay"></div>
-        <div id="popup-container">
-            <div id="popup">
-                <h2>Gelukt!</h2>
-                <p class="H2textGap">Uw formulier is succesvol verzonden. Wij zullen zo snel mogelijk contact met u opnemen.</p>
-                <button id="close-popup" type="button">
-                    <svg class="PopUpBulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
-                        <defs>
-                            <style>                                   
-                                .PopUpBulletButton g {
-                                    fill: url(#linear-gradientPopUpA);
-                                }
-                                
-                                .PopUpBulletButton g:hover {
-                                    fill: url(#linear-gradientPopUpB);
-                                }
-                            </style>
-                            <linearGradient id="linear-gradientPopUpA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
-                                <stop offset="0" stop-color="#ffda47" />
-                                <stop offset="1" stop-color="#F4974E" />
-                            </linearGradient>
-                            <linearGradient id="linear-gradientPopUpB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
-                                <stop offset="0" stop-color="#F4974E" />
-                                <stop offset="1" stop-color="#ffda47" />
-                            </linearGradient>
-                        </defs>
-                        <g>
-                            <path id="PopUpBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
-                            <text x="23" y="26" class="ButtonText" fill="#000000">Sluiten</text>
-                        </g>
-                    </svg>
-                </button>
-            </div>
-        </div>
     </body>
 
 </html>

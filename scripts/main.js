@@ -83,9 +83,9 @@ const observerSL = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('showSL');
          } 
-        else {
-            entry.target.classList.remove('showSL');
-        }
+        // else {
+        //     entry.target.classList.remove('showSL');
+        // }
     });
 });
 
@@ -99,9 +99,9 @@ const observerSR = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('showSR');
          } 
-        else {
-            entry.target.classList.remove('showSR');
-        }
+        // else {
+        //     entry.target.classList.remove('showSR');
+        // }
     });
 });
 
@@ -115,9 +115,9 @@ const observerSP = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('showSP');
          } 
-        else {
-            entry.target.classList.remove('showSP');
-        }
+        // else {
+        //     entry.target.classList.remove('showSP');
+        // }
     });
 });
 

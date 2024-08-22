@@ -1,4 +1,6 @@
 <?php
+require "mailer.php";
+
 function validate_input($input) {
     if ($input === null) {
         return ''; // Retourneert een lege string als de invoer nul is
@@ -12,6 +14,7 @@ function validate_input($input) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Formuliergegevens worden hier ontvangen
     $naam = validate_input($_POST['naam']);
     $visitor_email = validate_input($_POST['algemeen-email']);
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Valideerd de invoergegevens
     $errors = array();
 
-    if (empty($naam) || !preg_match("/^[a-zA-Z ]+$/", $naam)) {
+    if (empty($naam) || preg_match("/^[0-9]+$/", $naam)) {
         $errors[] = "Voer uw naam correct in";
     }
 
@@ -61,31 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             . "E-mailadres: $visitor_email\n"
             . "Bericht: $bericht\n";
 
-        // Email instellingen
+        // TODO: set email for the reciever here
         $to = 'melissaqvandijk1999@gmail.com';
-        $subject = $onderwerp;
-        $headers = "MIME-Version: 1.0". "\r\n";
-        $headers.= "Content-type:text/html;charset=UTF-8". "\r\n";
-        $headers.= "From: $email_from \r\n";
-        $headers.= "Reply-To: $visitor_email \r\n";
 
-        function send_email($to, $subject, $body, $headers, $email_from) {
-            $mail_sent = mail($to, $subject, $body, $headers);
-            if ($mail_sent) {
-                return 'OK';
-            } else {
-                return 'Error sending email';
-            }
-        }
+        send_email_helper($to, $onderwerp, $email_body, $email_body_text );
         
-        $response = send_email($to, $subject, $email_body, $headers, $email_from);
-        
-        if ($response === 'OK') {
-            echo "E-mail succesvol verzonden!";
-        } else {
-            echo "Er is een fout opgetreden bij het verzenden van de e-mail.";
-        }
-        
+exit(200);
         // Verstuurd een bevestigingsmail
         $confirmation_email = "
         <html>
@@ -97,22 +81,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </body>
         </html>
         ";
+         // Verstuurd een bevestigingsmail
+        $confirmation_email_text = "Bedankt voor uw bericht";
         $confirmation_subject = "Bevestiging aanmelding proefschieten";
-        $confirmation_headers = "MIME-Version: 1.0". "\r\n";
-        $confirmation_headers.= "Content-type:text/html;charset=UTF-8". "\r\n";
-        $confirmation_headers.= "From: $email_from \r\n";
-        $confirmation_headers.= "Reply-To: $visitor_email \r\n";
-        
-        $response = send_email($visitor_email, $confirmation_subject, $confirmation_email, $confirmation_headers, $email_from);
-        
-        if ($response === 'OK') {
-            echo "Bevestigingsmail succesvol verzonden!";
-        } else {
-            echo "Er is een fout opgetreden bij het verzenden van de bevestigingsmail.";
-        }
+        send_email_helper($visitor_email, $confirmation_subject, $confirmation_email, $confirmation_email_text );
         
         // Redirect naar de contactpagina
-        header('Location:../pages/contact.html');
+        header('Location:../pages/contact_succes.html');
         exit;
     }
 }

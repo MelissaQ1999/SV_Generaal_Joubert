@@ -1,4 +1,6 @@
 <?php
+require "mailer.php";
+
 function validate_input($input) {
     if ($input === null) {
         return ''; // Retourneert een lege string als de invoer nul is
@@ -10,10 +12,7 @@ function validate_input($input) {
         return $input;
     } else {
         // Past validatielogica toe op de input string
-        $input = trim($input);
-        $input = strip_tags($input);
-        $input = htmlspecialchars($input);
-        return $input;
+        return htmlspecialchars(strip_tags(trim($input)));
     }
 }
 
@@ -36,11 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Valideerd de invoergegevens
     $errors = array();
 
-    if (empty($voornaam) || !preg_match("/^[a-zA-Z ]+$/", $voornaam)) {
+    if (empty($voornaam) || preg_match("/^[0-9]+$/", $voornaam)) {
         $errors[] = "Voer uw voornaam(en) in";
     }
 
-    if (empty($achternaam) || !preg_match("/^[a-zA-Z ]+$/", $achternaam)) {
+    if (empty($achternaam) || preg_match("/^[0-9]+$/", $achternaam)) {
         $errors[] = "Voer uw achternaam in";
     }
 
@@ -48,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Voer uw geboortedatum in (DD-MM-YYYY)";
     }
 
-    if (empty($geboorteplaats) || !preg_match("/^[a-zA-Z ]+$/", $geboorteplaats)) {
+    if (empty($geboorteplaats) || preg_match("/^[0-9]+$/", $geboorteplaats)) {
         $errors[] = "Voer uw geboorteplaats in";
     }
 
-    if (empty($straatnaam) || !preg_match("/^[a-zA-Z ]+$/", $straatnaam)) {
+    if (empty($straatnaam) || preg_match("/^[0-9]+$/", $straatnaam)) {
         $errors[] = "Voer uw straatnaam in";
     }
 
@@ -64,11 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Voer een geldige postcode in (1234 AB)";
     }
 
-    if (empty($woonplaats) || !preg_match("/^[a-zA-Z ]+$/", $woonplaats)) {
+    if (empty($woonplaats) || preg_match("/^[0-9]+$/", $woonplaats)) {
         $errors[] = "Voer uw woonplaats in";
     }
 
-    if (empty($burgerlijkeStaat) || !preg_match("/^[a-zA-Z ]+$/", $burgerlijkeStaat)) {
+    if (empty($burgerlijkeStaat) || preg_match("/^[0-9]+$/", $burgerlijkeStaat)) {
         $errors[] = "Voer uw burgerlijke staat in";
     }
 

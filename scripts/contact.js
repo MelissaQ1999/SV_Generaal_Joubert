@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let nationaliteitCount = 1;
 
     introductieForm.addEventListener('submit', function(event) {
-        event.preventDefault();
         const geboortedatumInput = document.getElementById('geboortedatum');
         if (isValidDate(geboortedatumInput.value)) {
             const formattedDate = new Date(geboortedatumInput.value).toISOString().split('T')[0];
@@ -55,7 +54,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (validateIntroductieForm()) {
             currentForm = 'introductieForm';
-            showPopup(); // <--- Roept de showPopup() functie aan
+            introductieForm.submit()
+            // showPopup(); // <--- Roept de showPopup() functie aan
+        }
+        else{
+            event.preventDefault();
         }
     });
   
@@ -188,7 +191,11 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         if (validateAlgemeenForm()) {
             currentForm = 'algemeenForm';
-            showPopup(); // <--- Roept de showPopup() functie aan
+            // showPopup(); // <--- Roept de showPopup() functie aan
+            algemeenForm.submit()
+        }
+        else{
+            event.preventDefault();
         }
     });
   
@@ -235,13 +242,13 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    closePopupButton.addEventListener('click', () => {
-        popupContainer.style.display = 'none';
-        popupOverlay.style.display = 'none';
-        if (currentForm === 'algemeenForm') {
-            algemeenForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
-        } else if (currentForm === 'introductieForm') {
-            introductieForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
-        }
-    });
+    // closePopupButton.addEventListener('click', () => {
+    //     popupContainer.style.display = 'none';
+    //     popupOverlay.style.display = 'none';
+    //     if (currentForm === 'algemeenForm') {
+    //         algemeenForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
+    //     } else if (currentForm === 'introductieForm') {
+    //         introductieForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
+    //     }
+    // });
 });
