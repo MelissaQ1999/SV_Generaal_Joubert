@@ -17,6 +17,7 @@ function validate_input($input) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Formuliergegevens worden hier ontvangen
     $voornaam = validate_input($_POST['voornaam']);
     $achternaam = validate_input($_POST['achternaam']);
@@ -131,30 +132,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             . "Telefoonnummer: $telefoonnummer\n"
             . "Opmerkingen: $opmerkingen\n";
 
-        // Email instellingen
+        // TODO: set email for the reciever here
         $to = 'melissaqvandijk1999@gmail.com';
         $subject = 'Aanmelding proefschieten';
-        $headers = "MIME-Version: 1.0". "\r\n";
-        $headers.= "Content-type:text/html;charset=UTF-8". "\r\n";
-        $headers.= "From: $email_from \r\n";
-        $headers.= "Reply-To: $visitor_email \r\n";
-
-        function send_email($to, $subject, $body, $headers, $email_from) {
-            $mail_sent = mail($to, $subject, $body, $headers);
-            if ($mail_sent) {
-                return 'OK';
-            } else {
-                return 'Error sending email';
-            }
-        }
         
-        $response = send_email($to, $subject, $email_body, $headers, $email_from);
-        
-        if ($response === 'OK') {
-            echo "E-mail succesvol verzonden!";
-        } else {
-            echo "Er is een fout opgetreden bij het verzenden van de e-mail.";
-        }
+        // Email instellingen
+        send_email_helper($to, $subject, $email_body, $email_body_text );
         
         // Verstuurd een bevestigingsmail
         $confirmation_email = "
@@ -167,29 +150,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </body>
         </html>
         ";
+
+        // Verstuurd een bevestigingsmail
         $confirmation_subject = "Bevestiging aanmelding proefschieten";
-        $confirmation_headers = "MIME-Version: 1.0". "\r\n";
-        $confirmation_headers.= "Content-type:text/html;charset=UTF-8". "\r\n";
-        $confirmation_headers.= "From: $email_from \r\n";
-        $confirmation_headers.= "Reply-To: $visitor_email \r\n";
+        $confirmation_email_text = "Bedankt voor uw aanmelding! Wij nemen zo snel mogelijk contact met uw op.";
         
-        $response = send_email($visitor_email, $confirmation_subject, $confirmation_email, $confirmation_headers, $email_from);
+        send_email_helper($visitor_email, $confirmation_subject, $confirmation_email, $confirmation_email_text );
         
-        if ($response === 'OK') {
-            echo "Bevestigingsmail succesvol verzonden!";
-        } else {
-            echo "Er is een fout opgetreden bij het verzenden van de bevestigingsmail.";
-        }
         
-        // Redirect naar de contactpagina of de promo stuken
+        // Redirect naar de succes pagina's
         if (isset($_POST['origin'])) {
             $origin = $_POST['origin'];
             if ($origin == 'contact') {
-                $referrer = '../pages/contact.html';
+                header('Location:../pages/contact_succes.html');
             } elseif ($origin == 'introductie-formulier') {
-                $referrer = isset($_GET['referrer'])? $_GET['referrer'] : '../pages/introductie-formulier.html';
+                header('Location:../pages/introductie-formulier_succes.html');
             }
-            header('Location: '. $referrer);
             exit;
         }
     }

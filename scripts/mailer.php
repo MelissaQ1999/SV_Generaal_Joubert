@@ -49,7 +49,7 @@ function send_email_helper($to, $subject, $html_body, $plain_body){
         return 204;
     } catch (Exception $e) {
         // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        throw new ErrorException("Message could not be sent.");
+        throw new ErrorException("Er is een fout opgetreden bij het verzenden van de e-mail.");
     }
 
 };

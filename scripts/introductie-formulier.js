@@ -21,16 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('referrer', referrer);
     }
 
-    // Pop-up gerelateerde variabelen en functies
-    const popupContainer = document.getElementById('popup-container');
-    const popupOverlay = document.getElementById('popup-overlay');
-    const closePopupButton = document.getElementById('close-popup');
-
-    function showPopup() {
-        popupContainer.style.display = 'block';
-        popupOverlay.style.display = 'block';
-    }
-
     // Introductieformulier gerelateerde variabelen en functies
     const introductieForm = document.getElementById('introductieForm');
     const addNationaliteitFieldBtn = document.getElementById('addNationaliteitField');
@@ -45,9 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
             geboortedatumInput.value = formattedDate;
         }
         if (validateIntroductieForm()) {
-            showPopup(); // <--- Roept de showPopup() functie aan
+            introductieForm.submit(); // Verzend het formulier
+        }
+        else{
+            event.preventDefault();
         }
     });
+    
   
     addNationaliteitFieldBtn.addEventListener('click', function() {
         nationaliteitCount++;
@@ -170,11 +164,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    closePopupButton.addEventListener('click', () => {
-        popupContainer.style.display = 'none';
-        popupOverlay.style.display = 'none';
-        introductieForm.submit(); // Verzend het formulier nadat de pop-up wordt gesloten
+    // Pop-up gerelateerde variabelen en functies
+    const closePopupButton = document.getElementById('close-popup');
 
+    closePopupButton.addEventListener('click', () => {
         // Get the referrer from localStorage and redirect
         const referrer = localStorage.getItem('referrer');
         if (referrer) {

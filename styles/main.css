@@ -33,30 +33,30 @@
 @media (prefers-color-scheme: dark){
     :root {
         /* button kleuren */
-    --primary: #F4974E;
-    --secondary: #EDEDED;
+        --primary: #F4974E;
+        --secondary: #EDEDED;
 
-    /* formulier kleuren */
-    --sucsess: #64B54F;
-    --warning: #EA523C;
+        /* formulier kleuren */
+        --sucsess: #64B54F;
+        --warning: #EA523C;
 
-    /* menu/ footer kleuren */
-    --gunmetal: #0C2431;
-    --outerSpace: #38494D;
-    --feldGrau: #4E5C5B;
+        /* menu/ footer kleuren */
+        --gunmetal: #0C2431;
+        --outerSpace: #38494D;
+        --feldGrau: #4E5C5B;
 
-    /* achtergrond kleuren */
-    --timberwolf: #D1D5D0;
-    --mintCream: #F1F9F7;
-    --aliceBlue: #EDF8FD;
-    --nyanza: #D8EDD4;
-    
-    /* overige kleuren */
-    --gray: #808080;
-    --lightGray: #F0F0F0;
-    --blue: #3DACE3;
-    --yellow: #FFDA47;
-    --orange: #EF7545;
+        /* achtergrond kleuren */
+        --timberwolf: #D1D5D0;
+        --mintCream: #F1F9F7;
+        --aliceBlue: #EDF8FD;
+        --nyanza: #D8EDD4;
+        
+        /* overige kleuren */
+        --gray: #808080;
+        --lightGray: #F0F0F0;
+        --blue: #3DACE3;
+        --yellow: #FFDA47;
+        --orange: #EF7545;
     }
 }
 

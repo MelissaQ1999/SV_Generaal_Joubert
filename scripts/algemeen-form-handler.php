@@ -6,10 +6,7 @@ function validate_input($input) {
         return ''; // Retourneert een lege string als de invoer nul is
     } else {
         // Past validatielogica toe op de input string
-        $input = trim($input);
-        $input = strip_tags($input);
-        $input = htmlspecialchars($input);
-        return $input;
+        return htmlspecialchars(strip_tags(trim($input)));
     }
 }
 
@@ -67,9 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // TODO: set email for the reciever here
         $to = 'melissaqvandijk1999@gmail.com';
 
+        // Email instellingen
         send_email_helper($to, $onderwerp, $email_body, $email_body_text );
         
-exit(200);
         // Verstuurd een bevestigingsmail
         $confirmation_email = "
         <html>
@@ -81,9 +78,11 @@ exit(200);
         </body>
         </html>
         ";
-         // Verstuurd een bevestigingsmail
-        $confirmation_email_text = "Bedankt voor uw bericht";
-        $confirmation_subject = "Bevestiging aanmelding proefschieten";
+
+        // Verstuurd een bevestigingsmail
+        $confirmation_subject = "Bevestiging van uw bericht";
+        $confirmation_email_text = "Bedankt voor uw bericht!";
+        
         send_email_helper($visitor_email, $confirmation_subject, $confirmation_email, $confirmation_email_text );
         
         // Redirect naar de contactpagina

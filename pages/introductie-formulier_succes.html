@@ -56,7 +56,7 @@
         <main>
             <!-- de introductie voor de lidmaatschap pagina -->
             <h1 class="pageTitle">Introductie formulier</h1>
-            <p class="pageIntro hiddenN">
+            <p class="pageIntro">
                 Vul ons introductie formulier in als je graag een keer proef wilt komen schieten, zodat wij gelijk alle benodigde gegevens hebben om snel een afspraak met u te kunnen maken.
                 <br><br>
                 Ben je jonger dan 18 jaar, stuur dan een <a href="mailto:info@svgeneraaljoubert.nl">e-mail</a>.   
@@ -261,5 +261,42 @@
             <!-- De copyright regel -->
             <p class="copy">&copy; 2024 - SV Generaal Joubert &#124 <br class="on"> <a class="avg" href="privacyverklaring.html">Privacy statement</a></p>
         </footer>
+        <!-- Hieronder begind de pop-up van de formulieren
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- De pop-up container -->
+        <div id="popup-overlay" style="display: block;"></div>
+        <div id="popup-container" style="display: block;">
+            <div id="popup">
+                <h2>Bedankt voor je aanmelding!</h2>
+                <p class="H2textGap">Het formulier is succesvol verzonden. Wij zullen zo snel mogelijk contact met u opnemen.</p>
+                <button id="close-popup" type="button">
+                    <svg class="PopUpBulletButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="40" viewBox="0 0 128 40">
+                        <defs>
+                            <style>                                   
+                                .PopUpBulletButton g {
+                                    fill: url(#linear-gradientPopUpA);
+                                }
+                                
+                                .PopUpBulletButton g:hover {
+                                    fill: url(#linear-gradientPopUpB);
+                                }
+                            </style>
+                            <linearGradient id="linear-gradientPopUpA" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#ffda47" />
+                                <stop offset="1" stop-color="#F4974E" />
+                            </linearGradient>
+                            <linearGradient id="linear-gradientPopUpB" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#F4974E" />
+                                <stop offset="1" stop-color="#ffda47" />
+                            </linearGradient>
+                        </defs>
+                        <g>
+                            <path id="PopUpBullet" d="M2079.308,1461v-2.5h-4.923v2.5H2067v-40h7.384v2.5h4.923V1421h80v1.253l.615,0c19.372,0,35.077,8.395,35.077,18.75s-15.705,18.75-35.077,18.75l-.615,0V1461Z" transform="translate(-2067 -1421)" />
+                            <text x="23" y="26" class="ButtonText" fill="#000000">Sluiten</text>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </body>
 </html>
